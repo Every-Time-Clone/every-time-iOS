@@ -13,6 +13,12 @@
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
 		ABF8334129752D1100E3DC16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF8334029752D1100E3DC16 /* Assets.xcassets */; };
 		ABF8334429752D1100E3DC16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8334229752D1100E3DC16 /* LaunchScreen.storyboard */; };
+		ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8335129752DDD00E3DC16 /* UIView +.swift */; };
+		ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8335429752E0500E3DC16 /* UIColor +.swift */; };
+		ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8335629752E1F00E3DC16 /* UIStackView +.swift */; };
+		ABF8335929752ED500E3DC16 /* CGFloat +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8335829752ED500E3DC16 /* CGFloat +.swift */; };
+		ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8335E29752F2D00E3DC16 /* UITableViewCell +.swift */; };
+		ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8336029752F3C00E3DC16 /* UICollectionViewCell +.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		ABF8334029752D1100E3DC16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABF8334329752D1100E3DC16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABF8334529752D1100E3DC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABF8335129752DDD00E3DC16 /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
+		ABF8335429752E0500E3DC16 /* UIColor +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor +.swift"; sourceTree = "<group>"; };
+		ABF8335629752E1F00E3DC16 /* UIStackView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView +.swift"; sourceTree = "<group>"; };
+		ABF8335829752ED500E3DC16 /* CGFloat +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat +.swift"; sourceTree = "<group>"; };
+		ABF8335E29752F2D00E3DC16 /* UITableViewCell +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell +.swift"; sourceTree = "<group>"; };
+		ABF8336029752F3C00E3DC16 /* UICollectionViewCell +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell +.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 		ABF8334B29752D5400E3DC16 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				ABF8335029752DD100E3DC16 /* Extension */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -97,6 +110,19 @@
 				ABF8333B29752D1000E3DC16 /* ViewController.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		ABF8335029752DD100E3DC16 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ABF8335129752DDD00E3DC16 /* UIView +.swift */,
+				ABF8335429752E0500E3DC16 /* UIColor +.swift */,
+				ABF8335629752E1F00E3DC16 /* UIStackView +.swift */,
+				ABF8335829752ED500E3DC16 /* CGFloat +.swift */,
+				ABF8335E29752F2D00E3DC16 /* UITableViewCell +.swift */,
+				ABF8336029752F3C00E3DC16 /* UICollectionViewCell +.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */,
+				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
+				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				ABF8333C29752D1000E3DC16 /* ViewController.swift in Sources */,
+				ABF8335929752ED500E3DC16 /* CGFloat +.swift in Sources */,
+				ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
+				ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */,
 				ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
