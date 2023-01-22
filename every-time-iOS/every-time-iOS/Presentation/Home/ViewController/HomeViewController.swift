@@ -67,6 +67,7 @@ extension HomeViewController {
             $0.backgroundColor = .yellow
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
+            $0.register(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableViewCell.cellIdentifier)
             $0.register(BannerTableViewCell.self, forCellReuseIdentifier: BannerTableViewCell.cellIdentifier)
         }
     }
@@ -131,7 +132,7 @@ extension HomeViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath)
             return cell
         case HomeCellType.menu.rawValue:
-            let cell = UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.cellIdentifier, for: indexPath)
             return cell
         case HomeCellType.banner.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: BannerTableViewCell.cellIdentifier, for: indexPath)
@@ -155,7 +156,7 @@ extension HomeViewController: UITableViewDelegate {
         case HomeCellType.event.rawValue:
             return 200
         case HomeCellType.menu.rawValue:
-            return 50
+            return 100
         case HomeCellType.banner.rawValue:
             return 90
         case HomeCellType.board.rawValue:

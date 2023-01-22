@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class BannerTableViewCell: UITableViewCell {
+final class BannerTableViewCell: UITableViewCell {
     
     // MARK: - UI Components
     
