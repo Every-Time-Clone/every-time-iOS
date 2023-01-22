@@ -33,6 +33,7 @@ extension EverytimeTabBarController {
         let homeViewController = HomeViewController()
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
         homeNavigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        homeNavigationController.navigationBar.isHidden = true
 
         let timetableViewController = TImetableViewController()
         let timetableNavigationController = UINavigationController(rootViewController: timetableViewController)

@@ -7,23 +7,43 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+import SnapKit
+import Then
 
+class HomeViewController: UIViewController {
+    
+    // MARK: - UI Components
+    
+    private let topView: UIView = UIView()
+    
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUI()
+        setLayout()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension HomeViewController {
+    
+    // MARK: - UI Components Property
+    
+    private func setUI() {
+        topView.do {
+            $0.backgroundColor = .yellow
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Layout Helper
+    
+    private func setLayout() {
+        view.addSubviews(topView)
+        
+        topView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(50)
+        }
     }
-    */
-
 }
