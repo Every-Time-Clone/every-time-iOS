@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB7DCCBB297D8D64002F46FE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCBA297D8D64002F46FE /* EventTableViewCell.swift */; };
+		AB7DCCBD297D8F51002F46FE /* HomeCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCBC297D8F51002F46FE /* HomeCellType.swift */; };
+		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
 		ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333729752D1000E3DC16 /* AppDelegate.swift */; };
 		ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333929752D1000E3DC16 /* SceneDelegate.swift */; };
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB7DCCBA297D8D64002F46FE /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		AB7DCCBC297D8F51002F46FE /* HomeCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellType.swift; sourceTree = "<group>"; };
+		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABF8333429752D1000E3DC16 /* every-time-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "every-time-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8333729752D1000E3DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8333929752D1000E3DC16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB7DCCB4297D8CBF002F46FE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ABF833722976796900E3DC16 /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AB7DCCB5297D8CCB002F46FE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB7DCCBC297D8F51002F46FE /* HomeCellType.swift */,
+				AB7DCCBF297D9116002F46FE /* CollectionViewCEll */,
+				AB7DCCBE297D910E002F46FE /* TableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AB7DCCBE297D910E002F46FE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB7DCCBA297D8D64002F46FE /* EventTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		AB7DCCBF297D9116002F46FE /* CollectionViewCEll */ = {
+			isa = PBXGroup;
+			children = (
+				AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */,
+			);
+			path = CollectionViewCEll;
+			sourceTree = "<group>";
+		};
 		ABF8332B29752D1000E3DC16 = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +203,8 @@
 		ABF8336D2976791500E3DC16 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ABF833722976796900E3DC16 /* HomeViewController.swift */,
+				AB7DCCB5297D8CCB002F46FE /* Cell */,
+				AB7DCCB4297D8CBF002F46FE /* ViewController */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -281,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7DCCBD297D8F51002F46FE /* HomeCellType.swift in Sources */,
 				ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */,
 				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
@@ -292,6 +334,8 @@
 				ABF833772976797B00E3DC16 /* MenuViewController.swift in Sources */,
 				ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */,
 				ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */,
+				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
+				AB7DCCBB297D8D64002F46FE /* EventTableViewCell.swift in Sources */,
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
 				ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */,

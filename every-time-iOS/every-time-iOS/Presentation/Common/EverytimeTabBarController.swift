@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EverytimeTabBarController: UITabBarController {
+final class EverytimeTabBarController: UITabBarController {
     
     // MARK: - View Life Cycle
     
