@@ -14,6 +14,7 @@
 		AB7DCCC5297D9B74002F46FE /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC4297D9B74002F46FE /* MenuTableViewCell.swift */; };
 		AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */; };
 		AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */; };
+		AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */; };
 		ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333729752D1000E3DC16 /* AppDelegate.swift */; };
 		ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333929752D1000E3DC16 /* SceneDelegate.swift */; };
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		AB7DCCC4297D9B74002F46FE /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
+		AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		ABF8333429752D1000E3DC16 /* every-time-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "every-time-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8333729752D1000E3DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8333929752D1000E3DC16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				AB7DCCC4297D9B74002F46FE /* MenuTableViewCell.swift */,
 				AB7DCCC2297D995C002F46FE /* BannerTableViewCell.swift */,
 				AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */,
+				AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
 				AB7DCCC3297D995C002F46FE /* BannerTableViewCell.swift in Sources */,
+				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
 				AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */,
 				ABF833752976797300E3DC16 /* TImetableViewController.swift in Sources */,
 				ABF8335929752ED500E3DC16 /* CGFloat +.swift in Sources */,

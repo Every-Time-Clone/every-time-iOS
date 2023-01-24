@@ -16,7 +16,8 @@ final class BoardTableViewCell: UITableViewCell {
     
     private let titleLabel: UILabel = UILabel()
     private let moreButton: UIButton = UIButton()
-    
+    private let favoriteBoardTableView: UITableView = UITableView(frame: .zero, style: .plain)
+     
     // MARK: - Initializer
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -24,6 +25,7 @@ final class BoardTableViewCell: UITableViewCell {
         
         setUI()
         setLayout()
+        setDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -53,12 +55,21 @@ extension BoardTableViewCell {
             $0.setTitleColor(.red, for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 13)
         }
+        
+        favoriteBoardTableView.do {
+            $0.backgroundColor = .clear
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.isScrollEnabled = false
+            $0.showsVerticalScrollIndicator = false
+            $0.separatorStyle = .none
+            $0.register(BoardPreviewTableViewCell.self, forCellReuseIdentifier: BoardPreviewTableViewCell.cellIdentifier)
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        contentView.addSubviews(titleLabel, moreButton)
+        contentView.addSubviews(titleLabel, moreButton, favoriteBoardTableView)
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(20)
@@ -69,6 +80,13 @@ extension BoardTableViewCell {
             $0.centerY.equalTo(titleLabel)
             $0.trailing.equalToSuperview().offset(-15)
         }
+        
+        favoriteBoardTableView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.bottom.equalToSuperview().offset(-10)
+            $0.leading.equalToSuperview().offset(15)
+            $0.trailing.equalToSuperview().offset(-15)
+        }
     }
     
     // MARK: - Methods
@@ -77,5 +95,23 @@ extension BoardTableViewCell {
         super.layoutSubviews()
         
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+    }
+    
+    // MARK: - Methods
+    
+    private func setDelegate() {
+        favoriteBoardTableView.dataSource = self
+    }
+}
+
+extension BoardTableViewCell: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: BoardPreviewTableViewCell.cellIdentifier, for: indexPath)
+        return cell
     }
 }
