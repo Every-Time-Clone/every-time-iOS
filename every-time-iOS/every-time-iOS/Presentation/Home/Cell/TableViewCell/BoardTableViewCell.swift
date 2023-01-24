@@ -101,8 +101,11 @@ extension BoardTableViewCell {
     
     private func setDelegate() {
         favoriteBoardTableView.dataSource = self
+        favoriteBoardTableView.delegate = self
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension BoardTableViewCell: UITableViewDataSource {
     
@@ -113,5 +116,14 @@ extension BoardTableViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BoardPreviewTableViewCell.cellIdentifier, for: indexPath)
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension BoardTableViewCell: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(30).adjusted
     }
 }

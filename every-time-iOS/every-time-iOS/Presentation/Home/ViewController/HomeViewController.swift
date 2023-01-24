@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     private let campusNameLabel: UILabel = UILabel()
     private let searchButton: UIButton = UIButton()
     private let myPageButton: UIButton = UIButton()
-    private let homeTableView: UITableView = UITableView(frame: .zero, style: .plain)
+    private let homeTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - View Life Cycle
     
@@ -64,12 +64,11 @@ extension HomeViewController {
         
         homeTableView.do {
             $0.separatorStyle = .none
+            $0.showsVerticalScrollIndicator = false
             $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.cellIdentifier)
-            $0.register(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableViewCell.cellIdentifier)
-            $0.register(BannerTableViewCell.self, forCellReuseIdentifier: BannerTableViewCell.cellIdentifier)
             $0.register(BoardTableViewCell.self, forCellReuseIdentifier: BoardTableViewCell.cellIdentifier)
+            $0.register(HomeTableViewHeader.self, forHeaderFooterViewReuseIdentifier: HomeTableViewHeader.cellIdentifier)
         }
     }
     
@@ -124,27 +123,21 @@ extension HomeViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case HomeCellType.event.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.cellIdentifier, for: indexPath)
-            return cell
-        case HomeCellType.menu.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.cellIdentifier, for: indexPath)
-            return cell
-        case HomeCellType.banner.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: BannerTableViewCell.cellIdentifier, for: indexPath)
-            return cell
-        case HomeCellType.board.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: BoardTableViewCell.cellIdentifier, for: indexPath)
-            return cell
-        default:
-            let cell = UITableViewCell()
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: BoardTableViewCell.cellIdentifier, for: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeTableViewHeader.cellIdentifier)
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(380).adjusted
     }
 }
 
@@ -153,17 +146,6 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case HomeCellType.event.rawValue:
-            return 200
-        case HomeCellType.menu.rawValue:
-            return 100
-        case HomeCellType.banner.rawValue:
-            return 90
-        case HomeCellType.board.rawValue:
-            return 400
-        default:
-            return 50
-        }
+        return CGFloat(400).adjusted
     }
 }
