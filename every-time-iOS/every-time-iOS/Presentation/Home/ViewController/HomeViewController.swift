@@ -148,7 +148,7 @@ extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return UITableView.automaticDimension
-        return CGFloat(8 * CGFloat(30).adjusted + 80).adjusted
+        return CGFloat(8 * CGFloat(30).adjusted + 80)
     }
 }
 

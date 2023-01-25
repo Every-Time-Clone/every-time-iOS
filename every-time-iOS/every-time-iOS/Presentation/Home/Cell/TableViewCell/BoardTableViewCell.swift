@@ -61,7 +61,7 @@ extension BoardTableViewCell {
         }
         
         favoriteBoardTableView.do {
-            $0.backgroundColor = .yellow
+            $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.isScrollEnabled = false
             $0.showsVerticalScrollIndicator = false
