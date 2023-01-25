@@ -20,7 +20,7 @@ final class BoardTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    private let favoriteBoardList: [FavoriteBoard] = FavoriteBoard.dummyData()
+    private let favoriteBoardList: [FavoriteBoardModel] = FavoriteBoardModel.dummyData()
      
     // MARK: - Initializer
 

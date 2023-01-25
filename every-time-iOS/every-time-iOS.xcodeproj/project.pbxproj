@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB5C7C2429812FAF00CCD3D9 /* FavoriteBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C2329812FAF00CCD3D9 /* FavoriteBoard.swift */; };
+		AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */; };
+		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
 		AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */; };
 		AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */; };
@@ -39,7 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB5C7C2329812FAF00CCD3D9 /* FavoriteBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBoard.swift; sourceTree = "<group>"; };
+		AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBoardModel.swift; sourceTree = "<group>"; };
+		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,7 +88,8 @@
 		AB5C7C2229812F9B00CCD3D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AB5C7C2329812FAF00CCD3D9 /* FavoriteBoard.swift */,
+				AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */,
+				AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,9 +350,10 @@
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
 				AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */,
-				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoard.swift in Sources */,
+				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
 				AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */,
+				AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */,
 				ABF833752976797300E3DC16 /* TImetableViewController.swift in Sources */,
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
 				ABF8338B2976ADAD00E3DC16 /* CALayer +.swift in Sources */,

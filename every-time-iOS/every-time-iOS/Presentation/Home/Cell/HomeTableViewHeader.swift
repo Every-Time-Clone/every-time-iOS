@@ -28,6 +28,10 @@ final class HomeTableViewHeader: UITableViewHeaderFooterView {
     }()
     private let bannerImageView: UIImageView = UIImageView()
     
+    // MARK: - Properties
+    
+    private let menuList: [MenuModel] = MenuModel.dummyData()
+
     // MARK: - Initializer
     
     override init(reuseIdentifier: String?) {
@@ -113,7 +117,7 @@ extension HomeTableViewHeader: UICollectionViewDataSource {
         if collectionView == eventCollectionView {
             return 3
         } else if collectionView == menuCollectionView {
-            return 7
+            return menuList.count
         }
         return 0
     }
@@ -123,7 +127,8 @@ extension HomeTableViewHeader: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.cellIdentifier, for: indexPath)
             return cell
         } else if collectionView == menuCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellIdentifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellIdentifier, for: indexPath) as! MenuCollectionViewCell
+            cell.setDataBind(menuList[indexPath.row])
             return cell
         }
         return UICollectionViewCell()

@@ -69,7 +69,7 @@ extension BoardPreviewTableViewCell {
     
     // MARK: - Methods
     
-    func setDataBind(_ model: FavoriteBoard) {
+    func setDataBind(_ model: FavoriteBoardModel) {
         boardTitleLabel.text = model.boardTitle
         contentTitleLabel.text = model.contentTitle
     }

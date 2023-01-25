@@ -65,4 +65,11 @@ extension MenuCollectionViewCell {
             $0.centerX.equalToSuperview()
         }
     }
+    
+    // MARK: - Methods
+    
+    func setDataBind(_ model: MenuModel) {
+        menuImageView.image = UIImage(named: model.menuImage)
+        menuNameLabel.text = model.menuName
+    }
 }
