@@ -17,6 +17,7 @@ final class BoardTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = UILabel()
     private let moreButton: UIButton = UIButton()
     private let favoriteBoardTableView: UITableView = UITableView(frame: .zero, style: .plain)
+    var test: CGFloat = CGFloat()
      
     // MARK: - Initializer
 
@@ -57,7 +58,7 @@ extension BoardTableViewCell {
         }
         
         favoriteBoardTableView.do {
-            $0.backgroundColor = .clear
+            $0.backgroundColor = .yellow
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.isScrollEnabled = false
             $0.showsVerticalScrollIndicator = false
@@ -110,7 +111,7 @@ extension BoardTableViewCell {
 extension BoardTableViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

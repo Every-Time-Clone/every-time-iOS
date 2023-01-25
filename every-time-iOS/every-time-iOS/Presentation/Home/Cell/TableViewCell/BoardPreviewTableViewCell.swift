@@ -36,6 +36,8 @@ extension BoardPreviewTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
+        selectionStyle = .none
+        
         contentView.backgroundColor = .clear
         
         boardTitleLabel.do {

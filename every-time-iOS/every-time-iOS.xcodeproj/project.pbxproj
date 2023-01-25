@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB7DCCBD297D8F51002F46FE /* HomeCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCBC297D8F51002F46FE /* HomeCellType.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
 		AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */; };
 		AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB7DCCBC297D8F51002F46FE /* HomeCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellType.swift; sourceTree = "<group>"; };
 		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 		AB7DCCB5297D8CCB002F46FE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				AB7DCCBC297D8F51002F46FE /* HomeCellType.swift */,
 				AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */,
 				AB7DCCBF297D9116002F46FE /* CollectionViewCell */,
 				AB7DCCBE297D910E002F46FE /* TableViewCell */,
@@ -334,7 +331,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB7DCCBD297D8F51002F46FE /* HomeCellType.swift in Sources */,
 				ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */,
 				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,

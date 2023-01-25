@@ -21,6 +21,10 @@ final class HomeViewController: UIViewController {
     private let myPageButton: UIButton = UIButton()
     private let homeTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
+    // MARK: - Properties
+    
+    var test: CGFloat = CGFloat()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -123,11 +127,11 @@ extension HomeViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BoardTableViewCell.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: BoardTableViewCell.cellIdentifier, for: indexPath) as! BoardTableViewCell
         return cell
     }
     
@@ -144,8 +148,9 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension HomeViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(400).adjusted
+//        return UITableView.automaticDimension
+        return CGFloat(3 * CGFloat(30).adjusted + 80).adjusted
     }
 }
