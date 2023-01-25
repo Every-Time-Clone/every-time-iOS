@@ -17,7 +17,10 @@ final class BoardTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = UILabel()
     private let moreButton: UIButton = UIButton()
     private let favoriteBoardTableView: UITableView = UITableView(frame: .zero, style: .plain)
-    var test: CGFloat = CGFloat()
+    
+    // MARK: - Properties
+    
+    private let favoriteBoardList: [FavoriteBoard] = FavoriteBoard.dummyData()
      
     // MARK: - Initializer
 
@@ -111,11 +114,12 @@ extension BoardTableViewCell {
 extension BoardTableViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return favoriteBoardList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BoardPreviewTableViewCell.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: BoardPreviewTableViewCell.cellIdentifier, for: indexPath) as! BoardPreviewTableViewCell
+        cell.setDataBind(favoriteBoardList[indexPath.row])
         return cell
     }
 }

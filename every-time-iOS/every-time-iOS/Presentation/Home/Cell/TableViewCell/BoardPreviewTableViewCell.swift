@@ -66,4 +66,11 @@ extension BoardPreviewTableViewCell {
             $0.leading.equalTo(boardTitleLabel.snp.trailing).offset(15)
         }
     }
+    
+    // MARK: - Methods
+    
+    func setDataBind(_ model: FavoriteBoard) {
+        boardTitleLabel.text = model.boardTitle
+        contentTitleLabel.text = model.contentTitle
+    }
 }
