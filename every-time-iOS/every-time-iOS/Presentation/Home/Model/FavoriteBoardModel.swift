@@ -14,6 +14,11 @@ struct FavoriteBoardModel {
     static func dummyData() -> [FavoriteBoardModel] {
         return [FavoriteBoardModel(boardTitle: "자유게시판", contentTitle: "국제경제학"),
                 FavoriteBoardModel(boardTitle: "졸업생게시판", contentTitle: "중소기업 대기업"),
+                FavoriteBoardModel(boardTitle: "새내기게시판", contentTitle: "입학식 꼭 가야 하나요?"),
+                FavoriteBoardModel(boardTitle: "게시판", contentTitle: "입학식 꼭 가야 하나요?"),
+                FavoriteBoardModel(boardTitle: "게시판", contentTitle: "입학식 꼭 가야 하나요?"),
+                FavoriteBoardModel(boardTitle: "새내기게시판", contentTitle: "입학식 꼭 가야 하나요?"),
+                FavoriteBoardModel(boardTitle: "새내기게시판", contentTitle: "입학식 꼭 가야 하나요?"),
                 FavoriteBoardModel(boardTitle: "새내기게시판", contentTitle: "입학식 꼭 가야 하나요?")]
     }
 }

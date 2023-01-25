@@ -14,7 +14,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let topView: UIView = UIView()
+    private let headerView: UIView = UIView()
     private let everyTimeLabel: UILabel = UILabel()
     private let campusNameLabel: UILabel = UILabel()
     private let searchButton: UIButton = UIButton()
@@ -22,8 +22,9 @@ final class HomeViewController: UIViewController {
     private let homeTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - Properties
-    
-    var test: CGFloat = CGFloat()
+
+    private let headerHeight: CGFloat = CGFloat(60)
+    private var headerHeightConstraint: NSLayoutConstraint?
     
     // MARK: - View Life Cycle
     
@@ -41,13 +42,9 @@ extension HomeViewController {
     // MARK: - UI Components Property
     
     private func setUI() {
-        topView.do {
-            $0.backgroundColor = .cyan
-        }
-        
         everyTimeLabel.do {
             $0.text = "에브리타임"
-            $0.textColor = .red
+            $0.textColor = UIColor(r: 199, g: 39, b: 9)
             $0.font = .systemFont(ofSize: 12)
         }
         
@@ -79,16 +76,16 @@ extension HomeViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(topView, homeTableView)
-        topView.addSubviews(everyTimeLabel, campusNameLabel, searchButton, myPageButton)
+        view.addSubviews(headerView, homeTableView)
+        headerView.addSubviews(everyTimeLabel, campusNameLabel, searchButton, myPageButton)
         
-        topView.snp.makeConstraints {
+        headerView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(60)
         }
         
         everyTimeLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(5)
+            $0.top.equalToSuperview().offset(7)
             $0.leading.equalToSuperview().offset(20)
         }
         
@@ -108,7 +105,7 @@ extension HomeViewController {
         }
         
         homeTableView.snp.makeConstraints {
-            $0.top.equalTo(topView.snp.bottom)
+            $0.top.equalTo(headerView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
@@ -151,6 +148,45 @@ extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return UITableView.automaticDimension
-        return CGFloat(3 * CGFloat(30).adjusted + 80).adjusted
+        return CGFloat(8 * CGFloat(30).adjusted + 80).adjusted
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension HomeViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 100 {
+            everyTimeLabel.isHidden = true
+            
+            campusNameLabel.snp.remakeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.leading.equalToSuperview().offset(20)
+            }
+            
+            headerView.snp.remakeConstraints {
+                $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+                $0.height.equalTo(50)
+            }
+        } else {
+            everyTimeLabel.isHidden = false
+            everyTimeLabel.alpha = abs(scrollView.contentOffset.y - 100) / 100
+            
+            self.headerView.snp.remakeConstraints {
+                $0.top.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+                $0.height.equalTo(60)
+            }
+            
+            self.everyTimeLabel.snp.remakeConstraints {
+                $0.top.equalToSuperview().offset(7)
+                $0.leading.equalToSuperview().offset(20)
+            }
+            
+            self.campusNameLabel.snp.remakeConstraints {
+                $0.top.equalTo(self.everyTimeLabel.snp.bottom).offset(3)
+                $0.leading.equalTo(self.everyTimeLabel)
+            }
+        }
     }
 }
