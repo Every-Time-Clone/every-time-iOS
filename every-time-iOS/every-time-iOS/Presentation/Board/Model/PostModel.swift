@@ -23,6 +23,9 @@ struct PostModel {
                 PostModel(title: "영어학입문", content: "영어학입문 이번 여름 계절학기에 들으실분 계신가요..?ㅠㅠ", time: "15분 전", name: "익명", likeNumber: "0", commentNumber: "0"),
                 PostModel(title: "공항에서 탑승수속", content: "출국 3시간 전부터 가능한가여?\n셀프체크인은 24시간 전부터 가능한걸로 알고 있는데 셀프수하물이나 탑승수속은 3시간 전부터만 가능한가요? 더 빨리 할 수는 없겠죠…?", time: "15분 전", name: "익명", likeNumber: "0", commentNumber: "0"),
                 PostModel(title: "뭐하고", content: "방학 때 뭐하고 지내나요?", time: "15분 전", name: "익명", likeNumber: "0", commentNumber: "0"),
+                PostModel(title: "뭐하고", content: "방학 때 뭐하고 지내나요?", time: "15분 전", name: "익명", likeNumber: "0", commentNumber: "0"),
+                PostModel(title: "공항에서 탑승수속", content: "출국 3시간 전부터 가능한가여?\n셀프체크인은 24시간 전부터 가능한걸로 알고 있는데 셀프수하물이나 탑승수속은 3시간 전부터만 가능한가요? 더 빨리 할 수는 없겠죠…?", time: "15분 전", name: "익명", likeNumber: "0", commentNumber: "0"),
+                PostModel(title: "뭐하고", content: "방학 때 뭐하고 지내나요?", time: "15분 전", name: "익명", likeNumber: "0", commentNumber: "0"),
                 PostModel(title: "뭐하고", content: "방학 때 뭐하고 지내나요?", time: "15분 전", name: "익명", likeNumber: "0", commentNumber: "0")
         ]
     }
