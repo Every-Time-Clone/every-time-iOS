@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol BoardTableViewCellDelegate {
+    func boardPreviewCellDidSelected(_ index: Int) 
+}
+
 final class BoardTableViewCell: UITableViewCell {
     
     // MARK: - UI Components
@@ -21,6 +25,7 @@ final class BoardTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     private let favoriteBoardList: [FavoriteBoardModel] = FavoriteBoardModel.dummyData()
+    var delegate: BoardTableViewCellDelegate?
      
     // MARK: - Initializer
 
@@ -121,6 +126,10 @@ extension BoardTableViewCell: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: BoardPreviewTableViewCell.cellIdentifier, for: indexPath) as! BoardPreviewTableViewCell
         cell.setDataBind(favoriteBoardList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.boardPreviewCellDidSelected(indexPath.row)
     }
 }
 

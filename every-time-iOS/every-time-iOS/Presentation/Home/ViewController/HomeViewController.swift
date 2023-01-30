@@ -117,6 +117,11 @@ extension HomeViewController {
         homeTableView.delegate = self
         homeTableView.dataSource = self
     }
+    
+    private func pushToBoardViewController() {
+        let boardVC = BoardViewController()
+        self.navigationController?.pushViewController(boardVC, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -129,6 +134,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BoardTableViewCell.cellIdentifier, for: indexPath) as! BoardTableViewCell
+        cell.delegate = self
         return cell
     }
     
@@ -188,5 +194,15 @@ extension HomeViewController: UIScrollViewDelegate {
                 $0.leading.equalTo(self.everyTimeLabel)
             }
         }
+    }
+}
+
+// MARK: - BoardTableViewCellDelegate
+
+extension HomeViewController: BoardTableViewCellDelegate {
+    
+    func boardPreviewCellDidSelected(_ index: Int) {
+        print(index)
+        pushToBoardViewController()
     }
 }
