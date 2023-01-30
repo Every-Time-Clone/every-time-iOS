@@ -15,6 +15,7 @@
 		AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */; };
 		AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */; };
 		AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */; };
+		ABA5BF402987C09E007A6BD5 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */; };
 		ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333729752D1000E3DC16 /* AppDelegate.swift */; };
 		ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333929752D1000E3DC16 /* SceneDelegate.swift */; };
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewHeader.swift; sourceTree = "<group>"; };
 		AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView +.swift"; sourceTree = "<group>"; };
+		ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		ABF8333429752D1000E3DC16 /* every-time-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "every-time-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8333729752D1000E3DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8333929752D1000E3DC16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,22 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		ABA5BF3D2987C08C007A6BD5 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				ABA5BF3E2987C092007A6BD5 /* ViewController */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		ABA5BF3E2987C092007A6BD5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		ABF8332B29752D1000E3DC16 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +208,7 @@
 			children = (
 				ABF8336B2976784200E3DC16 /* Common */,
 				ABF8336D2976791500E3DC16 /* Home */,
+				ABA5BF3D2987C08C007A6BD5 /* Board */,
 				ABF8336E2976791E00E3DC16 /* Timetable */,
 				ABF8336F2976793700E3DC16 /* Menu */,
 				ABF833702976794400E3DC16 /* Notification */,
@@ -349,6 +368,7 @@
 				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
+				ABA5BF402987C09E007A6BD5 /* BoardViewController.swift in Sources */,
 				AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
