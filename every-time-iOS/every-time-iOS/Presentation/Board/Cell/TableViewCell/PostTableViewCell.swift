@@ -96,7 +96,7 @@ extension PostTableViewCell {
         }
         
         bottomLineView.do {
-            $0.backgroundColor = .systemGray5
+            $0.backgroundColor = .systemGray6
         }
     }
     
