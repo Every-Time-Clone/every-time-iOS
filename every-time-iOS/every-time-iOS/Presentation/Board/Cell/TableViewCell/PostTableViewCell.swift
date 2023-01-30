@@ -23,6 +23,7 @@ class PostTableViewCell: UITableViewCell {
     private let lineView = UIView()
     private let commentImageView = UIImageView()
     private let commentNumberLabel = UILabel()
+    private let bottomLineView = UIView()
     
     // MARK: - Initializer
     
@@ -43,6 +44,8 @@ extension PostTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
+        selectionStyle = .none
+        
         titleLabel.do {
             $0.text = "제목"
             $0.font = .systemFont(ofSize: 15)
@@ -91,12 +94,16 @@ extension PostTableViewCell {
             $0.font = .systemFont(ofSize: 12)
             $0.textColor = UIColor(r: 33, g: 170, b: 180)
         }
+        
+        bottomLineView.do {
+            $0.backgroundColor = .systemGray5
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        contentView.addSubviews(titleLabel, contentLabel, timeLabel, lineView, nameLabel, commentNumberLabel, commentImageView, likeNumberLabel, likeImageView)
+        contentView.addSubviews(titleLabel, contentLabel, timeLabel, lineView, nameLabel, commentNumberLabel, commentImageView, likeNumberLabel, likeImageView, bottomLineView)
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
@@ -146,6 +153,13 @@ extension PostTableViewCell {
             $0.centerY.equalTo(commentNumberLabel)
             $0.trailing.equalTo(likeNumberLabel.snp.leading).offset(-3)
             $0.width.height.equalTo(12)
+        }
+        
+        bottomLineView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(10)
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(1)
         }
     }
 }

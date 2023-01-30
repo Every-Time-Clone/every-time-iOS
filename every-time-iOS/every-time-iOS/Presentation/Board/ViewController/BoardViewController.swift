@@ -63,6 +63,7 @@ extension BoardViewController {
         boardTableView.do {
             $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.separatorStyle = .none
             $0.register(BoardTableViewHeader.self, forHeaderFooterViewReuseIdentifier: BoardTableViewHeader.cellIdentifier)
             $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.cellIdentifier)
         }
