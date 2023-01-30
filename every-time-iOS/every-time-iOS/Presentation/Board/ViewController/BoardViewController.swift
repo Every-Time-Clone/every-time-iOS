@@ -25,7 +25,9 @@ extension BoardViewController {
     // MARK: - UI Components Property
     
     private func setUI() {
+        view.backgroundColor = .white
         
+        navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: - Layout Helper
