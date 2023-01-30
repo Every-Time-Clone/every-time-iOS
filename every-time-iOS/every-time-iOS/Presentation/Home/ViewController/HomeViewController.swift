@@ -35,6 +35,12 @@ final class HomeViewController: UIViewController {
         setLayout()
         setDelegate()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
 }
 
 extension HomeViewController {
