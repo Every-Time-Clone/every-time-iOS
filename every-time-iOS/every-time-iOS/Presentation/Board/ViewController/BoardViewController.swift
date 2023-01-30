@@ -17,6 +17,7 @@ class BoardViewController: UIViewController {
     private let titleView = UIStackView()
     private let boardTitleLabel = UILabel()
     private let campusNameLabel = UILabel()
+    private let boardTableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - View Life Cycle
 
@@ -26,6 +27,7 @@ class BoardViewController: UIViewController {
         setUI()
         setLayout()
         setNavigationBar()
+        setDelegate()
     }
 }
 
@@ -57,6 +59,11 @@ extension BoardViewController {
             $0.axis = .vertical
             $0.distribution = .fillEqually
         }
+        
+        boardTableView.do {
+            $0.backgroundColor = .yellow
+            $0.register(BoardTableViewHeader.self, forHeaderFooterViewReuseIdentifier: BoardTableViewHeader.cellIdentifier)
+        }
     }
     
     // MARK: - Layout Helper
@@ -64,6 +71,12 @@ extension BoardViewController {
     private func setLayout() {
         titleView.addArrangedSubViews(boardTitleLabel, campusNameLabel)
         
+        view.addSubviews(boardTableView)
+        
+        boardTableView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
     }
     
     // MARK: - Methods
@@ -83,6 +96,11 @@ extension BoardViewController {
         navigationItem.titleView = titleView
     }
     
+    private func setDelegate() {
+        boardTableView.dataSource = self
+        boardTableView.delegate = self
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -95,5 +113,32 @@ extension BoardViewController {
     
     @objc private func menuButtonDidTap() {
         print("menu")
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension BoardViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = BoardTableViewHeader()
+        return header
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension BoardViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
     }
 }
