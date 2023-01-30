@@ -12,12 +12,16 @@ import Then
 
 class BoardViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - UI Components
     
     private let titleView = UIStackView()
     private let boardTitleLabel = UILabel()
     private let campusNameLabel = UILabel()
     private let boardTableView = UITableView(frame: .zero, style: .grouped)
+    
+    // MARK: - Properties
+    
+    let postList: [PostModel] = PostModel.dummyData()
     
     // MARK: - View Life Cycle
 
@@ -124,11 +128,12 @@ extension BoardViewController {
 extension BoardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return postList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.cellIdentifier, for: indexPath) as! PostTableViewCell
+        cell.setDataBind(postList[indexPath.row])
         return cell
     }
     

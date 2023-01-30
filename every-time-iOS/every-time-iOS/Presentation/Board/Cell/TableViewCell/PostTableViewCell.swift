@@ -162,4 +162,14 @@ extension PostTableViewCell {
             $0.height.equalTo(1)
         }
     }
+    
+    // MARK: - Methods
+    
+    func setDataBind(_ model: PostModel) {
+        titleLabel.text = model.title
+        contentLabel.text = model.content
+        timeLabel.text = model.time
+        likeNumberLabel.text = model.likeNumber
+        commentNumberLabel.text = model.commentNumber
+    }
 }
