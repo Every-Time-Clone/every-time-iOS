@@ -79,10 +79,24 @@ extension PostDetailViewController {
             button.image = UIImage(systemName: "bell")
             button.tintColor = UIColor(r: 199, g: 39, b: 9)
             button.style = .done
+            
+            let alert = UIAlertController(title: "댓글 알림을 켰습니다", message: nil, preferredStyle: .alert)
+            present(alert, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                self.dismiss(animated: true)
+            }
         } else {
             button.image = UIImage(systemName: "bell.slash")
             button.tintColor = .systemGray4
             button.style = .plain
+            
+            let alert = UIAlertController(title: "댓글 알림을 껐습니다", message: nil, preferredStyle: .alert)
+            present(alert, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                self.dismiss(animated: true)
+            }
         }
     }
 }
