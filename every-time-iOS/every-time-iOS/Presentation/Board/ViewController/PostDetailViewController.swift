@@ -27,7 +27,7 @@ extension PostDetailViewController {
     // MARK: - UI Components Property
     
     private func setUI() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
     }
     
     // MARK: - Layout Helper
