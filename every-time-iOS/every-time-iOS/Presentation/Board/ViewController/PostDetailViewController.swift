@@ -73,6 +73,19 @@ extension PostDetailViewController {
         }
     }
     
+    private func setMenuAlert() {
+        let alert = UIAlertController(title: "글 메뉴", message: nil, preferredStyle: .actionSheet)
+        let messageAction = UIAlertAction(title: "쪽지 보내기", style: .default, handler: nil)
+        let reportAction = UIAlertAction(title: "신고", style: .default, handler: nil)
+        let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(messageAction)
+        alert.addAction(reportAction)
+        alert.addAction(shareAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -80,7 +93,7 @@ extension PostDetailViewController {
     }
 
     @objc private func menuButtonDidTap() {
-        print("menu")
+        setMenuAlert()
     }
     
     @objc private func alarmButtonDidTap(_ button: UIBarButtonItem) {
