@@ -168,7 +168,8 @@ extension PostDetailViewController: UITableViewDataSource {
             cell.setDataBind(commentList[indexPath.row])
             return cell
         case false:
-            let cell = tableView.dequeueReusableCell(withIdentifier: ReplyTableViewCell.cellIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: ReplyTableViewCell.cellIdentifier, for: indexPath) as! ReplyTableViewCell
+            cell.setDataBind(commentList[indexPath.row])
             return cell
         }
     }
@@ -179,6 +180,13 @@ extension PostDetailViewController: UITableViewDataSource {
 extension PostDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        commentType = commentList[indexPath.row].isComment
+        
+        switch commentType {
+        case true:
+            return UITableView.automaticDimension
+        case false:
+            return UITableView.automaticDimension
+        }
     }
 }

@@ -155,7 +155,7 @@ extension CommentTableViewCell {
             $0.centerY.equalToSuperview()
             $0.leading.equalTo(likeButton.snp.trailing).offset(10)
             $0.width.equalTo(1)
-            $0.height.equalTo(13)
+            $0.height.equalTo(10)
         }
         
         menuButton.snp.makeConstraints {
