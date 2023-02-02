@@ -29,7 +29,7 @@ class PostDetailViewController: UIViewController {
     // MARK: - UI Components
     
     private let titleView = TitleView()
-    private let postTableView: UITableView = UITableView(frame: .zero, style: .plain)
+    private let postTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - Properties
     
@@ -66,6 +66,7 @@ extension PostDetailViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.register(CommentTableViewCell.self, forCellReuseIdentifier: CommentTableViewCell.cellIdentifier)
             $0.register(ReplyTableViewCell.self, forCellReuseIdentifier: ReplyTableViewCell.cellIdentifier)
+            $0.register(PostTableViewHeader.self, forHeaderFooterViewReuseIdentifier: PostTableViewHeader.cellIdentifier)
         }
     }
     
@@ -173,6 +174,11 @@ extension PostDetailViewController: UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PostTableViewHeader.cellIdentifier)
+        return header
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -188,5 +194,9 @@ extension PostDetailViewController: UITableViewDelegate {
         case false:
             return UITableView.automaticDimension
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

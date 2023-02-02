@@ -24,6 +24,7 @@
 		ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB17478298B67D2000165E6 /* CommentTableViewCell.swift */; };
 		ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1747A298B67D9000165E6 /* ReplyTableViewCell.swift */; };
 		ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1747C298B6867000165E6 /* CommentModel.swift */; };
+		ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1747E298B7CFE000165E6 /* PostTableViewHeader.swift */; };
 		ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333729752D1000E3DC16 /* AppDelegate.swift */; };
 		ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333929752D1000E3DC16 /* SceneDelegate.swift */; };
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		ABB17478298B67D2000165E6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		ABB1747A298B67D9000165E6 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		ABB1747C298B6867000165E6 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		ABB1747E298B7CFE000165E6 /* PostTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewHeader.swift; sourceTree = "<group>"; };
 		ABF8333429752D1000E3DC16 /* every-time-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "every-time-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8333729752D1000E3DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8333929752D1000E3DC16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				ABB174592988078E000165E6 /* BoardTableViewHeader.swift */,
+				ABB1747E298B7CFE000165E6 /* PostTableViewHeader.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			files = (
 				ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */,
 				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
+				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
 				ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
