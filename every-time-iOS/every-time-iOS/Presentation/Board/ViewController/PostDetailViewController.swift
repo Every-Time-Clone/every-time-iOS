@@ -62,7 +62,7 @@ extension PostDetailViewController {
         }
         
         postTableView.do {
-            $0.backgroundColor = .blue
+            $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.register(CommentTableViewCell.self, forCellReuseIdentifier: CommentTableViewCell.cellIdentifier)
             $0.register(ReplyTableViewCell.self, forCellReuseIdentifier: ReplyTableViewCell.cellIdentifier)
