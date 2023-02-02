@@ -64,7 +64,7 @@ extension CommentTableViewCell {
         
         timeLabel.do {
             $0.font = .systemFont(ofSize: 12)
-            $0.textColor = . lightGray
+            $0.textColor = .lightGray
         }
         
         buttonView.do {

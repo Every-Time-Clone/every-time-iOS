@@ -90,11 +90,6 @@ extension BoardViewController {
         boardTableView.delegate = self
     }
     
-    private func pushToPostDetailViewController() {
-        let postDetailVC = PostDetailViewController()
-        navigationController?.pushViewController(postDetailVC, animated: true)
-    }
-    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -130,7 +125,9 @@ extension BoardViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pushToPostDetailViewController()
+        let postDetailVC = PostDetailViewController()
+        postDetailVC.postDetail = postList[indexPath.row]
+        navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
 

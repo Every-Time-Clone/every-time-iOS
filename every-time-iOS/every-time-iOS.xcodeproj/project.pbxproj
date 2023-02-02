@@ -25,6 +25,7 @@
 		ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1747A298B67D9000165E6 /* ReplyTableViewCell.swift */; };
 		ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1747C298B6867000165E6 /* CommentModel.swift */; };
 		ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1747E298B7CFE000165E6 /* PostTableViewHeader.swift */; };
+		ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB17480298B8CC1000165E6 /* UIButton +.swift */; };
 		ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333729752D1000E3DC16 /* AppDelegate.swift */; };
 		ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333929752D1000E3DC16 /* SceneDelegate.swift */; };
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		ABB1747A298B67D9000165E6 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		ABB1747C298B6867000165E6 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		ABB1747E298B7CFE000165E6 /* PostTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewHeader.swift; sourceTree = "<group>"; };
+		ABB17480298B8CC1000165E6 /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		ABF8333429752D1000E3DC16 /* every-time-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "every-time-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8333729752D1000E3DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8333929752D1000E3DC16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				ABF833882976ACEA00E3DC16 /* UITabBar +.swift */,
 				ABF8338A2976ADAD00E3DC16 /* CALayer +.swift */,
 				AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */,
+				ABB17480298B8CC1000165E6 /* UIButton +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
 				ABA5BF402987C09E007A6BD5 /* BoardViewController.swift in Sources */,
 				AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */,
+				ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */,
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,

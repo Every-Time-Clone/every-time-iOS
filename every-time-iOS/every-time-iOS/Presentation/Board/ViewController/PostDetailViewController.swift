@@ -35,6 +35,7 @@ class PostDetailViewController: UIViewController {
     
     let commentList: [CommentModel] = CommentModel.dummyData()
     var commentType = CommentType.comment.isComment
+    var postDetail: PostModel?
     
     // MARK: - View Life Cycle
 
@@ -45,6 +46,8 @@ class PostDetailViewController: UIViewController {
         setLayout()
         setNavigationBar()
         setDelegate()
+        
+//        print(postDetail)
     }
 }
 
@@ -176,7 +179,9 @@ extension PostDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PostTableViewHeader.cellIdentifier)
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PostTableViewHeader.cellIdentifier) as! PostTableViewHeader
+        guard let postDetail = postDetail else { return nil }
+        header.setDataBind(postDetail)
         return header
     }
 }
