@@ -10,11 +10,31 @@ import UIKit
 import SnapKit
 import Then
 
+enum CommentType {
+    case comment
+    case reply
+    
+    var isComment: Bool {
+        switch self {
+        case .comment:
+            return true
+        case .reply:
+            return false
+        }
+    }
+}
+
 class PostDetailViewController: UIViewController {
+    
+    // MARK: - UI Components
+    
+    private let titleView = TitleView()
+    private let postTableView: UITableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - Properties
     
-    private let titleView = TitleView()
+    let commentList: [CommentModel] = CommentModel.dummyData()
+    var commentType = CommentType.comment.isComment
     
     // MARK: - View Life Cycle
 
@@ -24,6 +44,7 @@ class PostDetailViewController: UIViewController {
         setUI()
         setLayout()
         setNavigationBar()
+        setDelegate()
     }
 }
 
@@ -39,12 +60,24 @@ extension PostDetailViewController {
             $0.distribution = .fillEqually
             $0.setNavigationBarTitle("자유게시판", "동국대 서울캠")
         }
+        
+        postTableView.do {
+            $0.backgroundColor = .blue
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.register(CommentTableViewCell.self, forCellReuseIdentifier: CommentTableViewCell.cellIdentifier)
+            $0.register(ReplyTableViewCell.self, forCellReuseIdentifier: ReplyTableViewCell.cellIdentifier)
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
+        view.addSubviews(postTableView)
         
+        postTableView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
     }
     
     // MARK: - Methods
@@ -86,6 +119,11 @@ extension PostDetailViewController {
         present(alert, animated: true)
     }
     
+    private func setDelegate() {
+        postTableView.dataSource = self
+        postTableView.delegate = self
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -110,5 +148,37 @@ extension PostDetailViewController {
             
             setAlarmAlert("댓글 알림을 껐습니다")
         }
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension PostDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        commentType = commentList[indexPath.row].isComment
+        
+        switch commentType {
+        case true:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.cellIdentifier, for: indexPath) as! CommentTableViewCell
+            cell.setDataBind(commentList[indexPath.row])
+            return cell
+        case false:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ReplyTableViewCell.cellIdentifier, for: indexPath)
+            return cell
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension PostDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
