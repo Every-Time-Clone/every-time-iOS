@@ -10,6 +10,15 @@ import UIKit
 import SnapKit
 import Then
 
+protocol PostTableViewHeaderDelegate {
+    func scrapButtonDidTap(_ scrapButtonState: ScrapButtonType)
+}
+
+enum ScrapButtonType {
+    case scrapped
+    case notScrapped
+}
+
 class PostTableViewHeader: UITableViewHeaderFooterView {
     
     // MARK: - UI Components
@@ -28,6 +37,11 @@ class PostTableViewHeader: UITableViewHeaderFooterView {
     private let likeButton: UIButton = UIButton()
     private let scrapButton: UIButton = UIButton()
     
+    // MARK: - Properties
+    
+    var scrapButtonState: ScrapButtonType = .notScrapped
+    var delegate: PostTableViewHeaderDelegate?
+    
     // MARK: - Initializer
     
     override init(reuseIdentifier: String?) {
@@ -35,6 +49,7 @@ class PostTableViewHeader: UITableViewHeaderFooterView {
         
         setUI()
         setLayout()
+        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -55,24 +70,20 @@ extension PostTableViewHeader {
         }
         
         nameLabel.do {
-            $0.text = "익명"
             $0.font = .systemFont(ofSize: 16, weight: .semibold)
         }
         
         timeLabel.do {
-            $0.text = "22.22"
             $0.font = .systemFont(ofSize: 12)
             $0.textColor = .lightGray
         }
         
         titleLabel.do {
-//            $0.text = "제목..."
             $0.font = .systemFont(ofSize: 17,weight: .semibold)
             $0.numberOfLines = 0
         }
         
         contentLabel.do {
-//            $0.text = "흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링"
             $0.font = .systemFont(ofSize: 13)
             $0.numberOfLines = 0
         }
@@ -200,5 +211,30 @@ extension PostTableViewHeader {
         titleLabel.text = model.title
         contentLabel.text = model.content
         timeLabel.text = model.time
+        likeNumberLabel.text = model.likeNumber
+        commentNumberLabel.text = model.commentNumber
+        scrapNumberLabel.text = model.scrapNumber
+        
+        if model.isScrapped { // 스크랩되었을 때
+            scrapButtonState = .scrapped
+            scrapButton.setPostDetailButton("스크랩 취소", "")
+        }
     }
+    
+    private func setAddTarget() {
+        scrapButton.addTarget(self, action: #selector(scrapButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+   @objc private func scrapButtonDidTap() {
+       delegate?.scrapButtonDidTap(scrapButtonState)
+       
+       switch scrapButtonState {
+       case .scrapped:
+           scrapButtonState = .notScrapped
+       case .notScrapped:
+           scrapButtonState = .scrapped
+       }
+   }
 }

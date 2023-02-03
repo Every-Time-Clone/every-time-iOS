@@ -116,10 +116,7 @@ extension PostDetailViewController {
         let reportAction = UIAlertAction(title: "신고", style: .default, handler: nil)
         let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        alert.addAction(messageAction)
-        alert.addAction(reportAction)
-        alert.addAction(shareAction)
-        alert.addAction(cancelAction)
+        alert.addActions(messageAction, reportAction, shareAction, cancelAction)
         present(alert, animated: true)
     }
     
@@ -182,6 +179,7 @@ extension PostDetailViewController: UITableViewDataSource {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PostTableViewHeader.cellIdentifier) as! PostTableViewHeader
         guard let postDetail = postDetail else { return nil }
         header.setDataBind(postDetail)
+        header.delegate = self
         return header
     }
 }
@@ -203,5 +201,41 @@ extension PostDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+// MARK: - PostTableViewHeaderDelegate
+
+extension PostDetailViewController: PostTableViewHeaderDelegate {
+    
+    func scrapButtonDidTap(_ scrapButtonState: ScrapButtonType) {
+        switch scrapButtonState {
+        case .scrapped:
+            let alert = UIAlertController(title: "스크랩을 취소하시겠습니까?", message: nil, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+            let completeAction = UIAlertAction(title: "확인", style: .default) { _ in
+                let alert = UIAlertController(title: "스크랩을 취소하였습니다.", message: nil, preferredStyle: .alert)
+                self.present(alert, animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                    self.dismiss(animated: true)
+                }
+            }
+            alert.addActions(cancelAction, completeAction)
+            present(alert, animated: true)
+        case .notScrapped:
+            let alert = UIAlertController(title: "이 글을 스크랩하시겠습니까?", message: nil, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+            let completeAction = UIAlertAction(title: "확인", style: .default) { _ in
+                let alert = UIAlertController(title: "이 글을 스크랩하였습니다.", message: nil, preferredStyle: .alert)
+                self.present(alert, animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                    self.dismiss(animated: true)
+                }
+            }
+            alert.addActions(cancelAction, completeAction)
+            present(alert, animated: true)
+        }
     }
 }
