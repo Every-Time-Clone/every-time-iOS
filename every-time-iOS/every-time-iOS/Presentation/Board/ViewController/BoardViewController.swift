@@ -40,6 +40,8 @@ extension BoardViewController {
     private func setUI() {
         view.backgroundColor = .white
         
+        tabBarController?.tabBar.isHidden = true
+        
         navigationController?.navigationBar.isHidden = false
 
         titleView.do {

@@ -24,17 +24,28 @@ enum CommentType {
     }
 }
 
+enum AnonymityButtonType {
+    case anonymity
+    case nickname
+}
+
 class PostDetailViewController: UIViewController {
     
     // MARK: - UI Components
     
     private let titleView = TitleView()
     private let postTableView: UITableView = UITableView(frame: .zero, style: .grouped)
+    private let textFieldBackgroundView: UIView = UIView()
+    private let textFieldView: UIView = UIView()
+    private let sendButton: UIButton = UIButton()
+    private let anonymityButton: UIButton = UIButton()
+    private let commentTextView: UITextView = UITextView()
     
     // MARK: - Properties
     
     let commentList: [CommentModel] = CommentModel.dummyData()
     var commentType = CommentType.comment.isComment
+    var anonymityButtonType = AnonymityButtonType.anonymity
     var postDetail: PostModel?
     
     // MARK: - View Life Cycle
@@ -46,8 +57,7 @@ class PostDetailViewController: UIViewController {
         setLayout()
         setNavigationBar()
         setDelegate()
-        
-//        print(postDetail)
+        setAddTarget()
     }
 }
 
@@ -71,17 +81,63 @@ extension PostDetailViewController {
             $0.register(ReplyTableViewCell.self, forCellReuseIdentifier: ReplyTableViewCell.cellIdentifier)
             $0.register(PostTableViewHeader.self, forHeaderFooterViewReuseIdentifier: PostTableViewHeader.cellIdentifier)
         }
+        
+        textFieldBackgroundView.do {
+            $0.backgroundColor = .white
+        }
+        
+        textFieldView.do {
+            $0.backgroundColor = .systemGray6
+            $0.layer.cornerRadius = 8
+        }
+        
+        sendButton.do {
+            $0.setImage(UIImage(systemName: "paperplane"), for: .normal)
+            $0.tintColor = UIColor(r: 199, g: 39, b: 9)
+        }
+        
+        commentTextField.do {
+            $0.backgroundColor = .cyan
+//            $0.font = .systemFont(ofSize: 14)
+        }
+
+        setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(postTableView)
+        view.addSubviews(postTableView, textFieldBackgroundView)
+        
+        textFieldBackgroundView.addSubviews(textFieldView, sendButton, anonymityButton, commentTextView)
         
         postTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+        
+        textFieldBackgroundView.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(50)
+        }
+        
+        textFieldView.snp.makeConstraints {
+            $0.top.leading.equalToSuperview().offset(5)
+            $0.trailing.bottom.equalToSuperview().offset(-5)
+        }
+        
+        sendButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.width.height.equalTo(25)
+        }
+        
+        anonymityButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(10)
+        }
+        
+        
     }
     
     // MARK: - Methods
@@ -125,6 +181,25 @@ extension PostDetailViewController {
         postTableView.delegate = self
     }
     
+    private func setAnonymityButton(_ imageName: String, _ color: UIColor) {
+        var configuration = UIButton.Configuration.plain()
+        var attString = AttributedString("익명")
+        attString.font = .systemFont(ofSize: 12, weight: .semibold)
+        attString.foregroundColor = color
+        
+        configuration.attributedTitle = attString
+        configuration.image = UIImage(systemName: imageName)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: 10)
+        configuration.imagePadding = CGFloat(3)
+
+        anonymityButton.tintColor = color
+        anonymityButton.configuration = configuration
+    }
+    
+    private func setAddTarget() {
+        anonymityButton.addTarget(self, action: #selector(anonymityButtonDidTap), for: .touchUpInside)
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -148,6 +223,16 @@ extension PostDetailViewController {
             button.style = .plain
             
             setAlarmAlert("댓글 알림을 껐습니다")
+        }
+    }
+    
+    @objc private func anonymityButtonDidTap() {
+        if anonymityButtonType == .anonymity {
+            anonymityButtonType = .nickname
+            setAnonymityButton("square", .lightGray)
+        } else {
+            anonymityButtonType = .anonymity
+            setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
         }
     }
 }
