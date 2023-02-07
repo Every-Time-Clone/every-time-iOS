@@ -83,7 +83,7 @@ extension PostDetailViewController {
         }
         
         textFieldBackgroundView.do {
-            $0.backgroundColor = .white
+            $0.backgroundColor = .black
         }
         
         textFieldView.do {
@@ -96,9 +96,13 @@ extension PostDetailViewController {
             $0.tintColor = UIColor(r: 199, g: 39, b: 9)
         }
         
-        commentTextField.do {
+        commentTextView.do {
             $0.backgroundColor = .cyan
-//            $0.font = .systemFont(ofSize: 14)
+            $0.font = .systemFont(ofSize: 13)
+            $0.text = "댓글을 입력하세요."
+            $0.textColor = .lightGray
+            $0.isScrollEnabled = false
+            $0.sizeToFit()
         }
 
         setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
@@ -108,36 +112,41 @@ extension PostDetailViewController {
     
     private func setLayout() {
         view.addSubviews(postTableView, textFieldBackgroundView)
-        
-        textFieldBackgroundView.addSubviews(textFieldView, sendButton, anonymityButton, commentTextView)
+        textFieldBackgroundView.addSubviews(textFieldView)
+        textFieldView.addSubviews(anonymityButton, commentTextView, sendButton)
         
         postTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
-        textFieldBackgroundView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(50)
+        commentTextView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.leading.equalTo(anonymityButton.snp.trailing).offset(5)
+            $0.trailing.equalTo(sendButton.snp.leading).offset(-5)
         }
         
+        textFieldBackgroundView.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(textFieldView.snp.top).offset(-5)
+        }
+
         textFieldView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview().offset(5)
+            $0.leading.equalToSuperview().offset(5)
             $0.trailing.bottom.equalToSuperview().offset(-5)
+            $0.height.equalTo(commentTextView.snp.height)
         }
         
         sendButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().offset(-10)
-            $0.width.height.equalTo(25)
+            $0.bottom.equalToSuperview().offset(-5)
+            $0.trailing.equalToSuperview().offset(-5)
+            $0.width.height.equalTo(20)
         }
         
         anonymityButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-10)
             $0.leading.equalToSuperview().offset(10)
         }
-        
-        
     }
     
     // MARK: - Methods
@@ -179,6 +188,8 @@ extension PostDetailViewController {
     private func setDelegate() {
         postTableView.dataSource = self
         postTableView.delegate = self
+        
+        commentTextView.delegate = self
     }
     
     private func setAnonymityButton(_ imageName: String, _ color: UIColor) {
@@ -191,6 +202,7 @@ extension PostDetailViewController {
         configuration.image = UIImage(systemName: imageName)
         configuration.preferredSymbolConfigurationForImage = .init(pointSize: 10)
         configuration.imagePadding = CGFloat(3)
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
 
         anonymityButton.tintColor = color
         anonymityButton.configuration = configuration
@@ -322,5 +334,15 @@ extension PostDetailViewController: PostTableViewHeaderDelegate {
             alert.addActions(cancelAction, completeAction)
             present(alert, animated: true)
         }
+    }
+}
+
+// MARK: - UITextViewDelegate
+
+extension PostDetailViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = nil
+        textView.textColor = .black
     }
 }
