@@ -26,6 +26,7 @@ class WriteViewController: UIViewController {
         
         setUI()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -85,5 +86,17 @@ extension WriteViewController {
             $0.centerY.equalTo(titleLabel)
             $0.trailing.equalToSuperview().offset(-15)
         }
+    }
+    
+    // MARK: - Methods
+    
+    private func setAddTarget() {
+        backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func backButtonDidTap() {
+        dismiss(animated: true)
     }
 }
