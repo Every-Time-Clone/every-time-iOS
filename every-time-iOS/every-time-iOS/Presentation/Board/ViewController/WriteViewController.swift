@@ -18,6 +18,8 @@ class WriteViewController: UIViewController {
     private let titleLabel: UILabel = UILabel()
     private let backButton: UIButton = UIButton()
     private let completeButton: UIButton = UIButton()
+    private let titleTextField: UITextField = UITextField()
+    private let lineView: UIView = UIView()
     
     // MARK: - View Life Cycle
 
@@ -27,6 +29,7 @@ class WriteViewController: UIViewController {
         setUI()
         setLayout()
         setAddTarget()
+        setDelegate()
     }
 }
 
@@ -59,12 +62,22 @@ extension WriteViewController {
             $0.backgroundColor = .everytimeRed
             $0.layer.cornerRadius = 14
         }
+        
+        titleTextField.do {
+            $0.placeholder = "제목"
+            $0.font = .systemFont(ofSize: 17, weight: .bold)
+            $0.tintColor = .everytimeRed
+        }
+        
+        lineView.do {
+            $0.backgroundColor = .systemGray5
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(titleView)
+        view.addSubviews(titleView, titleTextField, lineView)
         
         titleView.addSubviews(titleLabel, backButton, completeButton)
         
@@ -79,12 +92,25 @@ extension WriteViewController {
         
         backButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
-            $0.leading.equalToSuperview().offset(15)
+            $0.leading.equalToSuperview().offset(20)
         }
         
         completeButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
-            $0.trailing.equalToSuperview().offset(-15)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        
+        titleTextField.snp.makeConstraints {
+            $0.top.equalTo(titleView.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(30)
+        }
+        
+        lineView.snp.makeConstraints {
+            $0.top.equalTo(titleTextField.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(titleTextField)
+            $0.height.equalTo(1)
         }
     }
     
@@ -93,6 +119,10 @@ extension WriteViewController {
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         completeButton.addTarget(self, action: #selector(completeButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func setDelegate() {
+        titleTextField.delegate = self
     }
     
     // MARK: - @objc Methods
@@ -104,4 +134,11 @@ extension WriteViewController {
     @objc private func completeButtonDidTap() {
         dismiss(animated: true)
     }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension WriteViewController: UITextFieldDelegate {
+    
+    
 }
