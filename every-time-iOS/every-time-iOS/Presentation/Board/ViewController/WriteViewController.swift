@@ -177,14 +177,15 @@ extension WriteViewController {
         contentTextView.snp.makeConstraints {
             $0.top.equalTo(lineView.snp.bottom).offset(10)
             $0.leading.trailing.equalTo(titleTextField)
+            $0.bottom.equalToSuperview()
         }
 
-        guidelineView.snp.makeConstraints {
-            $0.top.equalTo(contentTextView.snp.bottom).offset(100)
-            $0.bottom.equalToSuperview()
-            $0.leading.trailing.equalTo(titleTextField)
-            $0.height.equalTo(1000)
-        }
+//        guidelineView.snp.makeConstraints {
+//            $0.top.equalTo(contentTextView.snp.bottom).offset(100)
+//            $0.bottom.equalToSuperview()
+//            $0.leading.trailing.equalTo(titleTextField)
+//            $0.height.equalTo(1000)
+//        }
         
         cameraButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
