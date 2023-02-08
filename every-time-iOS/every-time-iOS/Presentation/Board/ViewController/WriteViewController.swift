@@ -15,11 +15,14 @@ class WriteViewController: UIViewController {
     // MARK: - UI Components
     
     private let titleView: UIView = UIView()
+    private let scrollView: UIScrollView = UIScrollView()
     private let titleLabel: UILabel = UILabel()
     private let backButton: UIButton = UIButton()
     private let completeButton: UIButton = UIButton()
     private let titleTextField: UITextField = UITextField()
     private let lineView: UIView = UIView()
+    private let contentTextView: UITextView = UITextView()
+    private let guidelineView: UIView = UIView()
     
     // MARK: - View Life Cycle
 
@@ -65,6 +68,7 @@ extension WriteViewController {
         
         titleTextField.do {
             $0.placeholder = "제목"
+            $0.backgroundColor = .white
             $0.font = .systemFont(ofSize: 17, weight: .bold)
             $0.tintColor = .everytimeRed
         }
@@ -72,45 +76,76 @@ extension WriteViewController {
         lineView.do {
             $0.backgroundColor = .systemGray5
         }
+        
+        contentTextView.do {
+            $0.text = "내용을 입력하세요."
+            $0.font = .systemFont(ofSize: 15)
+            $0.textColor = .lightGray
+            $0.isScrollEnabled = false
+            $0.sizeToFit()
+        }
+        
+        guidelineView.do {
+            $0.backgroundColor = .cyan
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(titleView, titleTextField, lineView)
+        view.addSubviews(titleView, scrollView)
         
         titleView.addSubviews(titleLabel, backButton, completeButton)
+        
+        scrollView.addSubviews(titleTextField, lineView, contentTextView, guidelineView)
         
         titleView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(44)
         }
         
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(titleView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
         titleLabel.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
         }
-        
+
         backButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
             $0.leading.equalToSuperview().offset(20)
         }
-        
+
         completeButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
             $0.trailing.equalToSuperview().offset(-20)
         }
         
         titleTextField.snp.makeConstraints {
-            $0.top.equalTo(titleView.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.top.equalToSuperview().offset(10)
+            $0.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide).offset(-20)
             $0.height.equalTo(30)
         }
-        
+
         lineView.snp.makeConstraints {
             $0.top.equalTo(titleTextField.snp.bottom).offset(10)
             $0.leading.trailing.equalTo(titleTextField)
             $0.height.equalTo(1)
+        }
+
+        contentTextView.snp.makeConstraints {
+            $0.top.equalTo(lineView.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(titleTextField)
+        }
+
+        guidelineView.snp.makeConstraints {
+            $0.top.equalTo(contentTextView.snp.bottom).offset(100)
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalTo(titleTextField)
+            $0.height.equalTo(300)
         }
     }
     
@@ -122,7 +157,7 @@ extension WriteViewController {
     }
     
     private func setDelegate() {
-        titleTextField.delegate = self
+        contentTextView.delegate = self
     }
     
     // MARK: - @objc Methods
@@ -138,7 +173,12 @@ extension WriteViewController {
 
 // MARK: - UITextFieldDelegate
 
-extension WriteViewController: UITextFieldDelegate {
+extension WriteViewController: UITextViewDelegate {
     
-    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
 }
