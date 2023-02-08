@@ -84,7 +84,7 @@ extension PostDetailViewController {
         }
         
         textFieldBackgroundView.do {
-            $0.backgroundColor = .black
+            $0.backgroundColor = .white
         }
         
         textFieldView.do {
@@ -98,12 +98,13 @@ extension PostDetailViewController {
         }
         
         commentTextView.do {
-            $0.backgroundColor = .cyan
+            $0.backgroundColor = .clear
             $0.font = .systemFont(ofSize: 13)
             $0.text = "댓글을 입력하세요."
             $0.textColor = .lightGray
             $0.isScrollEnabled = false
             $0.sizeToFit()
+            $0.tintColor = UIColor(r: 199, g: 39, b: 9)
         }
 
         setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
@@ -112,9 +113,10 @@ extension PostDetailViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(postTableView, textFieldBackgroundView)
+         view.addSubviews(postTableView, textFieldBackgroundView)
         textFieldBackgroundView.addSubviews(textFieldView)
         textFieldView.addSubviews(anonymityButton, commentTextView, sendButton)
+//        view.addSubviews(postTableView, commentTextView)
         
         postTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -122,11 +124,12 @@ extension PostDetailViewController {
         }
         
         commentTextView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
             $0.leading.equalTo(anonymityButton.snp.trailing).offset(5)
             $0.trailing.equalTo(sendButton.snp.leading).offset(-5)
         }
-        
+
         textFieldBackgroundView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(textFieldView.snp.top).offset(-5)
@@ -134,16 +137,16 @@ extension PostDetailViewController {
 
         textFieldView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(5)
-            $0.trailing.bottom.equalToSuperview().offset(-5)
+            $0.trailing.bottom.equalToSuperview().offset(-10)
             $0.height.equalTo(commentTextView.snp.height)
         }
-        
+
         sendButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-5)
             $0.trailing.equalToSuperview().offset(-5)
             $0.width.height.equalTo(20)
         }
-        
+
         anonymityButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-10)
             $0.leading.equalToSuperview().offset(10)
