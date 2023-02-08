@@ -12,4 +12,8 @@ extension UIColor {
     convenience init(r: Int, g: Int, b: Int) {
         self.init(red: CGFloat(r)/255,green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
     }
+    
+    @nonobjc class var everytimeRed: UIColor {
+        return UIColor(r: 199, g: 39, b: 9)
+    }
 }
