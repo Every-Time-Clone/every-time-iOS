@@ -80,6 +80,7 @@ extension PostDetailViewController {
             $0.register(CommentTableViewCell.self, forCellReuseIdentifier: CommentTableViewCell.cellIdentifier)
             $0.register(ReplyTableViewCell.self, forCellReuseIdentifier: ReplyTableViewCell.cellIdentifier)
             $0.register(PostTableViewHeader.self, forHeaderFooterViewReuseIdentifier: PostTableViewHeader.cellIdentifier)
+            $0.estimatedSectionHeaderHeight = CGFloat(100)
         }
         
         textFieldBackgroundView.do {

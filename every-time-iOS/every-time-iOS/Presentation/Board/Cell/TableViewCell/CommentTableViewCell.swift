@@ -117,7 +117,8 @@ extension CommentTableViewCell {
         contentLabel.snp.makeConstraints {
             $0.top.equalTo(profileImageView.snp.bottom).offset(5)
             $0.leading.equalTo(profileImageView)
-            $0.centerX.equalToSuperview()
+            $0.trailing.equalTo(buttonView)
+//            $0.centerX.equalToSuperview()
         }
         
         timeLabel.snp.makeConstraints {

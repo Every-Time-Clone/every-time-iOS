@@ -122,7 +122,7 @@ extension PostTableViewHeader {
         }
         
         likeButton.setPostDetailButton("공감", "hand.thumbsup")
-        
+//
         scrapButton.setPostDetailButton("스크랩", "star")
     }
     
@@ -141,66 +141,67 @@ extension PostTableViewHeader {
             $0.top.equalTo(profileImageView)
             $0.leading.equalTo(profileImageView.snp.trailing).offset(5)
         }
-        
+
         timeLabel.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom)
             $0.leading.equalTo(nameLabel)
         }
-        
+
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(profileImageView.snp.bottom).offset(5)
             $0.leading.equalTo(profileImageView)
             $0.centerX.equalToSuperview()
         }
-        
+
         contentLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(5)
             $0.leading.equalTo(profileImageView)
             $0.centerX.equalToSuperview()
+//            $0.bottom.equalToSuperview().offset(-10)
         }
-        
+
         likeImageView.snp.makeConstraints {
             $0.top.equalTo(contentLabel.snp.bottom).offset(15)
             $0.leading.equalTo(profileImageView)
             $0.width.height.equalTo(13)
         }
-        
+
         likeNumberLabel.snp.makeConstraints {
             $0.centerY.equalTo(likeImageView)
             $0.leading.equalTo(likeImageView.snp.trailing).offset(3)
         }
-        
+
         commentImageView.snp.makeConstraints {
             $0.centerY.equalTo(likeImageView)
             $0.leading.equalTo(likeNumberLabel.snp.trailing).offset(5)
             $0.width.height.equalTo(13)
         }
-        
+
         commentNumberLabel.snp.makeConstraints {
             $0.centerY.equalTo(likeImageView)
             $0.leading.equalTo(commentImageView.snp.trailing).offset(3)
         }
-        
+
         scrapImageView.snp.makeConstraints {
             $0.centerY.equalTo(likeImageView)
             $0.leading.equalTo(commentNumberLabel.snp.trailing).offset(5)
             $0.width.height.equalTo(13)
         }
-        
+
         scrapNumberLabel.snp.makeConstraints {
             $0.centerY.equalTo(likeImageView)
             $0.leading.equalTo(scrapImageView.snp.trailing).offset(3)
         }
-        
+
+        scrapButton.snp.makeConstraints {
+            $0.centerY.equalTo(likeButton)
+            $0.leading.equalTo(likeButton.snp.trailing).offset(5)
+        }
+
         likeButton.snp.makeConstraints {
             $0.top.equalTo(likeImageView.snp.bottom).offset(5)
             $0.leading.equalTo(profileImageView)
             $0.bottom.equalToSuperview().offset(-10)
-        }
-        
-        scrapButton.snp.makeConstraints {
-            $0.centerY.equalTo(likeButton)
-            $0.leading.equalTo(likeButton.snp.trailing).offset(5)
         }
     }
     
