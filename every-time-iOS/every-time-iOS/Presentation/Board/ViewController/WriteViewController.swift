@@ -92,11 +92,16 @@ extension WriteViewController {
     
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+        completeButton.addTarget(self, action: #selector(completeButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
+        dismiss(animated: true)
+    }
+    
+    @objc private func completeButtonDidTap() {
         dismiss(animated: true)
     }
 }
