@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB1E73932993D000009A44E4 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WritingViewController.swift */; };
+		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
 		AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */; };
 		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
@@ -53,7 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB1E73922993D000009A44E4 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
+		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBoardModel.swift; sourceTree = "<group>"; };
 		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 			children = (
 				ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */,
 				ABB1746D2988D8CB000165E6 /* PostDetailViewController.swift */,
-				AB1E73922993D000009A44E4 /* WritingViewController.swift */,
+				AB1E73922993D000009A44E4 /* WriteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -468,7 +468,7 @@
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
 				AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */,
-				AB1E73932993D000009A44E4 /* WritingViewController.swift in Sources */,
+				AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */,
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,

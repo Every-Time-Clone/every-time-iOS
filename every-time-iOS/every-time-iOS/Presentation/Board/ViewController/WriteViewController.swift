@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class WritingViewController: UIViewController {
+class WriteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class WritingViewController: UIViewController {
     }
 }
 
-extension WritingViewController {
+extension WriteViewController {
     
     // MARK: - UI Components Property
     

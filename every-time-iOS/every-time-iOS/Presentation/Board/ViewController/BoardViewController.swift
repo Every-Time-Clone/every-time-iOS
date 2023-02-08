@@ -31,6 +31,7 @@ class BoardViewController: UIViewController {
         setLayout()
         setNavigationBar()
         setDelegate()
+        setAddTarget()
     }
 }
 
@@ -118,6 +119,16 @@ extension BoardViewController {
         boardTableView.delegate = self
     }
     
+    private func setAddTarget() {
+        writeButton.addTarget(self, action: #selector(writeButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func presentToWriteViewController() {
+        let writeVC = WriteViewController()
+        writeVC.modalPresentationStyle = .overFullScreen
+        present(writeVC, animated: true)
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -130,6 +141,10 @@ extension BoardViewController {
     
     @objc private func menuButtonDidTap() {
         print("menu")
+    }
+    
+    @objc private func writeButtonDidTap() {
+        presentToWriteViewController()
     }
 }
 
