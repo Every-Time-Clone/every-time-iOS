@@ -10,7 +10,17 @@ import UIKit
 import SnapKit
 import Then
 
-class WriteViewController: UIViewController {
+enum WriterType {
+    case anonymous
+    case identified
+}
+
+enum QuestionType {
+    case question
+    case normal
+}
+
+final class WriteViewController: UIViewController {
     
     // MARK: - UI Components
     
@@ -23,6 +33,15 @@ class WriteViewController: UIViewController {
     private let lineView: UIView = UIView()
     private let contentTextView: UITextView = UITextView()
     private let guidelineView: UIView = UIView()
+    private let bottomView: UIView = UIView()
+    private let cameraButton: UIButton = UIButton()
+    private let anonymityButton: UIButton = UIButton()
+    private let questionButton: UIButton = UIButton()
+    
+    // MARK: - Properties
+    
+    var questionType: QuestionType = .normal
+    var writerType: WriterType = .anonymous
     
     // MARK: - View Life Cycle
 
@@ -33,6 +52,8 @@ class WriteViewController: UIViewController {
         setLayout()
         setAddTarget()
         setDelegate()
+        setNotificationCenter()
+        setTapGesture()
     }
 }
 
@@ -88,16 +109,27 @@ extension WriteViewController {
         guidelineView.do {
             $0.backgroundColor = .cyan
         }
+        
+        cameraButton.do {
+            $0.setImage(UIImage(systemName: "camera"), for: .normal)
+            $0.tintColor = .black
+        }
+        
+        anonymityButton.setCheckButton("익명", "checkmark.square.fill", .everytimeRed)
+        
+        questionButton.setCheckButton("질문", "square", .systemGray)
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(titleView, scrollView)
+        view.addSubviews(titleView, scrollView, bottomView)
         
         titleView.addSubviews(titleLabel, backButton, completeButton)
         
         scrollView.addSubviews(titleTextField, lineView, contentTextView, guidelineView)
+        
+        bottomView.addSubviews(cameraButton, anonymityButton, questionButton)
         
         titleView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -106,7 +138,13 @@ extension WriteViewController {
         
         scrollView.snp.makeConstraints {
             $0.top.equalTo(titleView.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(bottomView.snp.top)
+        }
+        
+        bottomView.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(50)
         }
         
         titleLabel.snp.makeConstraints {
@@ -145,7 +183,22 @@ extension WriteViewController {
             $0.top.equalTo(contentTextView.snp.bottom).offset(100)
             $0.bottom.equalToSuperview()
             $0.leading.trailing.equalTo(titleTextField)
-            $0.height.equalTo(300)
+            $0.height.equalTo(1000)
+        }
+        
+        cameraButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+        anonymityButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        
+        questionButton.snp.makeConstraints {
+            $0.centerY.equalTo(anonymityButton)
+            $0.trailing.equalTo(anonymityButton.snp.leading).offset(-15)
         }
     }
     
@@ -154,10 +207,23 @@ extension WriteViewController {
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         completeButton.addTarget(self, action: #selector(completeButtonDidTap), for: .touchUpInside)
+        questionButton.addTarget(self, action: #selector(questionButtonDidTap), for: .touchUpInside)
+        anonymityButton.addTarget(self, action: #selector(anonymityButtonDidTap), for: .touchUpInside)
     }
     
     private func setDelegate() {
         contentTextView.delegate = self
+    }
+    
+    private func setNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func setTapGesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     // MARK: - @objc Methods
@@ -168,6 +234,40 @@ extension WriteViewController {
     
     @objc private func completeButtonDidTap() {
         dismiss(animated: true)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) else { return }
+        let height = keyboardFrame.size.height - view.safeAreaInsets.bottom
+        bottomView.snp.updateConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-height)
+        }
+    }
+    
+    @objc private func keyboardWillHide() {
+        bottomView.snp.updateConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    @objc private func questionButtonDidTap() {
+        if questionType == .normal {
+            questionType = .question
+            questionButton.setCheckButton("질문", "checkmark.square.fill", .everytimeRed)
+        } else {
+            questionType = .normal
+            questionButton.setCheckButton("질문", "square", .systemGray)
+        }
+    }
+    
+    @objc private func anonymityButtonDidTap() {
+        if writerType == .anonymous {
+            writerType = .identified
+            anonymityButton.setCheckButton("익명", "square", .systemGray)
+        } else {
+            writerType = .anonymous
+            anonymityButton.setCheckButton("익명", "checkmark.square.fill", .everytimeRed)
+        }
     }
 }
 
