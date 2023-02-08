@@ -14,8 +14,9 @@ class BoardViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let titleView = TitleView()
-    private let boardTableView = UITableView(frame: .zero, style: .grouped)
+    private let titleView: TitleView = TitleView()
+    private let boardTableView: UITableView = UITableView(frame: .zero, style: .grouped)
+    private let writeButton: UIButton = UIButton()
     
     // MARK: - Properties
     
@@ -30,6 +31,7 @@ class BoardViewController: UIViewController {
         setLayout()
         setNavigationBar()
         setDelegate()
+        setAddTarget()
     }
 }
 
@@ -57,16 +59,41 @@ extension BoardViewController {
             $0.register(BoardTableViewHeader.self, forHeaderFooterViewReuseIdentifier: BoardTableViewHeader.cellIdentifier)
             $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.cellIdentifier)
         }
+        
+        writeButton.do {
+            var attString = AttributedString("글 쓰기")
+            attString.font = .systemFont(ofSize: 14, weight: .semibold)
+            attString.foregroundColor = .darkGray
+            
+            var configuration = UIButton.Configuration.plain()
+            configuration.image = UIImage(systemName: "pencil")
+            configuration.preferredSymbolConfigurationForImage = .init(pointSize: 15)
+            configuration.attributedTitle = attString
+            configuration.imagePadding = CGFloat(5)
+            configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15)
+            
+            $0.tintColor = .everytimeRed
+            $0.backgroundColor = UIColor(r: 249, g: 249, b: 249)
+            $0.configuration = configuration
+            $0.layer.borderColor = UIColor.lightGray.cgColor
+            $0.layer.borderWidth = 1
+            $0.layer.cornerRadius = 18
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(boardTableView)
+        view.addSubviews(boardTableView, writeButton)
         
         boardTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
+        }
+        
+        writeButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-40)
+            $0.centerX.equalToSuperview()
         }
     }
     
@@ -92,6 +119,16 @@ extension BoardViewController {
         boardTableView.delegate = self
     }
     
+    private func setAddTarget() {
+        writeButton.addTarget(self, action: #selector(writeButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func presentToWriteViewController() {
+        let writeVC = WriteViewController()
+        writeVC.modalPresentationStyle = .overFullScreen
+        present(writeVC, animated: true)
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -104,6 +141,10 @@ extension BoardViewController {
     
     @objc private func menuButtonDidTap() {
         print("menu")
+    }
+    
+    @objc private func writeButtonDidTap() {
+        presentToWriteViewController()
     }
 }
 

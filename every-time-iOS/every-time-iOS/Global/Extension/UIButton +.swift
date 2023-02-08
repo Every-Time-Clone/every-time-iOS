@@ -26,4 +26,20 @@ extension UIButton {
         self.tintColor = .lightGray
         self.configuration = configuration
     }
+    
+    func setCheckButton(_ title: String, _ imageName: String, _ color: UIColor) {
+        var configuration = UIButton.Configuration.plain()
+        var attString = AttributedString(title)
+        attString.font = .systemFont(ofSize: 12, weight: .semibold)
+        attString.foregroundColor = color
+        
+        configuration.attributedTitle = attString
+        configuration.image = UIImage(systemName: imageName)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: 10)
+        configuration.imagePadding = CGFloat(3)
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+        self.tintColor = color
+        self.configuration = configuration
+    }
 }
