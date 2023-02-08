@@ -40,6 +40,7 @@ class PostDetailViewController: UIViewController {
     private let sendButton: UIButton = UIButton()
     private let anonymityButton: UIButton = UIButton()
     private let commentTextView: UITextView = UITextView()
+    private let testView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 72.0))
     
     // MARK: - Properties
     
@@ -58,6 +59,8 @@ class PostDetailViewController: UIViewController {
         setNavigationBar()
         setDelegate()
         setAddTarget()
+        setNotificationCenter()
+        setTapGesture()
     }
 }
 
@@ -106,6 +109,10 @@ extension PostDetailViewController {
             $0.sizeToFit()
             $0.tintColor = UIColor(r: 199, g: 39, b: 9)
         }
+        
+        testView.do {
+            $0.backgroundColor = .red
+        }
 
         setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
     }
@@ -113,7 +120,8 @@ extension PostDetailViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-         view.addSubviews(postTableView, textFieldBackgroundView)
+        view.addSubviews(postTableView, textFieldBackgroundView)
+        
         textFieldBackgroundView.addSubviews(textFieldView)
         textFieldView.addSubviews(anonymityButton, commentTextView, sendButton)
         
@@ -215,6 +223,17 @@ extension PostDetailViewController {
         anonymityButton.addTarget(self, action: #selector(anonymityButtonDidTap), for: .touchUpInside)
     }
     
+    private func setNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func setTapGesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -249,6 +268,15 @@ extension PostDetailViewController {
             anonymityButtonType = .anonymity
             setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
         }
+    }
+    
+    @objc private func keyboardWillShow() {
+        self.view.frame.origin.y = -300
+        print("나온당")
+    }
+    
+    @objc private func keyboardWillHide() {
+        print("들어간당")
     }
 }
 
