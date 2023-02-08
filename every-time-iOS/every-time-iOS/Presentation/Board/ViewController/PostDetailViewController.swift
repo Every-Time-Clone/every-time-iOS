@@ -116,7 +116,6 @@ extension PostDetailViewController {
          view.addSubviews(postTableView, textFieldBackgroundView)
         textFieldBackgroundView.addSubviews(textFieldView)
         textFieldView.addSubviews(anonymityButton, commentTextView, sendButton)
-//        view.addSubviews(postTableView, commentTextView)
         
         postTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -345,8 +344,14 @@ extension PostDetailViewController: PostTableViewHeaderDelegate {
 
 extension PostDetailViewController: UITextViewDelegate {
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.text = nil
-        textView.textColor = .black
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        } else if textView.text.isEmpty {
+            textView.text = "댓글을 입력하세요."
+            textView.textColor = .lightGray
+        }
     }
 }
+
