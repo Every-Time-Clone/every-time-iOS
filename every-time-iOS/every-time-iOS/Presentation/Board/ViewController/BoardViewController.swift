@@ -14,9 +14,7 @@ class BoardViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let titleView = UIStackView()
-    private let boardTitleLabel = UILabel()
-    private let campusNameLabel = UILabel()
+    private let titleView = TitleView()
     private let boardTableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - Properties
@@ -42,26 +40,14 @@ extension BoardViewController {
     private func setUI() {
         view.backgroundColor = .white
         
+        tabBarController?.tabBar.isHidden = true
+        
         navigationController?.navigationBar.isHidden = false
-        
-        boardTitleLabel.do {
-            $0.text = "자유게시판"
-            $0.font = .systemFont(ofSize: 12)
-            $0.textAlignment = .center
-            $0.sizeToFit()
-        }
-        
-        campusNameLabel.do {
-            $0.text = "동국대 서울캠"
-            $0.font = .systemFont(ofSize: 12)
-            $0.textColor = .darkGray
-            $0.textAlignment = .center
-            $0.sizeToFit()
-        }
-        
+
         titleView.do {
             $0.axis = .vertical
             $0.distribution = .fillEqually
+            $0.setNavigationBarTitle("자유게시판", "동국대 서울캠")
         }
         
         boardTableView.do {
@@ -76,8 +62,6 @@ extension BoardViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        titleView.addArrangedSubViews(boardTitleLabel, campusNameLabel)
-        
         view.addSubviews(boardTableView)
         
         boardTableView.snp.makeConstraints {
@@ -101,7 +85,7 @@ extension BoardViewController {
         navigationItem.leftBarButtonItem = backButton
         navigationItem.rightBarButtonItems = [menuButton, searchButton]
         navigationItem.titleView = titleView
-    }
+    } 
     
     private func setDelegate() {
         boardTableView.dataSource = self
@@ -140,6 +124,12 @@ extension BoardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = BoardTableViewHeader()
         return header
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postDetailVC = PostDetailViewController()
+        postDetailVC.postDetail = postList[indexPath.row]
+        navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
 
