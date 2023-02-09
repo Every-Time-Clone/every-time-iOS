@@ -40,7 +40,6 @@ class PostDetailViewController: UIViewController {
     private let sendButton: UIButton = UIButton()
     private let anonymityButton: UIButton = UIButton()
     private let commentTextView: UITextView = UITextView()
-    private let testView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 72.0))
     
     // MARK: - Properties
     
@@ -108,10 +107,6 @@ extension PostDetailViewController {
             $0.isScrollEnabled = false
             $0.sizeToFit()
             $0.tintColor = UIColor(r: 199, g: 39, b: 9)
-        }
-        
-        testView.do {
-            $0.backgroundColor = .red
         }
 
         setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
@@ -270,12 +265,19 @@ extension PostDetailViewController {
         }
     }
     
-    @objc private func keyboardWillShow() {
-        self.view.frame.origin.y = -300
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) else { return }
+        let height = keyboardFrame.size.height - view.safeAreaInsets.bottom
+        textFieldBackgroundView.snp.updateConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-height)
+        }
         print("나온당")
     }
     
     @objc private func keyboardWillHide() {
+        textFieldBackgroundView.snp.updateConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
         print("들어간당")
     }
 }
