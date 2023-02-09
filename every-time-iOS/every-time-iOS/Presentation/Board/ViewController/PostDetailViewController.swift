@@ -40,7 +40,8 @@ class PostDetailViewController: UIViewController {
     private let sendButton: UIButton = UIButton()
     private let anonymityButton: UIButton = UIButton()
     private let commentTextView: UITextView = UITextView()
-    private let testView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 72.0))
+    private let testBackgroudView: UIView = UIView()
+    private let testView: UIView = UIView()
     
     // MARK: - Properties
     
@@ -97,7 +98,7 @@ extension PostDetailViewController {
         
         sendButton.do {
             $0.setImage(UIImage(systemName: "paperplane"), for: .normal)
-            $0.tintColor = UIColor(r: 199, g: 39, b: 9)
+            $0.tintColor = .everytimeRed
         }
         
         commentTextView.do {
@@ -107,55 +108,59 @@ extension PostDetailViewController {
             $0.textColor = .lightGray
             $0.isScrollEnabled = false
             $0.sizeToFit()
-            $0.tintColor = UIColor(r: 199, g: 39, b: 9)
+            $0.tintColor = .everytimeRed
+        }
+
+        setAnonymityButton("checkmark.square.fill", .everytimeRed)
+        
+        testBackgroudView.do {
+            $0.backgroundColor = .cyan
         }
         
         testView.do {
-            $0.backgroundColor = .red
+            $0.backgroundColor = .lightGray
         }
-
-        setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         view.addSubviews(postTableView, textFieldBackgroundView)
-        
+
         textFieldBackgroundView.addSubviews(textFieldView)
         textFieldView.addSubviews(anonymityButton, commentTextView, sendButton)
         
         postTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(textFieldBackgroundView.snp.top)
         }
-        
+         
         commentTextView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-5)
             $0.leading.equalTo(anonymityButton.snp.trailing).offset(5)
             $0.trailing.equalTo(sendButton.snp.leading).offset(-5)
         }
 
         textFieldBackgroundView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.top.equalTo(textFieldView.snp.top).offset(-5)
+            $0.top.equalTo(textFieldView.snp.top).offset(-7)
         }
 
         textFieldView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(5)
-            $0.trailing.bottom.equalToSuperview().offset(-10)
-            $0.height.equalTo(commentTextView.snp.height)
+            $0.bottom.equalToSuperview().offset(-7)
+            $0.top.equalTo(commentTextView.snp.top).offset(-5)
+            $0.leading.equalToSuperview().offset(7)
+            $0.trailing.equalToSuperview().offset(-7)
         }
 
         sendButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-5)
+            $0.bottom.equalToSuperview().offset(-12)
             $0.trailing.equalToSuperview().offset(-5)
             $0.width.height.equalTo(20)
         }
 
         anonymityButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-10)
+            $0.centerY.equalTo(sendButton)
             $0.leading.equalToSuperview().offset(10)
         }
     }
@@ -247,7 +252,7 @@ extension PostDetailViewController {
     @objc private func alarmButtonDidTap(_ button: UIBarButtonItem) {
         if button.style == .plain {
             button.image = UIImage(systemName: "bell")
-            button.tintColor = UIColor(r: 199, g: 39, b: 9)
+            button.tintColor = .everytimeRed
             button.style = .done
             
             setAlarmAlert("댓글 알림을 켰습니다")
@@ -266,17 +271,22 @@ extension PostDetailViewController {
             setAnonymityButton("square", .lightGray)
         } else {
             anonymityButtonType = .anonymity
-            setAnonymityButton("checkmark.square.fill", UIColor(r: 199, g: 39, b: 9))
+            setAnonymityButton("checkmark.square.fill", .everytimeRed)
         }
     }
     
-    @objc private func keyboardWillShow() {
-        self.view.frame.origin.y = -300
-        print("나온당")
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) else { return }
+        let height = keyboardFrame.size.height - view.safeAreaInsets.bottom
+        textFieldBackgroundView.snp.updateConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-height)
+        }
     }
     
     @objc private func keyboardWillHide() {
-        print("들어간당")
+        textFieldBackgroundView.snp.updateConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 }
 
