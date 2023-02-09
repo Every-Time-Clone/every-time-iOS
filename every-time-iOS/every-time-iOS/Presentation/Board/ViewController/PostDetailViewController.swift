@@ -33,15 +33,13 @@ class PostDetailViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let titleView = TitleView()
+    private let titleView: TitleView = TitleView()
     private let postTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     private let textFieldBackgroundView: UIView = UIView()
     private let textFieldView: UIView = UIView()
     private let sendButton: UIButton = UIButton()
     private let anonymityButton: UIButton = UIButton()
     private let commentTextView: UITextView = UITextView()
-    private let testBackgroudView: UIView = UIView()
-    private let testView: UIView = UIView()
     
     // MARK: - Properties
     
@@ -112,14 +110,6 @@ extension PostDetailViewController {
         }
 
         setAnonymityButton("checkmark.square.fill", .everytimeRed)
-        
-        testBackgroudView.do {
-            $0.backgroundColor = .cyan
-        }
-        
-        testView.do {
-            $0.backgroundColor = .lightGray
-        }
     }
     
     // MARK: - Layout Helper
