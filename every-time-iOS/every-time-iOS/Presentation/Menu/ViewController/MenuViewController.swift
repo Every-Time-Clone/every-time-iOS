@@ -14,18 +14,19 @@ final class MenuViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let menuCollectionView: UICollectionView = {
+    lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
+    private let containerView: UIView = UIView()
     
     // MARK: - Properties
     
-    private let menuNameList: [String] = ["게시판", "진로", "홍보", "단체"]
-    
+    let menuNameList: [String] = ["게시판", "진로", "홍보", "단체"]
+     
     // MARK: - Initializer
 
     override func viewDidLoad() {
@@ -34,6 +35,11 @@ final class MenuViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 }
 
@@ -58,11 +64,21 @@ extension MenuViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubview(menuCollectionView)
+        view.addSubviews(menuCollectionView, containerView)
+        
+        let boardVC = BoardMenuViewController()
+        addChild(boardVC)
+        
+        containerView.addSubview(boardVC.view)
 
         menuCollectionView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(70)
+        }
+        
+        containerView.snp.makeConstraints {
+            $0.top.equalTo(menuCollectionView.snp.bottom)
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -71,6 +87,12 @@ extension MenuViewController {
     private func setDelegate() {
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
+    }
+    
+    private func setContainerView(_ viewController: UIViewController) {
+        addChild(viewController)
+        containerView.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
     }
 }
 
@@ -85,7 +107,31 @@ extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuTabCollectionViewCell.cellIdentifier, for: indexPath) as! MenuTabCollectionViewCell
         cell.setDataBind(menuNameList[indexPath.row])
+        
+        if indexPath.row == 0 {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+        }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let boardVC = BoardMenuViewController()
+            setContainerView(boardVC)
+        case 1:
+            let careerVC = CareerMenuViewController()
+            setContainerView(careerVC)
+        case 2:
+            let advertiseVC = AdvertiseMenuViewController()
+            setContainerView(advertiseVC)
+        case 3:
+            let groupVC = GroupMenuViewController()
+            setContainerView(groupVC)
+        default:
+            break
+        }
     }
 }
 

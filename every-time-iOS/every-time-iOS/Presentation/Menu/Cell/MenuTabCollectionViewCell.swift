@@ -10,12 +10,26 @@ import UIKit
 import SnapKit
 import Then
 
-class MenuTabCollectionViewCell: UICollectionViewCell {
+final class MenuTabCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
     let menuNameLabel: UILabel = UILabel()
-    private let lineView: UIView = UIView()
+    let lineView: UIView = UIView()
+    
+    // MARK: - Properties
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                menuNameLabel.textColor = .black
+                lineView.backgroundColor = .black
+            } else {
+                menuNameLabel.textColor = .lightGray
+                lineView.backgroundColor = .lightGray
+            }
+        }
+    }
     
     // MARK: - Initializer
     
@@ -39,11 +53,13 @@ extension MenuTabCollectionViewCell {
         contentView.backgroundColor = .clear
         
         lineView.do {
-            $0.backgroundColor = .black
+            $0.backgroundColor = .lightGray
         }
         
         menuNameLabel.do {
+            $0.text = "..."
             $0.font = .systemFont(ofSize: 22, weight: .bold)
+            $0.textColor = .lightGray
         }
     }
     
