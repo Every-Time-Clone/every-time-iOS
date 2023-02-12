@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
+		AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */; };
+		AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */; };
+		AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */; };
+		AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */; };
+		AB4CFF9F2998D8A5006A3866 /* MenuTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */; };
 		AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */; };
 		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
@@ -54,6 +59,11 @@
 
 /* Begin PBXFileReference section */
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMenuViewController.swift; sourceTree = "<group>"; };
+		AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerMenuViewController.swift; sourceTree = "<group>"; };
+		AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseMenuViewController.swift; sourceTree = "<group>"; };
+		AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMenuViewController.swift; sourceTree = "<group>"; };
+		AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBoardModel.swift; sourceTree = "<group>"; };
 		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +121,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB4CFF942998C824006A3866 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ABF833762976797B00E3DC16 /* MenuViewController.swift */,
+				AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */,
+				AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */,
+				AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */,
+				AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AB4CFF9D2998D894006A3866 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AB5C7C2229812F9B00CCD3D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +368,8 @@
 		ABF8336F2976793700E3DC16 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				ABF833762976797B00E3DC16 /* MenuViewController.swift */,
+				AB4CFF9D2998D894006A3866 /* Cell */,
+				AB4CFF942998C824006A3866 /* ViewController */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -456,6 +487,8 @@
 				AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */,
 				ABF833752976797300E3DC16 /* TImetableViewController.swift in Sources */,
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
+				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
+				AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */,
 				ABB1746E2988D8CB000165E6 /* PostDetailViewController.swift in Sources */,
 				ABF8338B2976ADAD00E3DC16 /* CALayer +.swift in Sources */,
 				ABF833732976796900E3DC16 /* HomeViewController.swift in Sources */,
@@ -468,12 +501,15 @@
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
 				AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */,
+				AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */,
 				AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */,
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
+				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
 				ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */,
 				ABF8337B2976799100E3DC16 /* CampusPickViewController.swift in Sources */,
+				AB4CFF9F2998D8A5006A3866 /* MenuTabCollectionViewCell.swift in Sources */,
 				ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */,
 				ABB1746729880F6F000165E6 /* PostTableViewCell.swift in Sources */,
 				ABB174732988DD11000165E6 /* TitleView.swift in Sources */,
