@@ -42,7 +42,9 @@ extension BoardMenuViewController {
         menuCollectionView.do {
             $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.showsVerticalScrollIndicator = false
             $0.register(MainMenuCollectionViewCell.self, forCellWithReuseIdentifier: MainMenuCollectionViewCell.cellIdentifier)
+            $0.register(PinMenuCollectionViewCell.self, forCellWithReuseIdentifier: PinMenuCollectionViewCell.cellIdentifier)
         }
     }
     
@@ -72,7 +74,7 @@ extension BoardMenuViewController {
 extension BoardMenuViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,6 +82,9 @@ extension BoardMenuViewController: UICollectionViewDataSource {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuCollectionViewCell.cellIdentifier, for: indexPath) as! MainMenuCollectionViewCell
             cell.delegate = self
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PinMenuCollectionViewCell.cellIdentifier, for: indexPath) as! PinMenuCollectionViewCell
             return cell
         default:
             return UICollectionViewCell()
@@ -92,9 +97,12 @@ extension BoardMenuViewController: UICollectionViewDataSource {
 extension BoardMenuViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
         switch indexPath.row {
         case 0:
-            return CGSize(width: collectionView.frame.width, height: 250)
+            return CGSize(width: width, height: 250)
+        case 1:
+            return CGSize(width: width, height: 338)
         default:
             return CGSize()
         }

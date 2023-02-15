@@ -22,7 +22,7 @@ final class MainMenuCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     
-    let mainMenuList: [BoardMainMenu] = BoardMainMenu.dummyData()
+    let mainMenuList: [BoardMainMenuModel] = BoardMainMenuModel.dummyData()
     var delegate: MainMenuTableViewCellDelegate?
 
     // MARK: - Initializer
@@ -51,6 +51,7 @@ extension MainMenuCollectionViewCell {
             $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.separatorStyle = .none
+            $0.isScrollEnabled = false
             $0.register(MainDetailTableViewCell.self, forCellReuseIdentifier: MainDetailTableViewCell.cellIdentifier)
         }
     }

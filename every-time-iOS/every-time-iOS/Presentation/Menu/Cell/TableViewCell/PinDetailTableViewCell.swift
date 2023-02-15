@@ -1,5 +1,5 @@
 //
-//  MainDetailTableViewCell.swift
+//  PinDetailTableViewCell.swift
 //  every-time-iOS
 //
 //  Created by 김민 on 2023/02/15.
@@ -10,12 +10,13 @@ import UIKit
 import SnapKit
 import Then
 
-final class MainDetailTableViewCell: UITableViewCell {
-    
+final class PinDetailTableViewCell: UITableViewCell {
+
     // MARK: - UI Components
     
-    private let menuImageView: UIImageView = UIImageView()
+    private let pinButton: UIButton = UIButton()
     private let menuNameLabel: UILabel = UILabel()
+    private let updatedImageView: UIImageView = UIImageView()
 
     // MARK: - Initializer
     
@@ -31,7 +32,7 @@ final class MainDetailTableViewCell: UITableViewCell {
     }
 }
 
-extension MainDetailTableViewCell {
+extension PinDetailTableViewCell {
     
     // MARK: - UI Components Property
     
@@ -40,36 +41,47 @@ extension MainDetailTableViewCell {
         
         contentView.backgroundColor = .clear
         
-        menuImageView.do {
-            $0.backgroundColor = .systemGray4
+        pinButton.do {
+            $0.setImage(UIImage(systemName: "pin"), for: .normal)
+            $0.tintColor = .systemGray
         }
         
         menuNameLabel.do {
             $0.font = .systemFont(ofSize: 15)
             $0.text = "내가 쓴 글"
         }
+        
+        updatedImageView.do {
+            $0.image = UIImage(systemName: "plus.circle")
+            $0.tintColor = .everytimeRed
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        contentView.addSubviews(menuImageView, menuNameLabel)
+        contentView.addSubviews(pinButton, menuNameLabel, updatedImageView)
         
-        menuImageView.snp.makeConstraints {
+        pinButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(15)
             $0.width.height.equalTo(30)
         }
         
         menuNameLabel.snp.makeConstraints {
-            $0.centerY.equalTo(menuImageView)
-            $0.leading.equalTo(menuImageView.snp.trailing).offset(20)
+            $0.centerY.equalTo(pinButton)
+            $0.leading.equalTo(pinButton.snp.trailing).offset(20)
+        }
+        
+        updatedImageView.snp.makeConstraints {
+            $0.centerY.equalTo(pinButton)
+            $0.leading.equalTo(menuNameLabel.snp.trailing).offset(5)
         }
     }
     
     // MARK: - Methods
     
-    func setDataBind(_ model: BoardMainMenuModel) {
+    func setDataBind(_ model: PinMenuModel) {
         menuNameLabel.text = model.menuName
     }
 }

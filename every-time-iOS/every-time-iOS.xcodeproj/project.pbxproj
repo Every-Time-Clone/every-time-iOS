@@ -23,8 +23,11 @@
 		AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
-		AB9A61F3299CC0BD005CA2DB /* BoardMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenu.swift */; };
+		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
 		AB9A61F5299CC439005CA2DB /* DetailBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F4299CC439005CA2DB /* DetailBoardViewController.swift */; };
+		AB9A61F7299CCF36005CA2DB /* PinMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F6299CCF36005CA2DB /* PinMenuCollectionViewCell.swift */; };
+		AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */; };
+		AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */; };
 		ABA5BF402987C09E007A6BD5 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */; };
 		ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB174592988078E000165E6 /* BoardTableViewHeader.swift */; };
 		ABB1746729880F6F000165E6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1746629880F6F000165E6 /* PostTableViewCell.swift */; };
@@ -78,8 +81,11 @@
 		AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView +.swift"; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
-		AB9A61F2299CC0BD005CA2DB /* BoardMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenu.swift; sourceTree = "<group>"; };
+		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
 		AB9A61F4299CC439005CA2DB /* DetailBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBoardViewController.swift; sourceTree = "<group>"; };
+		AB9A61F6299CCF36005CA2DB /* PinMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailTableViewCell.swift; sourceTree = "<group>"; };
+		AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuModel.swift; sourceTree = "<group>"; };
 		ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		ABB174592988078E000165E6 /* BoardTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewHeader.swift; sourceTree = "<group>"; };
 		ABB1746629880F6F000165E6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -200,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */,
+				AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */,
+				AB9A61F6299CCF36005CA2DB /* PinMenuCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -207,8 +215,8 @@
 		AB9A61EE299CB850005CA2DB /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */,
 				AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */,
+				AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -216,7 +224,8 @@
 		AB9A61F1299CC0A1005CA2DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AB9A61F2299CC0BD005CA2DB /* BoardMainMenu.swift */,
+				AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */,
+				AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -512,6 +521,7 @@
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
 				ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
+				AB9A61F7299CCF36005CA2DB /* PinMenuCollectionViewCell.swift in Sources */,
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
 				ABA5BF402987C09E007A6BD5 /* BoardViewController.swift in Sources */,
 				AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */,
@@ -526,6 +536,7 @@
 				AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */,
 				ABF833752976797300E3DC16 /* TImetableViewController.swift in Sources */,
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
+				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
 				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
 				AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */,
 				ABB1746E2988D8CB000165E6 /* PostDetailViewController.swift in Sources */,
@@ -534,6 +545,7 @@
 				ABF833772976797B00E3DC16 /* MenuViewController.swift in Sources */,
 				ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */,
 				ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */,
+				AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */,
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
@@ -545,7 +557,7 @@
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
-				AB9A61F3299CC0BD005CA2DB /* BoardMainMenu.swift in Sources */,
+				AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
 				ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */,
 				ABF8337B2976799100E3DC16 /* CampusPickViewController.swift in Sources */,
