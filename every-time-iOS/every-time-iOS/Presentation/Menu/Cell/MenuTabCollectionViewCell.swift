@@ -24,9 +24,10 @@ final class MenuTabCollectionViewCell: UICollectionViewCell {
             if isSelected {
                 menuNameLabel.textColor = .black
                 lineView.backgroundColor = .black
+                lineView.isHidden = false
             } else {
                 menuNameLabel.textColor = .lightGray
-                lineView.backgroundColor = .lightGray
+                lineView.isHidden = true
             }
         }
     }
@@ -54,10 +55,10 @@ extension MenuTabCollectionViewCell {
         
         lineView.do {
             $0.backgroundColor = .lightGray
+            $0.isHidden = true
         }
         
         menuNameLabel.do {
-            $0.text = "..."
             $0.font = .systemFont(ofSize: 22, weight: .bold)
             $0.textColor = .lightGray
         }
