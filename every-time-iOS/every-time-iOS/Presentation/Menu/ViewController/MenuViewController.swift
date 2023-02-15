@@ -10,6 +10,30 @@ import UIKit
 import SnapKit
 import Then
 
+enum MenuType {
+    case board
+    case career
+    case advertise
+    case group
+    
+    func menuTypeVC() -> UIViewController {
+        switch self {
+        case .board:
+            let boardVC = BoardMenuViewController()
+            return boardVC
+        case .career:
+            let careerVC = CareerMenuViewController()
+            return careerVC
+        case .advertise:
+            let advertiseVC = AdvertiseMenuViewController()
+            return advertiseVC
+        case .group:
+            let groupVC = GroupMenuViewController()
+            return groupVC
+        }
+    }
+}
+
 final class MenuViewController: UIViewController {
     
     // MARK: - UI Components
@@ -26,6 +50,7 @@ final class MenuViewController: UIViewController {
     // MARK: - Properties
     
     let menuNameList: [String] = ["게시판", "진로", "홍보", "단체"]
+    var menuType: MenuType = .board
      
     // MARK: - Initializer
 
@@ -40,6 +65,7 @@ final class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setContainerView(menuType)
     }
 }
 
@@ -89,9 +115,16 @@ extension MenuViewController {
         menuCollectionView.delegate = self
     }
     
-    private func setContainerView(_ viewController: UIViewController) {
+    private func setContainerView(_ menuType: MenuType) {
+        let viewController = menuType.menuTypeVC()
+        
         addChild(viewController)
         containerView.addSubview(viewController.view)
+        
+        viewController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
         viewController.didMove(toParent: self)
     }
 }
@@ -118,17 +151,17 @@ extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let boardVC = BoardMenuViewController()
-            setContainerView(boardVC)
+            menuType = .board
+            setContainerView(menuType)
         case 1:
-            let careerVC = CareerMenuViewController()
-            setContainerView(careerVC)
+            menuType = .career
+            setContainerView(menuType)
         case 2:
-            let advertiseVC = AdvertiseMenuViewController()
-            setContainerView(advertiseVC)
+            menuType = .advertise
+            setContainerView(menuType)
         case 3:
-            let groupVC = GroupMenuViewController()
-            setContainerView(groupVC)
+            setContainerView(menuType)
+            menuType = .group
         default:
             break
         }
