@@ -12,11 +12,4 @@ extension UITableViewCell {
     static var cellIdentifier: String {
         return String(describing: self)
     }
-    
-    func setMenuBorder() {
-        self.contentView.backgroundColor = .clear
-        self.contentView.layer.cornerRadius = 13
-        self.contentView.layer.borderColor = UIColor.systemGray5.cgColor
-        self.contentView.layer.borderWidth = 1
-    }
 }

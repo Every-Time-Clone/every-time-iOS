@@ -14,7 +14,12 @@ final class BoardMenuViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let menuTableView: UITableView = UITableView(frame: .zero, style: .plain)
+    private let menuCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return collectionView
+    }()
     
     // MARK: - Initializer
 
@@ -34,20 +39,19 @@ extension BoardMenuViewController {
     private func setUI() {
         view.backgroundColor = .white
         
-        menuTableView.do {
+        menuCollectionView.do {
             $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.separatorStyle = .none
-            $0.register(MainMenuTableViewCell.self, forCellReuseIdentifier: MainMenuTableViewCell.cellIdentifier)
+            $0.register(MainMenuCollectionViewCell.self, forCellWithReuseIdentifier: MainMenuCollectionViewCell.cellIdentifier)
         }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(menuTableView)
+        view.addSubviews(menuCollectionView)
         
-        menuTableView.snp.makeConstraints {
+        menuCollectionView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview().offset(-10)
@@ -58,41 +62,41 @@ extension BoardMenuViewController {
     // MARK: - Methods
     
     private func setDelegate() {
-        menuTableView.dataSource = self
-        menuTableView.delegate = self
+        menuCollectionView.dataSource = self
+        menuCollectionView.delegate = self
     }
 }
 
 // MARK: - UITableViewDataSource
 
-extension BoardMenuViewController: UITableViewDataSource {
+extension BoardMenuViewController: UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MainMenuTableViewCell.cellIdentifier) as! MainMenuTableViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuCollectionViewCell.cellIdentifier, for: indexPath) as! MainMenuCollectionViewCell
             cell.delegate = self
             return cell
         default:
-            return UITableViewCell()
+            return UICollectionViewCell()
         }
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UICollectionViewDelegateFlowLayout
 
-extension BoardMenuViewController: UITableViewDelegate {
+extension BoardMenuViewController: UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.row {
         case 0:
-            return CGFloat(250)
+            return CGSize(width: collectionView.frame.width, height: 250)
         default:
-            return 0
+            return CGSize()
         }
     }
 }
@@ -100,7 +104,7 @@ extension BoardMenuViewController: UITableViewDelegate {
 // MARK: - MainMenuTableViewCellDelegate
 
 extension BoardMenuViewController: MainMenuTableViewCellDelegate {
-    
+
     func mainMenuCellDidSelected() {
         let detailBoardVC = DetailBoardViewController()
         navigationController?.pushViewController(detailBoardVC, animated: true)

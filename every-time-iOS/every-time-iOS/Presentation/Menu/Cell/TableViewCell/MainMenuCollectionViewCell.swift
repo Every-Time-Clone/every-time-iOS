@@ -14,7 +14,7 @@ protocol MainMenuTableViewCellDelegate {
     func mainMenuCellDidSelected()
 }
 
-final class MainMenuTableViewCell: UITableViewCell {
+final class MainMenuCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
@@ -27,8 +27,8 @@ final class MainMenuTableViewCell: UITableViewCell {
 
     // MARK: - Initializer
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         setUI()
         setLayout()
@@ -40,13 +40,11 @@ final class MainMenuTableViewCell: UITableViewCell {
     }
 }
 
-extension MainMenuTableViewCell {
+extension MainMenuCollectionViewCell {
     
     // MARK: - UI Components Property
     
     private func setUI() {
-        selectionStyle = .none
-        
         setMenuBorder()
         
         menuTableView.do {
@@ -79,18 +77,18 @@ extension MainMenuTableViewCell {
 
 // MARK: - UITableViewDataSource
 
-extension MainMenuTableViewCell: UITableViewDataSource {
-    
+extension MainMenuCollectionViewCell: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mainMenuList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.cellIdentifier, for: indexPath) as! MainDetailTableViewCell
         cell.setDataBind(mainMenuList[indexPath.row])
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.mainMenuCellDidSelected()
     }
@@ -98,7 +96,7 @@ extension MainMenuTableViewCell: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension MainMenuTableViewCell: UITableViewDelegate {
+extension MainMenuCollectionViewCell: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
