@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol PinDetailTableViewCellDelegate {
+    func pinButtonisSelected()
+}
+
 final class PinDetailTableViewCell: UITableViewCell {
 
     // MARK: - UI Components
@@ -17,6 +21,10 @@ final class PinDetailTableViewCell: UITableViewCell {
     private let pinButton: UIButton = UIButton()
     private let menuNameLabel: UILabel = UILabel()
     private let updatedImageView: UIImageView = UIImageView()
+    
+    // MARK: - Properties
+    
+//    /var delegate: PinDetailTableViewCellDelegate?
 
     // MARK: - Initializer
     
@@ -25,6 +33,7 @@ final class PinDetailTableViewCell: UITableViewCell {
         
         setUI()
         setLayout()
+        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +52,7 @@ extension PinDetailTableViewCell {
         
         pinButton.do {
             $0.setImage(UIImage(systemName: "pin"), for: .normal)
-            $0.tintColor = .systemGray
+            $0.tintColor = .darkGray
         }
         
         menuNameLabel.do {
@@ -83,5 +92,34 @@ extension PinDetailTableViewCell {
     
     func setDataBind(_ model: PinMenuModel) {
         menuNameLabel.text = model.menuName
+        
+        if model.isPinned {
+            pinButton.isSelected = true
+            pinButton.tintColor = .darkGray
+        } else {
+            pinButton.isSelected = false
+            pinButton.tintColor = .systemGray5
+        }
+        
+        if !model.isUpdated {
+            updatedImageView.isHidden = true
+        }
+    }
+    
+    private func setAddTarget() {
+        pinButton.addTarget(self, action: #selector(pinButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func pinButtonDidTap() {
+//        delegate?.pinButtonisSelected()
+        if pinButton.isSelected {
+            pinButton.tintColor = .darkGray
+            pinButton.isSelected = false
+        } else {
+            pinButton.tintColor = .systemGray5
+            pinButton.isSelected = true
+        }
     }
 }

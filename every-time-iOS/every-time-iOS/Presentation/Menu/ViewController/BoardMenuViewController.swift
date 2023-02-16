@@ -85,6 +85,7 @@ extension BoardMenuViewController: UICollectionViewDataSource {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PinMenuCollectionViewCell.cellIdentifier, for: indexPath) as! PinMenuCollectionViewCell
+            cell.delegate = self
             return cell
         default:
             return UICollectionViewCell()
@@ -111,10 +112,15 @@ extension BoardMenuViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - MainMenuTableViewCellDelegate
 
-extension BoardMenuViewController: MainMenuTableViewCellDelegate {
+extension BoardMenuViewController: MainMenuTableViewCellDelegate, PinMenuTableViewCellDelegate {
 
     func mainMenuCellDidSelected() {
         let detailBoardVC = DetailBoardViewController()
         navigationController?.pushViewController(detailBoardVC, animated: true)
+    }
+    
+    func pinMenuCellDidSelected() {
+        let boardVC = BoardViewController()
+        navigationController?.pushViewController(boardVC, animated: true)
     }
 }

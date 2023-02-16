@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol PinMenuTableViewCellDelegate {
+    func pinMenuCellDidSelected()
+}
+
 final class PinMenuCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
@@ -19,6 +23,7 @@ final class PinMenuCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     let pinMenuList: [PinMenuModel] = PinMenuModel.dummyData()
+    var delegate: PinMenuTableViewCellDelegate?
     
     // MARK: - UI Components
     
@@ -83,6 +88,10 @@ extension PinMenuCollectionViewCell: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PinDetailTableViewCell.cellIdentifier, for: indexPath) as! PinDetailTableViewCell
         cell.setDataBind(pinMenuList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.pinMenuCellDidSelected()
     }
 }
 
