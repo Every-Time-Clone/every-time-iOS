@@ -1,18 +1,19 @@
 //
-//  MenuViewController.swift
+//  DetailBoardViewController.swift
 //  every-time-iOS
 //
-//  Created by 김민 on 2023/01/17.
+//  Created by 김민 on 2023/02/15.
 //
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class DetailBoardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = .red
     }
     
 
