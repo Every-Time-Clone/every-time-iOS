@@ -10,10 +10,6 @@ import UIKit
 import SnapKit
 import Then
 
-protocol PinDetailTableViewCellDelegate {
-    func pinButtonisSelected()
-}
-
 final class PinDetailTableViewCell: UITableViewCell {
 
     // MARK: - UI Components
@@ -21,10 +17,6 @@ final class PinDetailTableViewCell: UITableViewCell {
     private let pinButton: UIButton = UIButton()
     private let menuNameLabel: UILabel = UILabel()
     private let updatedImageView: UIImageView = UIImageView()
-    
-    // MARK: - Properties
-    
-//    /var delegate: PinDetailTableViewCellDelegate?
 
     // MARK: - Initializer
     
@@ -113,7 +105,6 @@ extension PinDetailTableViewCell {
     // MARK: - @objc Methods
     
     @objc private func pinButtonDidTap() {
-//        delegate?.pinButtonisSelected()
         if pinButton.isSelected {
             pinButton.tintColor = .darkGray
             pinButton.isSelected = false
