@@ -30,6 +30,12 @@ final class BoardMenuViewController: UIViewController {
         setLayout()
         setDelegate()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
 }
 
 extension BoardMenuViewController {
