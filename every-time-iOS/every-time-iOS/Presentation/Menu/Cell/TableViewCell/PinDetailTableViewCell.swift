@@ -43,7 +43,7 @@ extension PinDetailTableViewCell {
         contentView.backgroundColor = .clear
         
         pinButton.do {
-            $0.setImage(UIImage(systemName: "pin"), for: .normal)
+            $0.setImage(UIImage(named: "PinnedImage"), for: .normal)
             $0.tintColor = .darkGray
         }
         
@@ -53,7 +53,7 @@ extension PinDetailTableViewCell {
         }
         
         updatedImageView.do {
-            $0.image = UIImage(systemName: "plus.circle")
+            $0.image = UIImage(named: "UpdateImage")
             $0.tintColor = .everytimeRed
         }
     }
@@ -66,7 +66,7 @@ extension PinDetailTableViewCell {
         pinButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(15)
-            $0.width.height.equalTo(30)
+            $0.width.height.equalTo(25)
         }
         
         menuNameLabel.snp.makeConstraints {
@@ -77,6 +77,7 @@ extension PinDetailTableViewCell {
         updatedImageView.snp.makeConstraints {
             $0.centerY.equalTo(pinButton)
             $0.leading.equalTo(menuNameLabel.snp.trailing).offset(5)
+            $0.width.height.equalTo(15)
         }
     }
     
@@ -87,10 +88,10 @@ extension PinDetailTableViewCell {
         
         if model.isPinned {
             pinButton.isSelected = true
-            pinButton.tintColor = .darkGray
+            pinButton.setImage(UIImage(named: "PinnedImage"), for: .normal)
         } else {
             pinButton.isSelected = false
-            pinButton.tintColor = .systemGray5
+            pinButton.setImage(UIImage(named: "UnpinnedImage"), for: .normal)
         }
         
         if !model.isUpdated {
@@ -106,10 +107,10 @@ extension PinDetailTableViewCell {
     
     @objc private func pinButtonDidTap() {
         if pinButton.isSelected {
-            pinButton.tintColor = .darkGray
+            pinButton.setImage(UIImage(named: "PinnedImage"), for: .normal)
             pinButton.isSelected = false
         } else {
-            pinButton.tintColor = .systemGray5
+            pinButton.setImage(UIImage(named: "UnpinnedImage"), for: .normal)
             pinButton.isSelected = true
         }
     }
