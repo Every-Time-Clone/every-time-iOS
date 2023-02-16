@@ -48,13 +48,11 @@ extension PinDetailTableViewCell {
         }
         
         menuNameLabel.do {
-            $0.font = .systemFont(ofSize: 15)
-            $0.text = "내가 쓴 글"
+            $0.font = .systemFont(ofSize: 16)
         }
         
         updatedImageView.do {
             $0.image = UIImage(named: "UpdateImage")
-            $0.tintColor = .everytimeRed
         }
     }
     

@@ -40,12 +40,8 @@ extension MainDetailTableViewCell {
         
         contentView.backgroundColor = .clear
         
-        menuImageView.do {
-            $0.backgroundColor = .systemGray4
-        }
-        
         menuNameLabel.do {
-            $0.font = .systemFont(ofSize: 15)
+            $0.font = .systemFont(ofSize: 16)
             $0.text = "내가 쓴 글"
         }
     }
@@ -58,7 +54,7 @@ extension MainDetailTableViewCell {
         menuImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(15)
-            $0.width.height.equalTo(30)
+            $0.width.height.equalTo(25)
         }
         
         menuNameLabel.snp.makeConstraints {
@@ -71,5 +67,6 @@ extension MainDetailTableViewCell {
     
     func setDataBind(_ model: BoardMainMenuModel) {
         menuNameLabel.text = model.menuName
+        menuImageView.image = UIImage(named: model.menuImageName)
     }
 }

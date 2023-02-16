@@ -12,11 +12,11 @@ struct BoardMainMenuModel {
     let menuName: String
     
     static func dummyData() -> [BoardMainMenuModel] {
-        return [BoardMainMenuModel(menuImageName: "", menuName: "내가 쓴 글"),
-                BoardMainMenuModel(menuImageName: "", menuName: "댓글 단 글"),
-                BoardMainMenuModel(menuImageName: "", menuName: "스크랩"),
-                BoardMainMenuModel(menuImageName: "", menuName: "HOT 게시판"),
-                BoardMainMenuModel(menuImageName: "", menuName: "Best 게시판"),
+        return [BoardMainMenuModel(menuImageName: "MyPostMenu", menuName: "내가 쓴 글"),
+                BoardMainMenuModel(menuImageName: "MyCommentMenu", menuName: "댓글 단 글"),
+                BoardMainMenuModel(menuImageName: "ScrapMenu", menuName: "스크랩"),
+                BoardMainMenuModel(menuImageName: "HotBoardMenu", menuName: "HOT 게시판"),
+                BoardMainMenuModel(menuImageName: "BestBoardMenu", menuName: "Best 게시판"),
         ]
     }
 }
