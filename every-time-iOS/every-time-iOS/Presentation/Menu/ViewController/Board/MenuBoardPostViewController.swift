@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MenuBoardPostViewController: PostDetailViewController {
+final class MenuBoardPostViewController: PostDetailViewController {
     
     // MARK: - @objc Methods
     
@@ -55,6 +55,6 @@ class MenuBoardPostViewController: PostDetailViewController {
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             self.dismiss(animated: true)
-        }  
+        }
     }
 }
