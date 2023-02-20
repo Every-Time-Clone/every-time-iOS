@@ -22,7 +22,9 @@ class MenuBoardPostViewController: PostDetailViewController {
         let deleteAction = UIAlertAction(title: "삭제", style: .default) { _ in
             self.deleteButtonDidTap()
         }
-        let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
+        let shareAction = UIAlertAction(title: "URL 공유", style: .default) { _ in
+            self.shareButtonDidTap()
+        }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addActions(modifyAction, deleteAction, shareAction, cancelAction)
         present(alert, animated: true)
@@ -45,5 +47,14 @@ class MenuBoardPostViewController: PostDetailViewController {
         }
         alert.addActions(cancelAction, confirmButton)
         present(alert, animated: true)
+    }
+    
+    private func shareButtonDidTap() {
+        let alert = UIAlertController(title: "URL이 클립보드에 복사되었습니다.", message: nil, preferredStyle: .alert)
+        present(alert, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+            self.dismiss(animated: true)
+        }  
     }
 }
