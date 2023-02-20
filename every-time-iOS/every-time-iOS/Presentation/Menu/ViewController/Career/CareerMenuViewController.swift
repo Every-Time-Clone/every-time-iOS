@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CareerMenuViewController: UIViewController {
+final class CareerMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
