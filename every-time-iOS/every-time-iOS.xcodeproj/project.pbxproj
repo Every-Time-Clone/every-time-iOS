@@ -23,10 +23,11 @@
 		AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */; };
 		AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */; };
 		AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */; };
+		AB8B570F29A38EC80059EBDC /* MenuBoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
-		AB9A61F5299CC439005CA2DB /* MenuBoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F4299CC439005CA2DB /* MenuBoardListViewController.swift */; };
+		AB9A61F5299CC439005CA2DB /* MenuBoardMyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F4299CC439005CA2DB /* MenuBoardMyListViewController.swift */; };
 		AB9A61F7299CCF36005CA2DB /* PinMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F6299CCF36005CA2DB /* PinMenuCollectionViewCell.swift */; };
 		AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */; };
 		AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */; };
@@ -83,10 +84,11 @@
 		AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView +.swift"; sourceTree = "<group>"; };
 		AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardPostViewController.swift; sourceTree = "<group>"; };
 		AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostViewController.swift; sourceTree = "<group>"; };
+		AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardListViewController.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
-		AB9A61F4299CC439005CA2DB /* MenuBoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardListViewController.swift; sourceTree = "<group>"; };
+		AB9A61F4299CC439005CA2DB /* MenuBoardMyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardMyListViewController.swift; sourceTree = "<group>"; };
 		AB9A61F6299CCF36005CA2DB /* PinMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuModel.swift; sourceTree = "<group>"; };
@@ -209,8 +211,9 @@
 			children = (
 				ABF833762976797B00E3DC16 /* MenuViewController.swift */,
 				AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */,
-				AB9A61F4299CC439005CA2DB /* MenuBoardListViewController.swift */,
+				AB9A61F4299CC439005CA2DB /* MenuBoardMyListViewController.swift */,
 				AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */,
+				AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */,
 				AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */,
 			);
 			path = Board;
@@ -564,7 +567,7 @@
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
 				ABA5BF402987C09E007A6BD5 /* BoardViewController.swift in Sources */,
 				AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */,
-				AB9A61F5299CC439005CA2DB /* MenuBoardListViewController.swift in Sources */,
+				AB9A61F5299CC439005CA2DB /* MenuBoardMyListViewController.swift in Sources */,
 				ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */,
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
@@ -602,6 +605,7 @@
 				ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */,
 				ABF8337B2976799100E3DC16 /* CampusPickViewController.swift in Sources */,
 				AB4CFF9F2998D8A5006A3866 /* MenuTabCollectionViewCell.swift in Sources */,
+				AB8B570F29A38EC80059EBDC /* MenuBoardListViewController.swift in Sources */,
 				ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */,
 				ABB1746729880F6F000165E6 /* PostTableViewCell.swift in Sources */,
 				ABB174732988DD11000165E6 /* TitleView.swift in Sources */,

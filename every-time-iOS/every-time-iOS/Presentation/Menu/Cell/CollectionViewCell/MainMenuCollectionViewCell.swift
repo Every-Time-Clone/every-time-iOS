@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 protocol MainMenuTableViewCellDelegate {
-    func mainMenuCellDidSelected()
+    func mainMenuCellDidSelected(_ indexPath: Int)
 }
 
 final class MainMenuCollectionViewCell: UICollectionViewCell {
@@ -91,7 +91,7 @@ extension MainMenuCollectionViewCell: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.mainMenuCellDidSelected()
+        delegate?.mainMenuCellDidSelected(indexPath.row)
     }
 }
 

@@ -119,10 +119,28 @@ extension BoardMenuViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - MainMenuTableViewCellDelegate
 
 extension BoardMenuViewController: MainMenuTableViewCellDelegate, PinMenuTableViewCellDelegate {
-
-    func mainMenuCellDidSelected() {
+    
+    func mainMenuCellDidSelected(_ indexPath: Int) {
         let menuBoardListVC = MenuBoardListViewController()
-        navigationController?.pushViewController(menuBoardListVC, animated: true)
+        switch indexPath {
+        case 0:
+            let menuBoardMyListVC = MenuBoardMyListViewController()
+            navigationController?.pushViewController(menuBoardMyListVC, animated: true)
+        case 1:
+            menuBoardListVC.navigationTitle = "댓글 단 글"
+            navigationController?.pushViewController(menuBoardListVC, animated: true)
+        case 2:
+            menuBoardListVC.navigationTitle = "스크랩"
+            navigationController?.pushViewController(menuBoardListVC, animated: true)
+        case 3:
+            menuBoardListVC.navigationTitle = "HOT 게시판"
+            navigationController?.pushViewController(menuBoardListVC, animated: true)
+        case 4:
+            menuBoardListVC.navigationTitle = "BEST 게시판"
+            navigationController?.pushViewController(menuBoardListVC, animated: true)
+        default:
+            navigationController?.pushViewController(menuBoardListVC, animated: true)
+        }
     }
     
     func pinMenuCellDidSelected() {

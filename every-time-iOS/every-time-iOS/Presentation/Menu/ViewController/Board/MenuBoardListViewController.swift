@@ -1,8 +1,8 @@
 //
-//  DetailBoardViewController.swift
+//  MenuBoardListViewController.swift
 //  every-time-iOS
 //
-//  Created by 김민 on 2023/02/15.
+//  Created by 김민 on 2023/02/20.
 //
 
 import UIKit
@@ -10,7 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-class MenuBoardListViewController: BoardViewController {
+final class MenuBoardListViewController: BoardViewController {
+    
+    // MARK: - Properties
+    
+    var navigationTitle: String?
     
     // MARK: - @objc Methods
     
@@ -19,13 +23,8 @@ class MenuBoardListViewController: BoardViewController {
         backButton.tintColor = .black
         
         navigationItem.leftBarButtonItem = backButton
-        navigationItem.title = "내가 쓴 글"
+        
+        guard let test = navigationTitle else { return }
+        navigationItem.title = test
     }
-    
-    @objc override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let menuBoardPostVC = MenuBoardPostViewController()
-        menuBoardPostVC.postDetail = postList[indexPath.row]
-        navigationController?.pushViewController(menuBoardPostVC, animated: true)
-    }
-
 }
