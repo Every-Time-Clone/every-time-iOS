@@ -167,7 +167,7 @@ extension BoardViewController: UITableViewDataSource {
         return header
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postDetailVC = PostDetailViewController()
         postDetailVC.postDetail = postList[indexPath.row]
         navigationController?.pushViewController(postDetailVC, animated: true)

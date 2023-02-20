@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class DetailBoardViewController: BoardViewController {
+class MenuBoardListViewController: BoardViewController {
 
     // MARK: - Initializer
     
@@ -26,7 +26,8 @@ class DetailBoardViewController: BoardViewController {
     }
 }
 
-extension DetailBoardViewController {
+extension MenuBoardListViewController {
+    
     // MARK: - Methods
     
     @objc override func setNavigationBar() {
@@ -35,5 +36,11 @@ extension DetailBoardViewController {
         
         navigationItem.leftBarButtonItem = backButton
         navigationItem.title = "내가 쓴 글"
+    }
+    
+    @objc override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let menuBoardPostVC = MenuBoardPostViewController()
+        menuBoardPostVC.postDetail = postList[indexPath.row]
+        navigationController?.pushViewController(menuBoardPostVC, animated: true)
     }
 }

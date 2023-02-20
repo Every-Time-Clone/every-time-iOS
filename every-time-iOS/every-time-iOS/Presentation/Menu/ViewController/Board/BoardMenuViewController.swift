@@ -121,8 +121,8 @@ extension BoardMenuViewController: UICollectionViewDelegateFlowLayout {
 extension BoardMenuViewController: MainMenuTableViewCellDelegate, PinMenuTableViewCellDelegate {
 
     func mainMenuCellDidSelected() {
-        let detailBoardVC = DetailBoardViewController()
-        navigationController?.pushViewController(detailBoardVC, animated: true)
+        let menuBoardListVC = MenuBoardListViewController()
+        navigationController?.pushViewController(menuBoardListVC, animated: true)
     }
     
     func pinMenuCellDidSelected() {
