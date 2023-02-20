@@ -19,7 +19,9 @@ class MenuBoardPostViewController: PostDetailViewController {
         let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
             self.modifyButtonDidTap()
         }
-        let deleteAction = UIAlertAction(title: "삭제", style: .default, handler: nil)
+        let deleteAction = UIAlertAction(title: "삭제", style: .default) { _ in
+            self.deleteButtonDidTap()
+        }
         let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addActions(modifyAction, deleteAction, shareAction, cancelAction)
@@ -33,5 +35,15 @@ class MenuBoardPostViewController: PostDetailViewController {
         modifyPostVC.postDetail = postDetail
         modifyPostVC.modalPresentationStyle = .overFullScreen
         present(modifyPostVC, animated: true)
+    }
+    
+    private func deleteButtonDidTap() {
+        let alert = UIAlertController(title: "삭제하시겠습니까?", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .default)
+        let confirmButton = UIAlertAction(title: "확인", style: .default) { _ in
+            self.dismiss(animated: true)
+        }
+        alert.addActions(cancelAction, confirmButton)
+        present(alert, animated: true)
     }
 }
