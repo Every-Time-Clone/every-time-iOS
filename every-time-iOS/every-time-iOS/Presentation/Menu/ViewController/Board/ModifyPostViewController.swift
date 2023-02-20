@@ -11,12 +11,30 @@ import SnapKit
 import Then
 
 class ModifyPostViewController: WriteViewController {
+    
+    // MARK: - Properties
+    
+    var postDetail: PostModel?
 
     // MARK: - Initializer
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        setNavigationBar()
+        setPost()
+    }
+    
+    // MARK: - Methods
+    
+    private func setNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func setPost() {
+        guard let postDetail = postDetail else {return}
+        titleTextField.text = postDetail.title
+        contentTextView.text = postDetail.content
+        contentTextView.textColor = .black
     }
 }

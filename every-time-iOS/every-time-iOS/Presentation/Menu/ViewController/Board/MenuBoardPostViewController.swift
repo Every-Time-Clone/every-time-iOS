@@ -29,6 +29,9 @@ class MenuBoardPostViewController: PostDetailViewController {
     // MARK: - Methods
     
     private func modifyButtonDidTap() {
-        print("d")
+        let modifyPostVC = ModifyPostViewController()
+        modifyPostVC.postDetail = postDetail
+        modifyPostVC.modalPresentationStyle = .overFullScreen
+        present(modifyPostVC, animated: true)
     }
 }
