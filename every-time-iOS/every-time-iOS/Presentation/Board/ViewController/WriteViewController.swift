@@ -20,7 +20,7 @@ enum QuestionType {
     case normal
 }
 
-final class WriteViewController: UIViewController {
+class WriteViewController: UIViewController {
     
     // MARK: - UI Components
     

@@ -11,22 +11,6 @@ import SnapKit
 import Then
 
 class MenuBoardListViewController: BoardViewController {
-
-    // MARK: - Initializer
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setNavigationBar()
-    }
-}
-
-extension MenuBoardListViewController {
     
     // MARK: - @objc Methods
     
@@ -43,4 +27,5 @@ extension MenuBoardListViewController {
         menuBoardPostVC.postDetail = postList[indexPath.row]
         navigationController?.pushViewController(menuBoardPostVC, animated: true)
     }
+
 }
