@@ -66,6 +66,7 @@ final class MenuViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setContainerView(menuType)
+        setTabBar()
     }
 }
 
@@ -126,6 +127,10 @@ extension MenuViewController {
         }
         
         viewController.didMove(toParent: self)
+    }
+    
+    private func setTabBar() {
+        tabBarController?.tabBar.isHidden = false
     }
 }
 

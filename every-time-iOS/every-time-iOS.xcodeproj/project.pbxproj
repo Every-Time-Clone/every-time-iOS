@@ -21,10 +21,12 @@
 		AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */; };
 		AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */; };
 		AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */; };
+		AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */; };
+		AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
-		AB9A61F5299CC439005CA2DB /* DetailBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F4299CC439005CA2DB /* DetailBoardViewController.swift */; };
+		AB9A61F5299CC439005CA2DB /* MenuBoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F4299CC439005CA2DB /* MenuBoardListViewController.swift */; };
 		AB9A61F7299CCF36005CA2DB /* PinMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F6299CCF36005CA2DB /* PinMenuCollectionViewCell.swift */; };
 		AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */; };
 		AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */; };
@@ -79,10 +81,12 @@
 		AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewHeader.swift; sourceTree = "<group>"; };
 		AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView +.swift"; sourceTree = "<group>"; };
+		AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardPostViewController.swift; sourceTree = "<group>"; };
+		AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostViewController.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
-		AB9A61F4299CC439005CA2DB /* DetailBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBoardViewController.swift; sourceTree = "<group>"; };
+		AB9A61F4299CC439005CA2DB /* MenuBoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardListViewController.swift; sourceTree = "<group>"; };
 		AB9A61F6299CCF36005CA2DB /* PinMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuModel.swift; sourceTree = "<group>"; };
@@ -138,12 +142,10 @@
 		AB4CFF942998C824006A3866 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				ABF833762976797B00E3DC16 /* MenuViewController.swift */,
-				AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */,
-				AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */,
-				AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */,
-				AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */,
-				AB9A61F4299CC439005CA2DB /* DetailBoardViewController.swift */,
+				AB8B570629A355AE0059EBDC /* Board */,
+				AB8B570729A355B80059EBDC /* Career */,
+				AB8B570829A355BE0059EBDC /* Advertise */,
+				AB8B570929A355C40059EBDC /* Group */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -200,6 +202,42 @@
 				AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		AB8B570629A355AE0059EBDC /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				ABF833762976797B00E3DC16 /* MenuViewController.swift */,
+				AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */,
+				AB9A61F4299CC439005CA2DB /* MenuBoardListViewController.swift */,
+				AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */,
+				AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		AB8B570729A355B80059EBDC /* Career */ = {
+			isa = PBXGroup;
+			children = (
+				AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */,
+			);
+			path = Career;
+			sourceTree = "<group>";
+		};
+		AB8B570829A355BE0059EBDC /* Advertise */ = {
+			isa = PBXGroup;
+			children = (
+				AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */,
+			);
+			path = Advertise;
+			sourceTree = "<group>";
+		};
+		AB8B570929A355C40059EBDC /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */,
+			);
+			path = Group;
 			sourceTree = "<group>";
 		};
 		AB9A61ED299CB842005CA2DB /* CollectionViewCell */ = {
@@ -518,6 +556,7 @@
 			files = (
 				ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */,
 				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
+				AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */,
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
 				ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
@@ -525,7 +564,7 @@
 				ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */,
 				ABA5BF402987C09E007A6BD5 /* BoardViewController.swift in Sources */,
 				AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */,
-				AB9A61F5299CC439005CA2DB /* DetailBoardViewController.swift in Sources */,
+				AB9A61F5299CC439005CA2DB /* MenuBoardListViewController.swift in Sources */,
 				ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */,
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
@@ -549,6 +588,7 @@
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
+				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
 				AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */,

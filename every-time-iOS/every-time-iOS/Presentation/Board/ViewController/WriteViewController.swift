@@ -20,7 +20,7 @@ enum QuestionType {
     case normal
 }
 
-final class WriteViewController: UIViewController {
+class WriteViewController: UIViewController {
     
     // MARK: - UI Components
     
@@ -29,14 +29,14 @@ final class WriteViewController: UIViewController {
     private let titleLabel: UILabel = UILabel()
     private let backButton: UIButton = UIButton()
     private let completeButton: UIButton = UIButton()
-    private let titleTextField: UITextField = UITextField()
     private let lineView: UIView = UIView()
-    private let contentTextView: UITextView = UITextView()
     private let guidelineView: UIView = UIView()
     private let bottomView: UIView = UIView()
     private let cameraButton: UIButton = UIButton()
     private let anonymityButton: UIButton = UIButton()
     private let questionButton: UIButton = UIButton()
+    let titleTextField: UITextField = UITextField()
+    let contentTextView: UITextView = UITextView()
     
     // MARK: - Properties
     

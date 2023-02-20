@@ -181,16 +181,6 @@ extension PostDetailViewController {
         }
     }
     
-    private func setMenuAlert() {
-        let alert = UIAlertController(title: "글 메뉴", message: nil, preferredStyle: .actionSheet)
-        let messageAction = UIAlertAction(title: "쪽지 보내기", style: .default, handler: nil)
-        let reportAction = UIAlertAction(title: "신고", style: .default, handler: nil)
-        let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        alert.addActions(messageAction, reportAction, shareAction, cancelAction)
-        present(alert, animated: true)
-    }
-    
     private func setDelegate() {
         postTableView.dataSource = self
         postTableView.delegate = self
@@ -230,6 +220,16 @@ extension PostDetailViewController {
     }
     
     // MARK: - @objc Methods
+    
+    @objc func setMenuAlert() {
+        let alert = UIAlertController(title: "글 메뉴", message: nil, preferredStyle: .actionSheet)
+        let messageAction = UIAlertAction(title: "쪽지 보내기", style: .default, handler: nil)
+        let reportAction = UIAlertAction(title: "신고", style: .default, handler: nil)
+        let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addActions(messageAction, reportAction, shareAction, cancelAction)
+        present(alert, animated: true)
+    }
     
     @objc private func backButtonDidTap() {
         navigationController?.popViewController(animated: true)
