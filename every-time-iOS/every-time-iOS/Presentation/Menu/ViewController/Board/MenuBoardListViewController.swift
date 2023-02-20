@@ -28,7 +28,7 @@ class MenuBoardListViewController: BoardViewController {
 
 extension MenuBoardListViewController {
     
-    // MARK: - Methods
+    // MARK: - @objc Methods
     
     @objc override func setNavigationBar() {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonDidTap))
