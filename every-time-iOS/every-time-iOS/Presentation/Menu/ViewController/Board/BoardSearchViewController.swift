@@ -18,6 +18,8 @@ final class BoardSearchViewController: UIViewController {
     private let searchImageView: UIImageView = UIImageView()
     private let searchLabel: UILabel = UILabel()
     private let makeBoardButton: UIButton = UIButton()
+    private let searchView: UIView = UIView()
+    private let searchTableView: UITableView = UITableView(frame: .zero, style: .plain)
 
     // MARK: - Initializer
     
@@ -33,6 +35,7 @@ final class BoardSearchViewController: UIViewController {
 
         setUI()
         setLayout()
+        setDelegate()
     }
 }
 
@@ -71,12 +74,25 @@ extension BoardSearchViewController {
             $0.configuration = configuration
             $0.layer.cornerRadius = 15
         }
+        
+        searchTableView.do {
+            $0.backgroundColor = .white
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.separatorStyle = .none
+            $0.isHidden = true
+            $0.register(BoardSearchTableViewCell.self, forCellReuseIdentifier: BoardSearchTableViewCell.cellIdentifier)
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(searchImageView, searchLabel, makeBoardButton)
+        view.addSubviews(searchView)
+        searchView.addSubviews(searchImageView, searchLabel, makeBoardButton, searchTableView)
+        
+        searchView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
+        }
         
         searchImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -92,6 +108,11 @@ extension BoardSearchViewController {
         makeBoardButton.snp.makeConstraints {
             $0.top.equalTo(searchLabel.snp.bottom).offset(15)
             $0.centerX.equalTo(searchImageView)
+        }
+        
+        searchTableView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
         }
     }
     
@@ -111,9 +132,45 @@ extension BoardSearchViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
+    private func setDelegate() {
+        searchBar.delegate = self
+        searchTableView.dataSource = self
+        searchTableView.delegate = self
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func cancelButtonDidTap() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension BoardSearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchTableView.isHidden = false
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension BoardSearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: BoardSearchTableViewCell.cellIdentifier, for: indexPath) as! BoardSearchTableViewCell
+        return cell
+    }
+}
+
+extension BoardSearchViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

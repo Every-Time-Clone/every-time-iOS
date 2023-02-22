@@ -26,6 +26,7 @@
 		AB8B570F29A38EC80059EBDC /* MenuBoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */; };
 		AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */; };
 		AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */; };
+		AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
@@ -89,6 +90,7 @@
 		AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardListViewController.swift; sourceTree = "<group>"; };
 		AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchViewController.swift; sourceTree = "<group>"; };
+		AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			children = (
 				AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */,
 				AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */,
+				AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */,
 				AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */,
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
+				AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */,
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
 				AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */,
