@@ -49,8 +49,10 @@ extension BoardMenuViewController {
             $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.showsVerticalScrollIndicator = false
+            $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
             $0.register(MainMenuCollectionViewCell.self, forCellWithReuseIdentifier: MainMenuCollectionViewCell.cellIdentifier)
             $0.register(PinMenuCollectionViewCell.self, forCellWithReuseIdentifier: PinMenuCollectionViewCell.cellIdentifier)
+            $0.register(BoardSearchCollectionViewCell.self, forCellWithReuseIdentifier: BoardSearchCollectionViewCell.cellIdentifier)
         }
     }
     
@@ -80,7 +82,7 @@ extension BoardMenuViewController {
 extension BoardMenuViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,6 +94,9 @@ extension BoardMenuViewController: UICollectionViewDataSource {
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PinMenuCollectionViewCell.cellIdentifier, for: indexPath) as! PinMenuCollectionViewCell
             cell.delegate = self
+            return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoardSearchCollectionViewCell.cellIdentifier, for: indexPath) as! BoardSearchCollectionViewCell
             return cell
         default:
             return UICollectionViewCell()
@@ -110,6 +115,8 @@ extension BoardMenuViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: 250)
         case 1:
             return CGSize(width: width, height: 338)
+        case 2:
+            return CGSize(width: width, height: 44)
         default:
             return CGSize()
         }
