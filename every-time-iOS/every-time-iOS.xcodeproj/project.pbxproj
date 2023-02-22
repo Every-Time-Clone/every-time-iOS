@@ -25,6 +25,7 @@
 		AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */; };
 		AB8B570F29A38EC80059EBDC /* MenuBoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */; };
 		AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */; };
+		AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
@@ -87,6 +88,7 @@
 		AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostViewController.swift; sourceTree = "<group>"; };
 		AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardListViewController.swift; sourceTree = "<group>"; };
 		AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchViewController.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */,
 				AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */,
 				AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */,
+				AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				AB9A61F5299CC439005CA2DB /* MenuBoardMyListViewController.swift in Sources */,
 				ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */,
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
+				AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
 				AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */,

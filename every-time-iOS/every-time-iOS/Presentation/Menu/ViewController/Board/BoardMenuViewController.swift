@@ -102,6 +102,13 @@ extension BoardMenuViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == 2 {
+            let boardSearchVC = BoardSearchViewController()
+            navigationController?.pushViewController(boardSearchVC, animated: true)
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
