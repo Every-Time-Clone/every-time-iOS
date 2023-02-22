@@ -27,6 +27,7 @@
 		AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */; };
 		AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */; };
 		AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */; };
+		AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
@@ -91,6 +92,7 @@
 		AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchViewController.swift; sourceTree = "<group>"; };
 		AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchTableViewCell.swift; sourceTree = "<group>"; };
+		AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchModel.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */,
 				AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */,
+				AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
 				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
+				AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */,
 				AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */,
 				ABB1746E2988D8CB000165E6 /* PostDetailViewController.swift in Sources */,
 				ABF8338B2976ADAD00E3DC16 /* CALayer +.swift in Sources */,
