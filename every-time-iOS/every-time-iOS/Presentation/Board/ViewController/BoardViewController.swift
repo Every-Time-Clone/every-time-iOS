@@ -10,11 +10,6 @@ import UIKit
 import SnapKit
 import Then
 
-enum BoardType {
-    case search
-    case normal
-}
-
 class BoardViewController: UIViewController {
     
     // MARK: - UI Components
@@ -33,13 +28,6 @@ class BoardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        switch boardType {
-//        case .search:
-//            print("이거야...")
-//            setSearchNavigationBar()
-//        case .normal:
-//            setNavigationBar()
-//        }
         setNavigationBar()
     }
 
