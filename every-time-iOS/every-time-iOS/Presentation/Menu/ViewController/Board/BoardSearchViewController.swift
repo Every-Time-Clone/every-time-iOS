@@ -130,6 +130,7 @@ extension BoardSearchViewController {
         navigationItem.rightBarButtonItem = cancelButton
         navigationItem.titleView = searchBar
         navigationItem.hidesBackButton = true
+        navigationItem.title = "게시판 검색"
     }
     
     private func setTabBar() {
@@ -170,6 +171,12 @@ extension BoardSearchViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: BoardSearchTableViewCell.cellIdentifier, for: indexPath) as! BoardSearchTableViewCell
         cell.setDataBind(boardList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let boardVC = BoardViewController()
+        boardVC.boardType = .search
+        navigationController?.pushViewController(boardVC, animated: true)
     }
 }
 

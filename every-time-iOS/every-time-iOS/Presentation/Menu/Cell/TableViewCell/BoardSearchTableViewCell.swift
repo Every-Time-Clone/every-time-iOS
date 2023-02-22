@@ -73,6 +73,7 @@ extension BoardSearchTableViewCell {
     
     private func setLayout() {
         contentView.addSubviews(boardStackView)
+        
         boardNameStackView.addArrangedSubViews(boardNameLabel, updateImageView)
         boardStackView.addArrangedSubViews(boardNameStackView,boardDetailLabel)
         
