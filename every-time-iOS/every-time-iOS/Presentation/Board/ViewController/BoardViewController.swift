@@ -21,15 +21,21 @@ class BoardViewController: UIViewController {
     // MARK: - Properties
     
     let postList: [PostModel] = PostModel.dummyData()
+    var boardType: BoardType = .normal
     
     // MARK: - View Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setNavigationBar()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
         setLayout()
-        setNavigationBar()
         setDelegate()
         setAddTarget()
     }
@@ -117,19 +123,14 @@ extension BoardViewController {
     // MARK: - @objc Methods
     
     @objc func setNavigationBar() {
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonDidTap))
-        backButton.tintColor = .black
-        
         let menuButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(menuButtonDidTap))
-        menuButton.tintColor = .black
         
         let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonDidTap))
-        searchButton.tintColor = .black
-        
-        navigationItem.leftBarButtonItem = backButton
+
         navigationItem.rightBarButtonItems = [menuButton, searchButton]
         navigationItem.titleView = titleView
-    } 
+        navigationController?.navigationBar.tintColor = .black
+    }
     
     @objc func backButtonDidTap() {
         navigationController?.popViewController(animated: true)

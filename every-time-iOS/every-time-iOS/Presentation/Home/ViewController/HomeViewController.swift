@@ -39,8 +39,8 @@ final class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = true
-        tabBarController?.tabBar.isHidden = false
+        setTabBar()
+        setNavigationBar()
     }
 }
 
@@ -128,6 +128,15 @@ extension HomeViewController {
     private func pushToBoardViewController() {
         let boardVC = BoardViewController()
         self.navigationController?.pushViewController(boardVC, animated: true)
+    }
+    
+    private func setNavigationBar() {
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func setTabBar() {
+        tabBarController?.tabBar.isHidden = false
     }
 }
 
