@@ -65,6 +65,7 @@ extension BoardSearchTableViewCell {
         
         updateImageView.do {
             $0.image = UIImage(named: "UpdateImage")
+            $0.isHidden = true
         }
     }
     
@@ -89,5 +90,14 @@ extension BoardSearchTableViewCell {
             $0.top.equalToSuperview().offset(12)
             $0.bottom.equalToSuperview().offset(-12)
         }
+    }
+    
+    // MARK: - Methods
+    
+    func setDataBind(_ model: BoardSearchModel) {
+        boardNameLabel.text = model.boardName
+        boardDetailLabel.text = model.boardDetail
+        
+        if model.isUpdated { updateImageView.isHidden = false }
     }
 }

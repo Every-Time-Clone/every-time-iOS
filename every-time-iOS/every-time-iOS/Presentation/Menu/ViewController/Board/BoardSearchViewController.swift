@@ -20,6 +20,10 @@ final class BoardSearchViewController: UIViewController {
     private let makeBoardButton: UIButton = UIButton()
     private let searchView: UIView = UIView()
     private let searchTableView: UITableView = UITableView(frame: .zero, style: .plain)
+    
+    // MARK: - Properties
+    
+    var boardList: [BoardSearchModel] = BoardSearchModel.dummyData()
 
     // MARK: - Initializer
     
@@ -159,11 +163,12 @@ extension BoardSearchViewController: UISearchBarDelegate {
 extension BoardSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return boardList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BoardSearchTableViewCell.cellIdentifier, for: indexPath) as! BoardSearchTableViewCell
+        cell.setDataBind(boardList[indexPath.row])
         return cell
     }
 }
