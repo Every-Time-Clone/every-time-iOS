@@ -51,8 +51,9 @@ extension CreateBoardViewController {
         }
     
         createBoardTableView.do {
-            $0.backgroundColor = .yellow
+            $0.backgroundColor = .clear
             $0.separatorStyle = .none
+            $0.register(BoardOptionTableViewCell.self, forCellReuseIdentifier: BoardOptionTableViewCell.cellIdentifier)
         }
     }
     
@@ -106,7 +107,13 @@ extension CreateBoardViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: BoardOptionTableViewCell.cellIdentifier, for: indexPath) as! BoardOptionTableViewCell
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
 }
 
@@ -121,5 +128,14 @@ extension CreateBoardViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return UITableView.automaticDimension
+        default:
+            return CGFloat(0)
+        }
     }
 }

@@ -31,6 +31,7 @@
 		AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */; };
 		AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B572029A724230059EBDC /* UIViewController +.swift */; };
 		AB8B572329A72FD60059EBDC /* CreateBoardTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B572229A72FD60059EBDC /* CreateBoardTableViewHeader.swift */; };
+		AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B572429A76C420059EBDC /* BoardOptionTableViewCell.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
@@ -99,6 +100,7 @@
 		AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardViewController.swift; sourceTree = "<group>"; };
 		AB8B572029A724230059EBDC /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		AB8B572229A72FD60059EBDC /* CreateBoardTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardTableViewHeader.swift; sourceTree = "<group>"; };
+		AB8B572429A76C420059EBDC /* BoardOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardOptionTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */,
 				AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */,
 				AB8B572229A72FD60059EBDC /* CreateBoardTableViewHeader.swift */,
+				AB8B572429A76C420059EBDC /* BoardOptionTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
 				AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */,
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
+				AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */,
 				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
 				AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */,
 				AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */,
