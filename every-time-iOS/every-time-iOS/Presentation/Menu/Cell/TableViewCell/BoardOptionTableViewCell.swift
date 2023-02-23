@@ -34,6 +34,7 @@ final class BoardOptionTableViewCell: UITableViewCell {
         
         setUI()
         setLayout()
+        setTapGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -46,6 +47,8 @@ extension BoardOptionTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
+        selectionStyle = .none
+        
         contentView.backgroundColor = .clear
         
         containerView.do {
@@ -101,6 +104,7 @@ extension BoardOptionTableViewCell {
         photoOptionCheckImage.do {
             $0.image = UIImage(systemName: "checkmark")
             $0.tintColor = .everytimeRed
+            $0.isHidden = true
         }
     }
     
@@ -150,5 +154,24 @@ extension BoardOptionTableViewCell {
             $0.trailing.equalToSuperview().offset(-15)
             $0.width.height.equalTo(15)
         }
+    }
+    
+    // MARK: - Methods
+    
+    private func setTapGesture() {
+        defaultOptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(defaultOptionDidTap)))
+        photoOptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(photoOptionDidTap)))
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func defaultOptionDidTap() {
+        defaultOptionCheckImage.isHidden = false
+        photoOptionCheckImage.isHidden = true
+    }
+    
+    @objc private func photoOptionDidTap() {
+        defaultOptionCheckImage.isHidden = true
+        photoOptionCheckImage.isHidden = false
     }
 }
