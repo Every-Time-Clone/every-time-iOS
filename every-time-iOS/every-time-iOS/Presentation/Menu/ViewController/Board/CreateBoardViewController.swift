@@ -54,6 +54,7 @@ extension CreateBoardViewController {
             $0.backgroundColor = .clear
             $0.separatorStyle = .none
             $0.register(BoardOptionTableViewCell.self, forCellReuseIdentifier: BoardOptionTableViewCell.cellIdentifier)
+            $0.register(AnonymityCheckTableViewCell.self, forCellReuseIdentifier: AnonymityCheckTableViewCell.cellIdentifier)
         }
     }
     
@@ -112,7 +113,8 @@ extension CreateBoardViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: BoardOptionTableViewCell.cellIdentifier, for: indexPath) as! BoardOptionTableViewCell
             return cell
         default:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: AnonymityCheckTableViewCell.cellIdentifier, for: indexPath) as! AnonymityCheckTableViewCell
+            return cell
         }
     }
 }
@@ -135,7 +137,7 @@ extension CreateBoardViewController: UITableViewDelegate {
         case 0:
             return UITableView.automaticDimension
         default:
-            return CGFloat(0)
+            return CGFloat(80)
         }
     }
 }
