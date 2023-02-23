@@ -50,7 +50,7 @@ extension TitleView {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        addArrangedSubViews(boardTitleLabel, campusNameLabel)
+        addArrangedSubviews(boardTitleLabel, campusNameLabel)
     }
     
     // MARK: - Methods

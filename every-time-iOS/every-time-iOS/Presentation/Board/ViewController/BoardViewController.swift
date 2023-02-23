@@ -21,7 +21,6 @@ class BoardViewController: UIViewController {
     // MARK: - Properties
     
     let postList: [PostModel] = PostModel.dummyData()
-    var boardType: BoardType = .normal
     
     // MARK: - View Life Cycle
     

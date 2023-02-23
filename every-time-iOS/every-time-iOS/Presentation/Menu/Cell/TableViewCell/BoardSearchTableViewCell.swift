@@ -74,8 +74,8 @@ extension BoardSearchTableViewCell {
     private func setLayout() {
         contentView.addSubviews(boardStackView)
         
-        boardNameStackView.addArrangedSubViews(boardNameLabel, updateImageView)
-        boardStackView.addArrangedSubViews(boardNameStackView,boardDetailLabel)
+        boardNameStackView.addArrangedSubviews(boardNameLabel, updateImageView)
+        boardStackView.addArrangedSubviews(boardNameStackView,boardDetailLabel)
         
         updateImageView.snp.makeConstraints {
             $0.width.height.equalTo(15)
