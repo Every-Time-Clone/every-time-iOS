@@ -53,7 +53,7 @@ extension CreateBoardTableViewHeader {
         detailTextField.do {
             $0.placeholder = "설명"
             $0.tintColor = .everytimeRed
-            $0.font = .systemFont(ofSize: 15)
+            $0.font = .systemFont(ofSize: 16)
         }
         
         detailLineView.do {
@@ -70,7 +70,7 @@ extension CreateBoardTableViewHeader {
             $0.top.equalToSuperview().offset(5)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
         titleLineView.snp.makeConstraints {
@@ -84,7 +84,7 @@ extension CreateBoardTableViewHeader {
             $0.top.equalTo(titleLineView.snp.bottom).offset(5)
             $0.width.equalTo(titleTextField)
             $0.centerX.equalTo(titleTextField)
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
         detailLineView.snp.makeConstraints {
