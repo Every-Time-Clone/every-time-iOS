@@ -14,7 +14,8 @@ final class CreateBoardViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let completeButton = UIButton()
+    private let completeButton: UIButton = UIButton()
+    private let createBoardTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - Initializer
     
@@ -24,6 +25,8 @@ final class CreateBoardViewController: UIViewController {
         setUI()
         setLayout()
         setNavigationBar()
+        setAddTarget()
+        setDelegate()
     }
 }
 
@@ -46,12 +49,22 @@ extension CreateBoardViewController {
             $0.backgroundColor = .everytimeRed
             $0.layer.cornerRadius = 14
         }
+    
+        createBoardTableView.do {
+            $0.backgroundColor = .yellow
+            $0.separatorStyle = .none
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
+        view.addSubview(createBoardTableView)
         
+        createBoardTableView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
     }
     
     // MARK: - Methods
@@ -68,10 +81,45 @@ extension CreateBoardViewController {
         completeButton.addTarget(self, action: #selector(completeButtonDidTap), for: .touchUpInside)
     }
     
+    private func setDelegate() {
+        createBoardTableView.dataSource = self
+        createBoardTableView.delegate = self
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func completeButtonDidTap() {
-        // 이름 입력이 안 되었을 때 팝업창
-        // 아닐 때는 게시판 생성 완료 팝업창 -> 팝업창은 extension으로 추가해 주자
+        setAlertWithAnimation("게시판 생성 완료")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension CreateBoardViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension CreateBoardViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = CreateBoardTableViewHeader()
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

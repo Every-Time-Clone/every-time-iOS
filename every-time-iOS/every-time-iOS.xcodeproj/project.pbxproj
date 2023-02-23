@@ -29,6 +29,8 @@
 		AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */; };
 		AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */; };
 		AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */; };
+		AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B572029A724230059EBDC /* UIViewController +.swift */; };
+		AB8B572329A72FD60059EBDC /* CreateBoardTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B572229A72FD60059EBDC /* CreateBoardTableViewHeader.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
@@ -95,6 +97,8 @@
 		AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchTableViewCell.swift; sourceTree = "<group>"; };
 		AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchModel.swift; sourceTree = "<group>"; };
 		AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardViewController.swift; sourceTree = "<group>"; };
+		AB8B572029A724230059EBDC /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
+		AB8B572229A72FD60059EBDC /* CreateBoardTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardTableViewHeader.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */,
 				AB9A61F8299CD177005CA2DB /* PinDetailTableViewCell.swift */,
 				AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */,
+				AB8B572229A72FD60059EBDC /* CreateBoardTableViewHeader.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */,
 				ABB17480298B8CC1000165E6 /* UIButton +.swift */,
 				ABB17485298CD827000165E6 /* UIAlertController +.swift */,
+				AB8B572029A724230059EBDC /* UIViewController +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 				AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */,
 				ABF833752976797300E3DC16 /* TImetableViewController.swift in Sources */,
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
+				AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */,
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
 				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
 				AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */,
@@ -619,6 +626,7 @@
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
 				AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */,
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
+				AB8B572329A72FD60059EBDC /* CreateBoardTableViewHeader.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
 				AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
