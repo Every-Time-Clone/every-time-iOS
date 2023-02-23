@@ -28,6 +28,7 @@
 		AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */; };
 		AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */; };
 		AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */; };
+		AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
@@ -93,6 +94,7 @@
 		AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchViewController.swift; sourceTree = "<group>"; };
 		AB8B571A29A63A880059EBDC /* BoardSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchTableViewCell.swift; sourceTree = "<group>"; };
 		AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchModel.swift; sourceTree = "<group>"; };
+		AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardViewController.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */,
 				AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */,
 				AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */,
+				AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
+				AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */,
 				AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */,
 				AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */,
 				AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */,

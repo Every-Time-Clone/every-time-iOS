@@ -40,6 +40,7 @@ final class BoardSearchViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        setAddTarget()
     }
 }
 
@@ -143,10 +144,19 @@ extension BoardSearchViewController {
         searchTableView.delegate = self
     }
     
+    private func setAddTarget() {
+        createBoardButton.addTarget(self, action: #selector(createBoardButtonDidTap), for: .touchUpInside)
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func cancelButtonDidTap() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func createBoardButtonDidTap() {
+        let createBoardVC = CreateBoardViewController()
+        navigationController?.pushViewController(createBoardVC, animated: true)
     }
 }
 
