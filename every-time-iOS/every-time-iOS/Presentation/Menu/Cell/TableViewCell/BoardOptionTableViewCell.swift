@@ -63,12 +63,12 @@ extension BoardOptionTableViewCell {
         }
         
         defaultOptionLabel.do { 
-            $0.font = .systemFont(ofSize: 15)
+            $0.font = .systemFont(ofSize: 16)
             $0.text = "기본형"
         }
         
         defaultOptionDetailLabel.do {
-            $0.font = .systemFont(ofSize: 10)
+            $0.font = .systemFont(ofSize: 11)
             $0.textColor = .lightGray
             $0.text = "여러 글을 빠르게 읽을 수 있는 기본 형식"
         }
@@ -80,12 +80,12 @@ extension BoardOptionTableViewCell {
         }
         
         photoOptionLabel.do {
-            $0.font = .systemFont(ofSize: 15)
+            $0.font = .systemFont(ofSize: 16)
             $0.text = "사진형"
         }
         
         photoOptionDetailLabel.do {
-            $0.font = .systemFont(ofSize: 10)
+            $0.font = .systemFont(ofSize: 11)
             $0.textColor = .lightGray
             $0.text = "글 목록에 사진이 노출되는 형식"
         }
@@ -121,8 +121,8 @@ extension BoardOptionTableViewCell {
         
         containerView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
-            $0.leading.equalToSuperview().offset(5)
-            $0.trailing.equalToSuperview().offset(-5)
+            $0.leading.equalToSuperview().offset(10)
+            $0.trailing.equalToSuperview().offset(-10)
             $0.height.equalTo(130)
             $0.bottom.equalToSuperview().offset(-5)
         }
@@ -135,12 +135,12 @@ extension BoardOptionTableViewCell {
         
         defaultOptionStackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(15)
+            $0.leading.equalToSuperview().offset(10)
         }
         
         photoOptionStackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(15)
+            $0.leading.equalToSuperview().offset(10)
         }
         
         defaultOptionCheckImage.snp.makeConstraints {
