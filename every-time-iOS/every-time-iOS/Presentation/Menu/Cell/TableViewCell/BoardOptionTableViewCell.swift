@@ -65,7 +65,7 @@ extension BoardOptionTableViewCell {
     private func setLayout() {
         contentView.addSubview(containerView)
         containerView.addSubview(optionStackView)
-        optionStackView.addArrangedSubViews(defaultOptionView, photoOptionView)
+        optionStackView.addArrangedSubviews(defaultOptionView, photoOptionView)
         
         containerView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
