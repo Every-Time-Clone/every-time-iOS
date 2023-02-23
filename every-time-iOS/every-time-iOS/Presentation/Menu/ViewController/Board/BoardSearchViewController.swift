@@ -17,7 +17,7 @@ final class BoardSearchViewController: UIViewController {
     private let searchBar: UISearchBar = UISearchBar()
     private let searchImageView: UIImageView = UIImageView()
     private let searchLabel: UILabel = UILabel()
-    private let makeBoardButton: UIButton = UIButton()
+    private let createBoardButton: UIButton = UIButton()
     private let searchView: UIView = UIView()
     private let searchTableView: UITableView = UITableView(frame: .zero, style: .plain)
     
@@ -66,7 +66,7 @@ extension BoardSearchViewController {
             $0.font = .systemFont(ofSize: 17, weight: .bold)
         }
         
-        makeBoardButton.do {
+        createBoardButton.do {
             var attString = AttributedString("새 게시판 만들기")
             attString.font = .systemFont(ofSize: 14, weight: .bold)
             attString.foregroundColor = .white
@@ -92,7 +92,7 @@ extension BoardSearchViewController {
     
     private func setLayout() {
         view.addSubviews(searchView)
-        searchView.addSubviews(searchImageView, searchLabel, makeBoardButton, searchTableView)
+        searchView.addSubviews(searchImageView, searchLabel, createBoardButton, searchTableView)
         
         searchView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
@@ -109,7 +109,7 @@ extension BoardSearchViewController {
             $0.centerX.equalTo(searchImageView)
         }
         
-        makeBoardButton.snp.makeConstraints {
+        createBoardButton.snp.makeConstraints {
             $0.top.equalTo(searchLabel.snp.bottom).offset(15)
             $0.centerX.equalTo(searchImageView)
         }
@@ -175,7 +175,6 @@ extension BoardSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let boardVC = BoardViewController()
-        boardVC.boardType = .search
         navigationController?.pushViewController(boardVC, animated: true)
     }
 }
