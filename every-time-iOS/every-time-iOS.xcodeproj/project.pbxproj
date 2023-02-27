@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
 		AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */; };
 		AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerMenuViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		AB1BF6B329AC4411002DBACF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AB1BF6B429AC452A002DBACF /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
 				AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */,
+				AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */,
 				AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */,
 				AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */,
 				AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */,
