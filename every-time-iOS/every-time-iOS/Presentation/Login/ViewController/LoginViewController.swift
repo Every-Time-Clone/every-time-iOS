@@ -21,6 +21,8 @@ final class LoginViewController: UIViewController {
     private let passwordTextField: UITextField = UITextField()
     private let loginButton: UIButton = UIButton()
     private let loginStackView: UIStackView = UIStackView()
+    private let findAccountButton: UIButton = UIButton()
+    private let signupButton: UIButton = UIButton()
 
     // MARK: - Initializer
     
@@ -92,12 +94,30 @@ extension LoginViewController {
             $0.distribution = .fillEqually
             $0.spacing = CGFloat(5)
         }
+        
+        findAccountButton.do {
+            var attString = AttributedString("아이디/비밀번호 찾기")
+            attString.font = .systemFont(ofSize: 13)
+            attString.foregroundColor = .lightGray
+            var configuration = UIButton.Configuration.plain()
+            configuration.attributedTitle = attString
+            $0.configuration = configuration
+        }
+        
+        signupButton.do {
+            var attString = AttributedString("회원가입")
+            attString.font = .systemFont(ofSize: 14, weight: .bold)
+            attString.foregroundColor = .black
+            var configuration = UIButton.Configuration.plain()
+            configuration.attributedTitle = attString
+            $0.configuration = configuration
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(everyTimeImageView, descriptionLabel, everyTimeLabel, loginStackView)
+        view.addSubviews(everyTimeImageView, descriptionLabel, everyTimeLabel, loginStackView, findAccountButton, signupButton)
         
         loginStackView.addArrangedSubviews(idTextField, passwordTextField, loginButton)
         
@@ -121,6 +141,17 @@ extension LoginViewController {
             $0.top.equalTo(everyTimeLabel.snp.bottom).offset(50)
             $0.centerX.equalToSuperview()
             $0.leading.equalToSuperview().offset(30)
+            $0.height.equalTo(120)
+        }
+        
+        findAccountButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(loginStackView.snp.bottom).offset(15)
+        }
+        
+        signupButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(findAccountButton.snp.bottom).offset(10)
         }
     }
 
@@ -142,6 +173,16 @@ extension LoginViewController {
             }
             self.loginStackView.superview?.layoutIfNeeded()
         }
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func findAccountButtonDidTap() {
+        print("아이디/비밀번호 찾기")
+    }
+    
+    @objc private func signupButtonDidTap() {
+        print("회원가입")
     }
 }
 
