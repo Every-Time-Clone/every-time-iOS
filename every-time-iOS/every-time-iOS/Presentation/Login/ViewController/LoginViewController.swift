@@ -55,24 +55,41 @@ extension LoginViewController {
         }
         
         idTextField.do {
-            $0.backgroundColor = .yellow
-            $0.placeholder = "아이디"
+            $0.backgroundColor = .systemGray6
+            $0.tintColor = .everytimeRed
+            $0.addLeftPadding()
+            $0.layer.cornerRadius = 17
+            $0.font = .systemFont(ofSize: 13)
+            var attString = AttributedString("아이디")
+            attString.font = .systemFont(ofSize: 13)
+            $0.attributedPlaceholder = NSAttributedString(attString)
         }
         
         passwordTextField.do {
-            $0.backgroundColor = .yellow
-            $0.placeholder = "비밀번호"
+            $0.backgroundColor = .systemGray6
+            $0.tintColor = .everytimeRed
+            $0.addLeftPadding()
+            $0.layer.cornerRadius = 17
+            $0.font = .systemFont(ofSize: 13)
+            var attString = AttributedString("비밀번호")
+            attString.font = .systemFont(ofSize: 13)
+            $0.attributedPlaceholder = NSAttributedString(attString)
         }
         
         loginButton.do {
             $0.backgroundColor = .everytimeRed
-            $0.setTitle("에브리타임 로그인", for: .normal)
+            $0.layer.cornerRadius = 17
+            var attString = AttributedString("에브리타임 로그인")
+            attString.font = .systemFont(ofSize: 14, weight: .bold)
+            attString.foregroundColor = .white
+            var configuartion = UIButton.Configuration.plain()
+            configuartion.attributedTitle = attString
+            $0.configuration = configuartion
         }
         
         loginStackView.do {
             $0.axis = .vertical
             $0.distribution = .fillEqually
-            $0.backgroundColor = .cyan
             $0.spacing = CGFloat(5)
         }
     }
@@ -111,8 +128,24 @@ extension LoginViewController {
     
     private func setDelegate() {
         idTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        everyTimeImageView.isHidden = false
+        descriptionLabel.isHidden = false
+        everyTimeLabel.isHidden = false
+        UIView.animate(withDuration: 0.25) {
+            self.loginStackView.snp.updateConstraints {
+                $0.top.equalTo(self.everyTimeLabel.snp.bottom).offset(50)
+            }
+            self.loginStackView.superview?.layoutIfNeeded()
+        }
     }
 }
+
+// MARK: - UITextFieldDelegate
 
 extension LoginViewController: UITextFieldDelegate {
     
