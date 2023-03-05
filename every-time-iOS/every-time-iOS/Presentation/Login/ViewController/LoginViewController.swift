@@ -165,6 +165,16 @@ extension LoginViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+        setOriginalLoginStackAnimation()
+    }
+    
+    private func setAddTarget() {
+        loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+        findAccountButton.addTarget(self, action: #selector(findAccountButtonDidTap), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(signupButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func setOriginalLoginStackAnimation() {
         everyTimeImageView.isHidden = false
         descriptionLabel.isHidden = false
         everyTimeLabel.isHidden = false
@@ -176,12 +186,24 @@ extension LoginViewController {
         }
     }
     
-    private func setAddTarget() {
-        findAccountButton.addTarget(self, action: #selector(findAccountButtonDidTap), for: .touchUpInside)
-        signupButton.addTarget(self, action: #selector(signupButtonDidTap), for: .touchUpInside)
-    }
-    
     // MARK: - @objc Methods
+    
+    @objc private func loginButtonDidTap() {
+        // 실패 시
+//        idTextField.resignFirstResponder()
+//        passwordTextField.resignFirstResponder()
+//        setOriginalLoginStackAnimation()
+//        let alert = UIAlertController(title: "올바른 정보를 입력해주세요.\nPC에서는 정상적으로 로그인이 되지만 앱에서 로그인이 되지 않을 경우,\n[everytimekr.help@gmail.com] 메일로 아이디와 스크린샷을 보내주시기 바랍니다.", message: nil, preferredStyle: .alert)
+//        let closeButton = UIAlertAction(title: "닫기", style: .cancel)
+//        alert.addAction(closeButton)
+//        present(alert, animated: true)
+        
+        // 성공 시
+        let tabBar = EverytimeTabBarController()
+        tabBar.modalTransitionStyle = .crossDissolve
+        tabBar.modalPresentationStyle = .overFullScreen
+        present(tabBar, animated: true)
+    }
     
     @objc private func findAccountButtonDidTap() {
         print("아이디/비밀번호 찾기")
@@ -200,7 +222,7 @@ extension LoginViewController: UITextFieldDelegate {
         everyTimeImageView.isHidden = true
         descriptionLabel.isHidden = true
         everyTimeLabel.isHidden = true
-        
+
         UIView.animate(withDuration: 0.25) {
             self.loginStackView.snp.updateConstraints {
                 $0.top.equalTo(self.everyTimeLabel.snp.bottom).offset(-100)
