@@ -189,13 +189,20 @@ extension LoginViewController {
     // MARK: - @objc Methods
     
     @objc private func loginButtonDidTap() {
-        idTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        setOriginalLoginStackAnimation()
-        let alert = UIAlertController(title: "올바른 정보를 입력해주세요.\nPC에서는 정상적으로 로그인이 되지만 앱에서 로그인이 되지 않을 경우,\n[everytimekr.help@gmail.com] 메일로 아이디와 스크린샷을 보내주시기 바랍니다.", message: nil, preferredStyle: .alert)
-        let closeButton = UIAlertAction(title: "닫기", style: .cancel)
-        alert.addAction(closeButton)
-        present(alert, animated: true)
+        // 실패 시
+//        idTextField.resignFirstResponder()
+//        passwordTextField.resignFirstResponder()
+//        setOriginalLoginStackAnimation()
+//        let alert = UIAlertController(title: "올바른 정보를 입력해주세요.\nPC에서는 정상적으로 로그인이 되지만 앱에서 로그인이 되지 않을 경우,\n[everytimekr.help@gmail.com] 메일로 아이디와 스크린샷을 보내주시기 바랍니다.", message: nil, preferredStyle: .alert)
+//        let closeButton = UIAlertAction(title: "닫기", style: .cancel)
+//        alert.addAction(closeButton)
+//        present(alert, animated: true)
+        
+        // 성공 시
+        let tabBar = EverytimeTabBarController()
+        tabBar.modalTransitionStyle = .crossDissolve
+        tabBar.modalPresentationStyle = .overFullScreen
+        present(tabBar, animated: true)
     }
     
     @objc private func findAccountButtonDidTap() {
