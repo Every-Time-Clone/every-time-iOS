@@ -32,6 +32,7 @@ final class LoginViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        setAddTarget()
     }
 }
 
@@ -173,6 +174,11 @@ extension LoginViewController {
             }
             self.loginStackView.superview?.layoutIfNeeded()
         }
+    }
+    
+    private func setAddTarget() {
+        findAccountButton.addTarget(self, action: #selector(findAccountButtonDidTap), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(signupButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
