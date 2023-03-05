@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
 		AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */; };
 		AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */; };
@@ -52,6 +53,7 @@
 		ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1747E298B7CFE000165E6 /* PostTableViewHeader.swift */; };
 		ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB17480298B8CC1000165E6 /* UIButton +.swift */; };
 		ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB17485298CD827000165E6 /* UIAlertController +.swift */; };
+		ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDF519E29B43FFC00102E7E /* UITextField +.swift */; };
 		ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333729752D1000E3DC16 /* AppDelegate.swift */; };
 		ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333929752D1000E3DC16 /* SceneDelegate.swift */; };
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
@@ -77,6 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerMenuViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		ABB1747E298B7CFE000165E6 /* PostTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewHeader.swift; sourceTree = "<group>"; };
 		ABB17480298B8CC1000165E6 /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		ABB17485298CD827000165E6 /* UIAlertController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController +.swift"; sourceTree = "<group>"; };
+		ABDF519E29B43FFC00102E7E /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
 		ABF8333429752D1000E3DC16 /* every-time-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "every-time-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8333729752D1000E3DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8333929752D1000E3DC16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB1BF6B229AC43F3002DBACF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB1BF6B329AC4411002DBACF /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AB1BF6B329AC4411002DBACF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB1BF6B429AC452A002DBACF /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		AB4CFF942998C824006A3866 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF8336B2976784200E3DC16 /* Common */,
+				AB1BF6B229AC43F3002DBACF /* Login */,
 				ABF8336D2976791500E3DC16 /* Home */,
 				ABA5BF3D2987C08C007A6BD5 /* Board */,
 				ABF8336E2976791E00E3DC16 /* Timetable */,
@@ -447,6 +468,7 @@
 				ABB17480298B8CC1000165E6 /* UIButton +.swift */,
 				ABB17485298CD827000165E6 /* UIAlertController +.swift */,
 				AB8B572029A724230059EBDC /* UIViewController +.swift */,
+				ABDF519E29B43FFC00102E7E /* UITextField +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -625,9 +647,11 @@
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
 				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
+				ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */,
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
 				AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */,
+				AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */,
 				AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */,
 				AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */,
 				AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */,
@@ -805,7 +829,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "min.every-time-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "min.every-time-iOS-min";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -834,7 +858,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "min.every-time-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "min.every-time-iOS-min";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
