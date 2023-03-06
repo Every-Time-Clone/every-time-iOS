@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
+		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
 		AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */; };
 		AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */; };
 		AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
 		AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseMenuViewController.swift; sourceTree = "<group>"; };
@@ -163,12 +165,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB1BF6B229AC43F3002DBACF /* Login */ = {
+		AB1BF6B229AC43F3002DBACF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				AB1BF6B329AC4411002DBACF /* ViewController */,
+				AB37354B29B57D9800FC3EF7 /* Login */,
+				AB37354C29B57DA800FC3EF7 /* Signup */,
 			);
-			path = Login;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		AB1BF6B329AC4411002DBACF /* ViewController */ = {
@@ -177,6 +180,22 @@
 				AB1BF6B429AC452A002DBACF /* LoginViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AB37354B29B57D9800FC3EF7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB1BF6B329AC4411002DBACF /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AB37354C29B57DA800FC3EF7 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		AB4CFF942998C824006A3866 /* ViewController */ = {
@@ -442,7 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF8336B2976784200E3DC16 /* Common */,
-				AB1BF6B229AC43F3002DBACF /* Login */,
+				AB1BF6B229AC43F3002DBACF /* Auth */,
 				ABF8336D2976791500E3DC16 /* Home */,
 				ABA5BF3D2987C08C007A6BD5 /* Board */,
 				ABF8336E2976791E00E3DC16 /* Timetable */,
@@ -608,6 +627,7 @@
 			files = (
 				ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */,
 				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
+				AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */,
 				AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */,
 				AB8B572729A777650059EBDC /* AnonymityCheckTableViewCell.swift in Sources */,
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,

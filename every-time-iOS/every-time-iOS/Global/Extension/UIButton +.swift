@@ -38,8 +38,15 @@ extension UIButton {
         configuration.preferredSymbolConfigurationForImage = .init(pointSize: 10)
         configuration.imagePadding = CGFloat(3)
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-
+        
         self.tintColor = color
         self.configuration = configuration
+    }
+    
+    func setRedButton(_ title: String) {
+        setTitle(title, for: .normal)
+        setTitleColor(.white, for: .normal)
+        backgroundColor = .everytimeRed
+        layer.cornerRadius = 8
     }
 }

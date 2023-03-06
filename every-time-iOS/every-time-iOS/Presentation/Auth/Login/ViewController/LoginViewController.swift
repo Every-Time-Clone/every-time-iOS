@@ -210,7 +210,9 @@ extension LoginViewController {
     }
     
     @objc private func signupButtonDidTap() {
-        print("회원가입")
+        let selectCollegeVC = SelectCollegeViewController()
+        selectCollegeVC.modalPresentationStyle = .overFullScreen
+        present(selectCollegeVC, animated: true)
     }
 }
 
