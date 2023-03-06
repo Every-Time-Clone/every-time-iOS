@@ -24,7 +24,7 @@ final class LoginViewController: UIViewController {
     private let findAccountButton: UIButton = UIButton()
     private let signupButton: UIButton = UIButton()
 
-    // MARK: - Initializer
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
