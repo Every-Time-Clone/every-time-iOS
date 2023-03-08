@@ -34,6 +34,7 @@ class SelectCollegeViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        setAddTarget()
     }
 }
 
@@ -161,9 +162,9 @@ extension SelectCollegeViewController {
         }
         
         schoolTableView.snp.makeConstraints {
-            $0.top.equalTo(schoolTextField.snp.bottom).offset(10)
+            $0.top.equalTo(schoolTextField.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(nextButton.snp.top).offset(-10)
+            $0.bottom.equalTo(nextButton.snp.top)
         }
         
         nextButton.snp.makeConstraints {
@@ -178,6 +179,16 @@ extension SelectCollegeViewController {
     
     private func setDelegate() {
         schoolTextField.delegate = self
+    }
+    
+    private func setAddTarget() {
+        schoolTextField.addTarget(self, action: #selector(schoolTextFieldDidChange), for: .editingChanged)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func schoolTextFieldDidChange() {
+        print(schoolTextField.text)
     }
 }
 
