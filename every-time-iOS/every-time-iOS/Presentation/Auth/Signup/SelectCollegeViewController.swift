@@ -23,6 +23,8 @@ class SelectCollegeViewController: UIViewController {
     private let pickerView: UIPickerView = UIPickerView()
     private let schoolLabel: UILabel = UILabel()
     private let schoolTextField: UITextField = UITextField()
+    private let nextButton: UIButton = UIButton()
+    private let schoolTableView: UITableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - View Life Cycle
     
@@ -92,12 +94,27 @@ extension SelectCollegeViewController {
             $0.addRightImage(image: UIImage(systemName: "magnifyingglass")!)
             $0.tintColor = .black
         }
+        
+        schoolTableView.do {
+            $0.backgroundColor = .yellow
+        }
+        
+        nextButton.do {
+            var attString = AttributedString("다음")
+            attString.font = .systemFont(ofSize: 15, weight: .bold)
+            attString.foregroundColor = .white
+            var configuration = UIButton.Configuration.plain()
+            configuration.attributedTitle = attString
+            $0.configuration = configuration
+            $0.backgroundColor = .everytimeRed
+            $0.layer.cornerRadius = 10
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(topView, titleLabel, yearLabel, yearTextField, schoolLabel, schoolTextField)
+        view.addSubviews(topView, titleLabel, yearLabel, yearTextField, schoolLabel, schoolTextField, schoolTableView, nextButton)
         topView.addSubviews(topTitleLabel, closeButton)
         
         topView.snp.makeConstraints {
@@ -139,6 +156,19 @@ extension SelectCollegeViewController {
         schoolTextField.snp.makeConstraints {
             $0.top.equalTo(schoolLabel.snp.bottom).offset(10)
             $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
+        schoolTableView.snp.makeConstraints {
+            $0.top.equalTo(schoolTextField.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(nextButton.snp.top).offset(-10)
+        }
+        
+        nextButton.snp.makeConstraints {
+            $0.top.equalTo(schoolTableView.snp.bottom)
+            $0.leading.equalTo(yearTextField.snp.leading)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
         }
