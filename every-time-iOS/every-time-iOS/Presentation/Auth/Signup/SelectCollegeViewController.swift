@@ -17,6 +17,12 @@ class SelectCollegeViewController: UIViewController {
     private let topView: UIView = UIView()
     private let topTitleLabel: UILabel = UILabel()
     private let closeButton: UIButton = UIButton()
+    private let titleLabel: UILabel = UILabel()
+    private let yearLabel: UILabel = UILabel()
+    private let yearTextField: UITextField = UITextField()
+    private let pickerView: UIPickerView = UIPickerView()
+    private let schoolLabel: UILabel = UILabel()
+    private let schoolTextField: UITextField = UITextField()
     
     // MARK: - View Life Cycle
     
@@ -25,6 +31,7 @@ class SelectCollegeViewController: UIViewController {
         
         setUI()
         setLayout()
+        setDelegate()
     }
 }
 
@@ -48,12 +55,49 @@ extension SelectCollegeViewController {
             $0.tintColor = .black
             $0.setImage(UIImage(systemName: "xmark"), for: .normal)
         }
+        
+        titleLabel.do {
+            $0.text = "학교 선택"
+            $0.font = .systemFont(ofSize: 20, weight: .bold)
+        }
+        
+        yearLabel.do {
+            $0.text = "입학년도"
+            $0.font = .systemFont(ofSize: 12, weight: .semibold)
+            $0.textColor = .darkGray
+        }
+        
+        yearTextField.do {
+            $0.backgroundColor = .cyan
+            $0.inputView = pickerView
+        }
+        
+        schoolLabel.do {
+            $0.text = "학교"
+            $0.font = .systemFont(ofSize: 12, weight: .semibold)
+            $0.textColor = .darkGray
+        }
+        
+        schoolTextField.do {
+            $0.backgroundColor = UIColor(r: 249, g: 249, b: 248)
+            var attString = AttributedString("학교 이름을 검색하세요.")
+            attString.font = .systemFont(ofSize: 17)
+            attString.foregroundColor = .lightGray
+            $0.attributedPlaceholder = NSAttributedString(attString)
+            $0.addLeftPadding(width: CGFloat(10))
+            $0.layer.cornerRadius = 10
+            $0.layer.borderColor = UIColor.systemGray6.cgColor
+            $0.layer.borderWidth = 1
+            $0.addRightPadding(width: CGFloat(10))
+            $0.addRightImage(image: UIImage(systemName: "magnifyingglass")!)
+            $0.tintColor = .black
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(topView)
+        view.addSubviews(topView, titleLabel, yearLabel, yearTextField, schoolLabel, schoolTextField)
         topView.addSubviews(topTitleLabel, closeButton)
         
         topView.snp.makeConstraints {
@@ -69,5 +113,49 @@ extension SelectCollegeViewController {
             $0.trailing.equalToSuperview().offset(-15)
             $0.centerY.equalToSuperview()
         }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(topView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+        yearLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        
+        yearTextField.snp.makeConstraints {
+            $0.top.equalTo(yearLabel.snp.bottom).offset(10)
+            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
+        schoolLabel.snp.makeConstraints {
+            $0.top.equalTo(yearTextField.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        
+        schoolTextField.snp.makeConstraints {
+            $0.top.equalTo(schoolLabel.snp.bottom).offset(10)
+            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+    }
+    
+    // MARK: - Methods
+    
+    private func setDelegate() {
+        schoolTextField.delegate = self
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension SelectCollegeViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.backgroundColor = .white
     }
 }
