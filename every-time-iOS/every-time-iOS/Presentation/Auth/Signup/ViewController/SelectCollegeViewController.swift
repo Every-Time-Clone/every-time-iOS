@@ -219,6 +219,7 @@ extension SelectCollegeViewController {
     private func setAddTarget() {
         schoolTextField.addTarget(self, action: #selector(schoolTextFieldDidChange), for: .editingChanged)
         closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(nextButtonDidTap), for: .touchUpInside)
     }
     
     private func setMenu() {
@@ -242,6 +243,12 @@ extension SelectCollegeViewController {
     
     @objc private func closeButtonDidTap() {
         dismiss(animated: true)
+    }
+    
+    @objc private func nextButtonDidTap() {
+        let termsVC = TermsViewController()
+        termsVC.modalPresentationStyle = .overFullScreen
+        present(termsVC, animated: false)
     }
 }
 
