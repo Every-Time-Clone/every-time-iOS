@@ -68,6 +68,7 @@ extension TermsViewController {
     private func setLayout() {
         view.addSubviews(topView, scrollView)
         topView.addSubviews(topTitleLabel, closeButton, backButton)
+        scrollView.addSubviews(titleLabel)
         
         topView.snp.makeConstraints {
             $0.height.equalTo(44)
@@ -92,6 +93,11 @@ extension TermsViewController {
         backButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(15)
             $0.centerY.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().offset(20)
         }
     }
 }
