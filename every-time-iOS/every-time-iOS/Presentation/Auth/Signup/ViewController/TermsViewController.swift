@@ -100,4 +100,16 @@ extension TermsViewController {
             $0.leading.equalToSuperview().offset(20)
         }
     }
+    
+    // MARK: - Methods
+    
+    private func setAddTarget() {
+        backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func backButtonDidTap() {
+        dismiss(animated: false)
+    }
 }
