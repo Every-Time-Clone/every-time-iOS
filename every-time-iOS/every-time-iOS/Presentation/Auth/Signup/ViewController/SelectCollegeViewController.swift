@@ -24,7 +24,8 @@ class SelectCollegeViewController: UIViewController {
     private let schoolLabel: UILabel = UILabel()
     private let schoolTextField: UITextField = UITextField()
     private let nextButton: UIButton = UIButton()
-    private let schoolTableView: UITableView = UITableView(frame: .zero, style: .plain)
+    private let scrollView: UIScrollView = UIScrollView()
+    private let schoolTableView: SchoolTableView = SchoolTableView(frame: .zero, style: .plain)
     
     // MARK: - View Life Cycle
     
@@ -46,6 +47,10 @@ extension SelectCollegeViewController {
         view.backgroundColor = .white
         
         topView.do {
+            $0.backgroundColor = .white
+        }
+        
+        scrollView.do {
             $0.backgroundColor = .white
         }
         
@@ -72,7 +77,6 @@ extension SelectCollegeViewController {
         
         yearTextField.do {
             $0.backgroundColor = .cyan
-            $0.inputView = pickerView
         }
         
         schoolLabel.do {
@@ -98,6 +102,8 @@ extension SelectCollegeViewController {
         
         schoolTableView.do {
             $0.backgroundColor = .yellow
+            $0.isScrollEnabled = false
+            $0.register(SchoolTableViewCell.self, forCellReuseIdentifier: SchoolTableViewCell.cellIdentifier)
         }
         
         nextButton.do {
@@ -115,7 +121,9 @@ extension SelectCollegeViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(topView, titleLabel, yearLabel, yearTextField, schoolLabel, schoolTextField, schoolTableView, nextButton)
+        view.addSubviews(topView, scrollView)
+        scrollView.addSubview(schoolTableView)
+        scrollView.addSubviews(titleLabel, yearLabel, yearTextField, schoolLabel, schoolTextField, schoolTableView, nextButton)
         topView.addSubviews(topTitleLabel, closeButton)
         
         topView.snp.makeConstraints {
@@ -123,55 +131,61 @@ extension SelectCollegeViewController {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(topView.snp.bottom)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
+        
         topTitleLabel.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
         }
-        
+
         closeButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-15)
             $0.centerY.equalToSuperview()
         }
-        
+
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(topView.snp.bottom).offset(20)
+            $0.top.equalToSuperview().offset(20)
             $0.leading.equalToSuperview().offset(20)
         }
-        
+
         yearLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(25)
         }
-        
+
         yearTextField.snp.makeConstraints {
             $0.top.equalTo(yearLabel.snp.bottom).offset(10)
             $0.leading.equalTo(titleLabel)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
         }
-        
+
         schoolLabel.snp.makeConstraints {
             $0.top.equalTo(yearTextField.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(25)
         }
-        
+
         schoolTextField.snp.makeConstraints {
             $0.top.equalTo(schoolLabel.snp.bottom).offset(10)
             $0.leading.equalTo(titleLabel)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
         }
-        
+
         schoolTableView.snp.makeConstraints {
             $0.top.equalTo(schoolTextField.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(nextButton.snp.top)
         }
-        
+
         nextButton.snp.makeConstraints {
-            $0.top.equalTo(schoolTableView.snp.bottom)
             $0.leading.equalTo(yearTextField.snp.leading)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
+            $0.bottom.equalToSuperview().offset(-20)
         }
     }
     
@@ -179,6 +193,8 @@ extension SelectCollegeViewController {
     
     private func setDelegate() {
         schoolTextField.delegate = self
+        schoolTableView.dataSource = self
+//        schoolTableView.delegate = self
     }
     
     private func setAddTarget() {
@@ -188,7 +204,7 @@ extension SelectCollegeViewController {
     // MARK: - @objc Methods
     
     @objc private func schoolTextFieldDidChange() {
-        print(schoolTextField.text)
+        print(schoolTextField.text!)
     }
 }
 
@@ -198,5 +214,19 @@ extension SelectCollegeViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.backgroundColor = .white
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension SelectCollegeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SchoolTableViewCell.cellIdentifier, for: indexPath) as! SchoolTableViewCell
+        return cell
     }
 }
