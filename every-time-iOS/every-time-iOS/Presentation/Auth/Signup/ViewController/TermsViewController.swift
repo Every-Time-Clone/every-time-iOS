@@ -28,6 +28,7 @@ final class TermsViewController: UIViewController {
         
         setUI()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -105,11 +106,16 @@ extension TermsViewController {
     
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
         dismiss(animated: false)
+    }
+    
+    @objc private func closeButtonDidTap() {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
     }
 }
