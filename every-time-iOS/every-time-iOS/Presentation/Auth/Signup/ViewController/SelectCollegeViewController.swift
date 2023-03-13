@@ -19,13 +19,18 @@ class SelectCollegeViewController: UIViewController {
     private let closeButton: UIButton = UIButton()
     private let titleLabel: UILabel = UILabel()
     private let yearLabel: UILabel = UILabel()
-    private let yearTextField: UITextField = UITextField()
+    private let yearButton: UIButton = UIButton()
+    private let classLabel: UILabel = UILabel()
     private let pickerView: UIPickerView = UIPickerView()
     private let schoolLabel: UILabel = UILabel()
     private let schoolTextField: UITextField = UITextField()
     private let nextButton: UIButton = UIButton()
     private let scrollView: UIScrollView = UIScrollView()
     private let schoolTableView: SchoolTableView = SchoolTableView(frame: .zero, style: .plain)
+    
+    // MARK: - Properties
+    
+    var yearMenuActions: [UIAction] = []
     
     // MARK: - View Life Cycle
     
@@ -36,6 +41,7 @@ class SelectCollegeViewController: UIViewController {
         setLayout()
         setDelegate()
         setAddTarget()
+        setMenu()
     }
 }
 
@@ -75,8 +81,16 @@ extension SelectCollegeViewController {
             $0.textColor = .darkGray
         }
         
-        yearTextField.do {
-            $0.backgroundColor = .cyan
+        yearButton.do {
+            $0.backgroundColor = UIColor(r: 249, g: 249, b: 248)
+            $0.layer.cornerRadius = 10
+            $0.layer.borderColor = UIColor.systemGray6.cgColor
+            $0.layer.borderWidth = 1
+        }
+        
+        classLabel.do {
+            $0.font = .systemFont(ofSize: 17)
+            $0.text = "연도 선택 (학번)"
         }
         
         schoolLabel.do {
@@ -123,7 +137,8 @@ extension SelectCollegeViewController {
     private func setLayout() {
         view.addSubviews(topView, scrollView)
         scrollView.addSubview(schoolTableView)
-        scrollView.addSubviews(titleLabel, yearLabel, yearTextField, schoolLabel, schoolTextField, schoolTableView, nextButton)
+        scrollView.addSubviews(titleLabel, yearLabel, yearButton, schoolLabel, schoolTextField, schoolTableView, nextButton)
+        yearButton.addSubview(classLabel)
         topView.addSubviews(topTitleLabel, closeButton)
         
         topView.snp.makeConstraints {
@@ -156,15 +171,20 @@ extension SelectCollegeViewController {
             $0.leading.equalToSuperview().offset(25)
         }
 
-        yearTextField.snp.makeConstraints {
+        yearButton.snp.makeConstraints {
             $0.top.equalTo(yearLabel.snp.bottom).offset(10)
             $0.leading.equalTo(titleLabel)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
         }
+        
+        classLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(10)
+        }
 
         schoolLabel.snp.makeConstraints {
-            $0.top.equalTo(yearTextField.snp.bottom).offset(20)
+            $0.top.equalTo(yearButton.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(25)
         }
 
@@ -182,7 +202,7 @@ extension SelectCollegeViewController {
         }
 
         nextButton.snp.makeConstraints {
-            $0.leading.equalTo(yearTextField.snp.leading)
+            $0.leading.equalTo(yearButton.snp.leading)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
             $0.bottom.equalToSuperview().offset(-20)
@@ -194,11 +214,23 @@ extension SelectCollegeViewController {
     private func setDelegate() {
         schoolTextField.delegate = self
         schoolTableView.dataSource = self
-//        schoolTableView.delegate = self
     }
     
     private func setAddTarget() {
         schoolTextField.addTarget(self, action: #selector(schoolTextFieldDidChange), for: .editingChanged)
+    }
+    
+    private func setMenu() {
+        let firstAction = UIAction(title: "연도 선택") { _ in }
+        yearMenuActions.append(firstAction)
+        for year in (1994...2023).reversed() {
+            yearMenuActions.append(UIAction(title: "\(year)학번", state: .off, handler: { action in
+                self.classLabel.text = "\(year)힉번"
+            }))
+        }
+        let menu = UIMenu(children: yearMenuActions)
+        yearButton.showsMenuAsPrimaryAction = true
+        yearButton.menu = menu
     }
     
     // MARK: - @objc Methods
@@ -213,7 +245,9 @@ extension SelectCollegeViewController {
 extension SelectCollegeViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.backgroundColor = .white
+        if textField == schoolTextField {
+            textField.backgroundColor = .white
+        }
     }
 }
 
