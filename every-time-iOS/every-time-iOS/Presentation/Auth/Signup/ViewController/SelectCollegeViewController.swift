@@ -218,6 +218,7 @@ extension SelectCollegeViewController {
     
     private func setAddTarget() {
         schoolTextField.addTarget(self, action: #selector(schoolTextFieldDidChange), for: .editingChanged)
+        closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
     }
     
     private func setMenu() {
@@ -237,6 +238,10 @@ extension SelectCollegeViewController {
     
     @objc private func schoolTextFieldDidChange() {
         print(schoolTextField.text!)
+    }
+    
+    @objc private func closeButtonDidTap() {
+        dismiss(animated: true)
     }
 }
 
