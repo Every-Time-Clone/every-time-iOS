@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
-		AB137F0B29C1EA0A00804ACD /* TermsTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */; };
-		AB137F0D29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0C29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift */; };
+		AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */; };
+		AB137F0D29C1EA9100804ACD /* TermDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */; };
 		AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0F29C1EB8C00804ACD /* TermModel.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
@@ -88,8 +88,8 @@
 
 /* Begin PBXFileReference section */
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
-		AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsTitleTableViewCell.swift; sourceTree = "<group>"; };
-		AB137F0C29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTitleTableViewCell.swift; sourceTree = "<group>"; };
+		AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F0F29C1EB8C00804ACD /* TermModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermModel.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
@@ -274,8 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */,
-				AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */,
-				AB137F0C29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift */,
+				AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */,
+				AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -692,7 +692,7 @@
 				AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */,
 				AB9A61F5299CC439005CA2DB /* MenuBoardMyListViewController.swift in Sources */,
 				AB676B6D29BE123000387247 /* SchoolTableViewCell.swift in Sources */,
-				AB137F0D29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift in Sources */,
+				AB137F0D29C1EA9100804ACD /* TermDescriptionTableViewCell.swift in Sources */,
 				ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */,
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
 				AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */,
@@ -719,7 +719,7 @@
 				ABF833772976797B00E3DC16 /* MenuViewController.swift in Sources */,
 				ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */,
 				ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */,
-				AB137F0B29C1EA0A00804ACD /* TermsTitleTableViewCell.swift in Sources */,
+				AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */,
 				AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */,
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  TermsTitleTableViewCell.swift
+//  TermsDescriptionTableViewCell.swift
 //  every-time-iOS
 //
 //  Created by 김민 on 2023/03/15.
@@ -10,10 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
-final class TermsTitleTableViewCell: UITableViewCell {
+final class TermDescriptionTableViewCell: UITableViewCell {
 
-    // MARK: - Initializer
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -26,12 +24,12 @@ final class TermsTitleTableViewCell: UITableViewCell {
     }
 }
 
-extension TermsTitleTableViewCell {
+extension TermDescriptionTableViewCell {
     
     // MARK: - UI Components Property
     
     private func setUI() {
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .cyan
     }
     
     // MARK: - Layout Helper

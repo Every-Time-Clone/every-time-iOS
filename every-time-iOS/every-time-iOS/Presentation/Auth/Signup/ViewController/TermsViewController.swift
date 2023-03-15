@@ -24,7 +24,7 @@ final class TermsViewController: UIViewController {
     
     // MARK: - Properties
 
-    let termsList
+    var termsList: [TermModel] = TermModel.termDummyData()
     
     // MARK: - View Life Cycle
 
@@ -68,8 +68,8 @@ extension TermsViewController {
             $0.backgroundColor = .yellow
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.separatorStyle = .none
-            $0.register(TermsTitleTableViewCell.self, forCellReuseIdentifier: TermsTitleTableViewCell.cellIdentifier)
-            $0.register(TermsDescriptionTableViewCell.self, forCellReuseIdentifier: TermsDescriptionTableViewCell.cellIdentifier)
+            $0.register(TermTitleTableViewCell.self, forCellReuseIdentifier: TermTitleTableViewCell.cellIdentifier)
+            $0.register(TermDescriptionTableViewCell.self, forCellReuseIdentifier: TermDescriptionTableViewCell.cellIdentifier)
         }
     }
     
@@ -114,6 +114,7 @@ extension TermsViewController {
     
     private func setDelegate() {
         termsTableView.dataSource = self
+        termsTableView.delegate = self
     }
     
     // MARK: - @objc Methods
@@ -132,14 +133,36 @@ extension TermsViewController {
 extension TermsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
+        return termsList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        if !termsList[section].isOpened {
+            return 1
+        } else {
+            return 2
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TermDescriptionTableViewCell.cellIdentifier, for: indexPath) as! TermDescriptionTableViewCell
+            return cell
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension TermsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            termsList[indexPath.section].isOpened = !termsList[indexPath.section].isOpened
+            tableView.reloadSections([indexPath.section], with: .none)
+        }
     }
 }
