@@ -22,6 +22,10 @@ final class TermsViewController: UIViewController {
     private let checkButton: UIButton = UIButton()
     private let termsTableView: UITableView = UITableView(frame: .zero, style: .plain)
     
+    // MARK: - Properties
+
+    let termsList
+    
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
