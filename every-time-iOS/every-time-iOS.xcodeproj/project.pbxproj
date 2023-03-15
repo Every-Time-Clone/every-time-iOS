@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
+		AB137F0B29C1EA0A00804ACD /* TermsTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
@@ -38,6 +39,7 @@
 		AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B572429A76C420059EBDC /* BoardOptionTableViewCell.swift */; };
 		AB8B572729A777650059EBDC /* AnonymityCheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B572629A777650059EBDC /* AnonymityCheckTableViewCell.swift */; };
 		AB91DC6E29BF2DDE00037914 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91DC6D29BF2DDE00037914 /* TermsViewController.swift */; };
+		AB91DC7029BF335C00037914 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91DC6F29BF335C00037914 /* CheckButton.swift */; };
 		AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */; };
 		AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */; };
 		AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */; };
@@ -84,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
+		AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsTitleTableViewCell.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 		AB8B572429A76C420059EBDC /* BoardOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardOptionTableViewCell.swift; sourceTree = "<group>"; };
 		AB8B572629A777650059EBDC /* AnonymityCheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymityCheckTableViewCell.swift; sourceTree = "<group>"; };
 		AB91DC6D29BF2DDE00037914 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		AB91DC6F29BF335C00037914 /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		AB9A61EB299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB9A61EF299CB881005CA2DB /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainMenuModel.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				AB0A31C929B999590095F852 /* SchoolTableView.swift */,
+				AB91DC6F29BF335C00037914 /* CheckButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */,
+				AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -697,9 +703,11 @@
 				ABF833772976797B00E3DC16 /* MenuViewController.swift in Sources */,
 				ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */,
 				ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */,
+				AB137F0B29C1EA0A00804ACD /* TermsTitleTableViewCell.swift in Sources */,
 				AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */,
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
+				AB91DC7029BF335C00037914 /* CheckButton.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
 				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
 				ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */,

@@ -19,7 +19,8 @@ final class TermsViewController: UIViewController {
     private let closeButton: UIButton = UIButton()
     private let backButton: UIButton = UIButton()
     private let scrollView: UIScrollView = UIScrollView()
-    private let titleLabel: UILabel = UILabel()
+    private let checkButton: UIButton = UIButton()
+    private let termsTableView: UITableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - View Life Cycle
 
@@ -45,7 +46,7 @@ extension TermsViewController {
         }
         
         scrollView.do {
-            $0.backgroundColor = .red
+            $0.backgroundColor = .white
         }
         
         closeButton.do {
@@ -58,28 +59,20 @@ extension TermsViewController {
             $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         }
         
-        titleLabel.do {
-            $0.text = "약관 동의"
-            $0.font = .systemFont(ofSize: 20, weight: .bold)
+        termsTableView.do {
+            $0.backgroundColor = .yellow
         }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(topView, scrollView)
+        view.addSubviews(topView, termsTableView)
         topView.addSubviews(topTitleLabel, closeButton, backButton)
-        scrollView.addSubviews(titleLabel)
         
         topView.snp.makeConstraints {
             $0.height.equalTo(44)
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        scrollView.snp.makeConstraints {
-            $0.top.equalTo(topView.snp.bottom)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.bottom.equalToSuperview()
         }
 
         closeButton.snp.makeConstraints {
@@ -96,9 +89,10 @@ extension TermsViewController {
             $0.centerY.equalToSuperview()
         }
         
-        titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(20)
-            $0.leading.equalToSuperview().offset(20)
+        termsTableView.snp.makeConstraints {
+            $0.top.equalTo(topView.snp.bottom)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
         }
     }
     
