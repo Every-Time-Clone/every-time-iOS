@@ -30,6 +30,7 @@ final class TermsViewController: UIViewController {
         setUI()
         setLayout()
         setAddTarget()
+        setDelegate()
     }
 }
 
@@ -61,6 +62,10 @@ extension TermsViewController {
         
         termsTableView.do {
             $0.backgroundColor = .yellow
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.separatorStyle = .none
+            $0.register(TermsTitleTableViewCell.self, forCellReuseIdentifier: TermsTitleTableViewCell.cellIdentifier)
+            $0.register(TermsDescriptionTableViewCell.self, forCellReuseIdentifier: TermsDescriptionTableViewCell.cellIdentifier)
         }
     }
     
@@ -101,6 +106,10 @@ extension TermsViewController {
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func setDelegate() {
+        termsTableView.delegate = self
     }
     
     // MARK: - @objc Methods
