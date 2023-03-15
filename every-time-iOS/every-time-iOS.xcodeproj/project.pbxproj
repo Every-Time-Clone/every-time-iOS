@@ -10,6 +10,7 @@
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
 		AB137F0B29C1EA0A00804ACD /* TermsTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */; };
 		AB137F0D29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0C29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift */; };
+		AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0F29C1EB8C00804ACD /* TermModel.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
@@ -89,6 +90,7 @@
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
 		AB137F0A29C1EA0A00804ACD /* TermsTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsTitleTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F0C29C1EA9100804ACD /* TermsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		AB137F0F29C1EB8C00804ACD /* TermModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermModel.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AB137F0E29C1EB7F00804ACD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB137F0F29C1EB8C00804ACD /* TermModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AB1BF6B229AC43F3002DBACF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +233,7 @@
 		AB37354C29B57DA800FC3EF7 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				AB137F0E29C1EB7F00804ACD /* Model */,
 				AB676B6B29BE121500387247 /* Cell */,
 				AB0A31C829B999320095F852 /* View */,
 				AB0A31C729B993970095F852 /* ViewController */,
@@ -695,6 +706,7 @@
 				ABF833752976797300E3DC16 /* TImetableViewController.swift in Sources */,
 				AB91DC6E29BF2DDE00037914 /* TermsViewController.swift in Sources */,
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
+				AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */,
 				AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */,
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
 				AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */,
