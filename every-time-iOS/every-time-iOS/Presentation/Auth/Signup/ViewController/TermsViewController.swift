@@ -24,7 +24,10 @@ final class TermsViewController: UIViewController {
     
     // MARK: - Properties
 
-    var termsList: [TermModel] = TermModel.termDummyData()
+    var termsList: [TermModel] = [TermModel(isOpened: false, termTitle: "아래 약관에 모두 동의합니다."),
+                                  TermModel(isOpened: true, termTitle: "서비스 이용 약관 동의(필수)"),
+                                  TermModel(isOpened: true, termTitle: "개인정보 수집 및 이용 동의(필수)"),
+                                  TermModel(isOpened: true, termTitle: "커뮤니티 이용 규칙 확인(필수)")]
     
     // MARK: - View Life Cycle
 
@@ -160,9 +163,21 @@ extension TermsViewController: UITableViewDataSource {
 extension TermsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            termsList[indexPath.section].isOpened = !termsList[indexPath.section].isOpened
-            tableView.reloadSections([indexPath.section], with: .none)
+        if indexPath.section == 0 {
+            for i in 0..<termsList.count {
+                termsList[i].isOpened = false
+            }
+            tableView.reloadData()
+        } else {
+            if indexPath.row == 0 {
+                termsList[indexPath.section].isOpened = !termsList[indexPath.section].isOpened
+                tableView.reloadSections([indexPath.section], with: .none)
+            }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 { return CGFloat(40) }
+        else { return CGFloat(100) }
     }
 }

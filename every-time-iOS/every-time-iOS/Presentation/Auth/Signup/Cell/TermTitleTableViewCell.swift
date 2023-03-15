@@ -11,6 +11,11 @@ import SnapKit
 import Then
 
 final class TermTitleTableViewCell: UITableViewCell {
+    
+    // MARK: - UI Components
+    
+    private let checkBoxImageView: UIImageView = UIImageView()
+    private let termTitleLabel: UILabel = UILabel()
 
     // MARK: - Initializer
     
@@ -31,12 +36,34 @@ extension TermTitleTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .white
+        
+        checkBoxImageView.do {
+            $0.image = UIImage(systemName: "square")
+            $0.tintColor = .lightGray
+        }
+        
+        termTitleLabel.do {
+            $0.text = "서비스 이용 약관 저쩌구"
+            $0.font = .systemFont(ofSize: 12)
+            $0.textColor = .darkGray
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
+        contentView.addSubviews(checkBoxImageView, termTitleLabel)
         
+        checkBoxImageView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(15)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(15)
+        }
+        
+        termTitleLabel.snp.makeConstraints {
+            $0.leading.equalTo(checkBoxImageView.snp.trailing).offset(5)
+            $0.centerY.equalToSuperview()
+        }
     }
 }
