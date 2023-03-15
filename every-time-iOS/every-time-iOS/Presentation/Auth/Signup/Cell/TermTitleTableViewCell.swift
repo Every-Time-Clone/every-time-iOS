@@ -44,7 +44,6 @@ extension TermTitleTableViewCell {
         }
         
         termTitleLabel.do {
-            $0.text = "서비스 이용 약관 저쩌구"
             $0.font = .systemFont(ofSize: 12)
             $0.textColor = .darkGray
         }
@@ -65,5 +64,11 @@ extension TermTitleTableViewCell {
             $0.leading.equalTo(checkBoxImageView.snp.trailing).offset(5)
             $0.centerY.equalToSuperview()
         }
+    }
+    
+    // MARK: - Methods
+    
+    func setDataBind(title: String) {
+        termTitleLabel.text = title
     }
 }
