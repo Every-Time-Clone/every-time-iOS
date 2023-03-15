@@ -71,6 +71,7 @@ extension TermsViewController {
             $0.backgroundColor = .yellow
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.separatorStyle = .none
+            $0.register(AllAgreeTableViewCell.self, forCellReuseIdentifier: AllAgreeTableViewCell.cellIdentifier)
             $0.register(TermTitleTableViewCell.self, forCellReuseIdentifier: TermTitleTableViewCell.cellIdentifier)
             $0.register(TermDescriptionTableViewCell.self, forCellReuseIdentifier: TermDescriptionTableViewCell.cellIdentifier)
         }
@@ -148,13 +149,18 @@ extension TermsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
-            cell.setDataBind(title: termsList[indexPath.section].termTitle)
+        if indexPath.section == 0  {
+            let cell = tableView.dequeueReusableCell(withIdentifier: AllAgreeTableViewCell.cellIdentifier, for: indexPath)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TermDescriptionTableViewCell.cellIdentifier, for: indexPath) as! TermDescriptionTableViewCell
-            return cell
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
+                cell.setDataBind(title: termsList[indexPath.section].termTitle)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TermDescriptionTableViewCell.cellIdentifier, for: indexPath) as! TermDescriptionTableViewCell
+                return cell
+            }
         }
     }
 }
