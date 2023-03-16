@@ -31,6 +31,7 @@ final class TermsViewController: UIViewController {
                                   TermModel(isOpened: true, isSatisfied: false, termTitle: "광고성 정보 수신 동의(선택)"),
                                   TermModel(isOpened: true, isSatisfied: false, termTitle: "본인 명의를 이용하여 가입을 진행하겠습니다."),
                                   TermModel(isOpened: true, isSatisfied: false, termTitle: "만 14세 이상입니다.")]
+    var delegate: TermFooterViewDelegate?
     
     // MARK: - View Life Cycle
 
@@ -205,6 +206,7 @@ extension TermsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == termsList.count - 1 {
             let view = TermsFooterView()
+            view.delegate = self
             return view
         } else {
             return UIView()
@@ -213,5 +215,18 @@ extension TermsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return section == termsList.count - 1 ? CGFloat(120) : CGFloat()
+    }
+}
+
+// MARK: - TermFooterViewDelegate
+
+extension TermsViewController: TermFooterViewDelegate {
+    
+    func phoneAuthenticationButtonDidTap() {
+        print("휴대폰 인증")
+    }
+    
+    func iPinAuthenticationButtonDidTap() {
+        print("아이핀 인증")
     }
 }

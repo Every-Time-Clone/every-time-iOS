@@ -10,6 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
+protocol TermFooterViewDelegate {
+    func phoneAuthenticationButtonDidTap()
+    func iPinAuthenticationButtonDidTap() 
+}
+
 class TermsFooterView: UIView {
     
     // MARK: - UI Components
@@ -18,6 +23,10 @@ class TermsFooterView: UIView {
     private let phoneAuthenticationButton: UIButton = UIButton()
     private let iPinAuthenticationButton: UIButton = UIButton()
     
+    // MARK: - Properties
+    
+    var delegate: TermFooterViewDelegate?
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -25,6 +34,7 @@ class TermsFooterView: UIView {
         
         setUI()
         setLayout()
+        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -74,5 +84,22 @@ extension TermsFooterView {
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
         }
+    }
+    
+    // MARK: - Methods
+    
+    private func setAddTarget() {
+        phoneAuthenticationButton.addTarget(self, action: #selector(phoneAuthenticationButtonDidTap), for: .touchUpInside)
+        iPinAuthenticationButton.addTarget(self, action: #selector(iPinAuthenticationButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func phoneAuthenticationButtonDidTap() {
+        self.delegate?.phoneAuthenticationButtonDidTap()
+    }
+    
+    @objc private func iPinAuthenticationButtonDidTap() {
+        self.delegate?.iPinAuthenticationButtonDidTap()
     }
 }
