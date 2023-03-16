@@ -9,5 +9,6 @@ import Foundation
 
 struct TermModel {
     var isOpened: Bool
+    var isSatisfied: Bool
     var termTitle: String
 }

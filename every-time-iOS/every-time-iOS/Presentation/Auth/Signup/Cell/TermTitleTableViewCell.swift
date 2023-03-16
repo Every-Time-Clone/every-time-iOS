@@ -70,5 +70,13 @@ extension TermTitleTableViewCell {
     
     func setDataBind(_ model: TermModel) {
         termTitleLabel.text = model.termTitle
+        
+        if model.isSatisfied {
+            checkBoxImageView.image = UIImage(systemName: "checkmark.square.fill")
+            checkBoxImageView.tintColor = .everytimeRed
+        } else {
+            checkBoxImageView.image = UIImage(systemName: "square")
+            checkBoxImageView.tintColor = .lightGray
+        }
     }
 }

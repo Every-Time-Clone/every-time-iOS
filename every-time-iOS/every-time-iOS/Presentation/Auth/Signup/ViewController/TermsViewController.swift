@@ -24,13 +24,13 @@ final class TermsViewController: UIViewController {
     
     // MARK: - Properties
 
-    var termsList: [TermModel] = [TermModel(isOpened: false, termTitle: "아래 약관에 모두 동의합니다."),
-                                  TermModel(isOpened: true, termTitle: "서비스 이용 약관 동의(필수)"),
-                                  TermModel(isOpened: true, termTitle: "개인정보 수집 및 이용 동의(필수)"),
-                                  TermModel(isOpened: true, termTitle: "커뮤니티 이용 규칙 확인(필수)"),
-                                  TermModel(isOpened: true, termTitle: "광고성 정보 수신 동의(선택)"),
-                                  TermModel(isOpened: true, termTitle: "본인 명의를 이용하여 가입을 진행하겠습니다."),
-                                  TermModel(isOpened: true, termTitle: "만 14세 이상입니다.")]
+    var termsList: [TermModel] = [TermModel(isOpened: false, isSatisfied: false, termTitle: "아래 약관에 모두 동의합니다."),
+                                  TermModel(isOpened: true, isSatisfied: false, termTitle: "서비스 이용 약관 동의(필수)"),
+                                  TermModel(isOpened: true, isSatisfied: false, termTitle: "개인정보 수집 및 이용 동의(필수)"),
+                                  TermModel(isOpened: true, isSatisfied: false, termTitle: "커뮤니티 이용 규칙 확인(필수)"),
+                                  TermModel(isOpened: true, isSatisfied: false, termTitle: "광고성 정보 수신 동의(선택)"),
+                                  TermModel(isOpened: true, isSatisfied: false, termTitle: "본인 명의를 이용하여 가입을 진행하겠습니다."),
+                                  TermModel(isOpened: true, isSatisfied: false, termTitle: "만 14세 이상입니다.")]
     
     // MARK: - View Life Cycle
 
@@ -70,7 +70,7 @@ extension TermsViewController {
             $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.separatorStyle = .none
-            $0.register(AllAgreeTableViewCell.self, forCellReuseIdentifier: AllAgreeTableViewCell.cellIdentifier)
+            $0.showsVerticalScrollIndicator = false
             $0.register(TermTitleTableViewCell.self, forCellReuseIdentifier: TermTitleTableViewCell.cellIdentifier)
             $0.register(TermDescriptionTableViewCell.self, forCellReuseIdentifier: TermDescriptionTableViewCell.cellIdentifier)
         }
@@ -171,11 +171,14 @@ extension TermsViewController: UITableViewDelegate {
         if indexPath.section == 0 {
             for i in 1..<termsList.count-2 {
                 termsList[i].isOpened = false
+                termsList[i].isSatisfied = true
             }
+            termsList[0].isSatisfied = !termsList[0].isSatisfied
             tableView.reloadData()
         } else {
             if indexPath.row == 0 {
                 termsList[indexPath.section].isOpened = !termsList[indexPath.section].isOpened
+                termsList[indexPath.section].isSatisfied = !termsList[indexPath.section].isSatisfied
                 tableView.reloadSections([indexPath.section], with: .none)
             }
         }
