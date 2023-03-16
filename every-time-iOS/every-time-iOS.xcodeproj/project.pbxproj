@@ -13,6 +13,7 @@
 		AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0F29C1EB8C00804ACD /* TermModel.swift */; };
 		AB137F1429C1F9E800804ACD /* AllAgreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1329C1F9E800804ACD /* AllAgreeTableViewCell.swift */; };
 		AB137F1629C37EAF00804ACD /* TermsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1529C37EAF00804ACD /* TermsHeaderView.swift */; };
+		AB137F1829C37FD400804ACD /* TermsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1729C37FD400804ACD /* TermsFooterView.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
@@ -95,6 +96,7 @@
 		AB137F0F29C1EB8C00804ACD /* TermModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermModel.swift; sourceTree = "<group>"; };
 		AB137F1329C1F9E800804ACD /* AllAgreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAgreeTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F1529C37EAF00804ACD /* TermsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsHeaderView.swift; sourceTree = "<group>"; };
+		AB137F1729C37FD400804ACD /* TermsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsFooterView.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				AB0A31C929B999590095F852 /* SchoolTableView.swift */,
 				AB91DC6F29BF335C00037914 /* CheckButton.swift */,
 				AB137F1529C37EAF00804ACD /* TermsHeaderView.swift */,
+				AB137F1729C37FD400804ACD /* TermsFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				AB137F1629C37EAF00804ACD /* TermsHeaderView.swift in Sources */,
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
 				AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */,
+				AB137F1829C37FD400804ACD /* TermsFooterView.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
 				AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */,

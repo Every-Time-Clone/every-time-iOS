@@ -44,9 +44,13 @@ extension UIButton {
     }
     
     func setRedButton(_ title: String) {
-        setTitle(title, for: .normal)
-        setTitleColor(.white, for: .normal)
+        var attString = AttributedString(title)
+        attString.font = .systemFont(ofSize: 15, weight: .bold)
+        attString.foregroundColor = .white
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = attString
+        configuration = config
         backgroundColor = .everytimeRed
-        layer.cornerRadius = 8
+        layer.cornerRadius = 10
     }
 }

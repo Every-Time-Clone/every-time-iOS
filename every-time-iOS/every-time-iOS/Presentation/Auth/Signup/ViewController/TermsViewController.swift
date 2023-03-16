@@ -152,19 +152,6 @@ extension TermsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.section == 0  {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: AllAgreeTableViewCell.cellIdentifier, for: indexPath) as! AllAgreeTableViewCell
-//            return cell
-//        } else {
-//            if indexPath.row == 0 {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
-//                cell.setDataBind(termsList[indexPath.section])
-//                return cell
-//            } else {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: TermDescriptionTableViewCell.cellIdentifier, for: indexPath) as! TermDescriptionTableViewCell
-//                return cell
-//            }
-//        }
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
             cell.setDataBind(termsList[indexPath.section])
@@ -214,8 +201,7 @@ extension TermsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == termsList.count - 1 {
-            let view = UIView()
-            view.backgroundColor = .everytimeRed
+            let view = TermsFooterView()
             return view
         } else {
             return UIView()
@@ -223,6 +209,6 @@ extension TermsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return section == termsList.count - 1 ? CGFloat(100) : CGFloat()
+        return section == termsList.count - 1 ? CGFloat(120) : CGFloat()
     }
 }
