@@ -24,7 +24,7 @@ final class LoginViewController: UIViewController {
     private let findAccountButton: UIButton = UIButton()
     private let signupButton: UIButton = UIButton()
 
-    // MARK: - Initializer
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ extension LoginViewController {
         idTextField.do {
             $0.backgroundColor = .systemGray6
             $0.tintColor = .everytimeRed
-            $0.addLeftPadding()
+            $0.addLeftPadding(width: CGFloat(10))
             $0.layer.cornerRadius = 17
             $0.font = .systemFont(ofSize: 13)
             var attString = AttributedString("아이디")
@@ -71,7 +71,7 @@ extension LoginViewController {
         passwordTextField.do {
             $0.backgroundColor = .systemGray6
             $0.tintColor = .everytimeRed
-            $0.addLeftPadding()
+            $0.addLeftPadding(width: CGFloat(10))
             $0.layer.cornerRadius = 17
             $0.font = .systemFont(ofSize: 13)
             var attString = AttributedString("비밀번호")
@@ -210,7 +210,9 @@ extension LoginViewController {
     }
     
     @objc private func signupButtonDidTap() {
-        print("회원가입")
+        let selectCollegeVC = SelectCollegeViewController()
+        selectCollegeVC.modalPresentationStyle = .overFullScreen
+        present(selectCollegeVC, animated: true)
     }
 }
 
