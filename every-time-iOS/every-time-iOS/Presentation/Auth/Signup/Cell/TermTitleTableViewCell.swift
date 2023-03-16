@@ -68,7 +68,7 @@ extension TermTitleTableViewCell {
     
     // MARK: - Methods
     
-    func setDataBind(title: String) {
-        termTitleLabel.text = title
+    func setDataBind(_ model: TermModel) {
+        termTitleLabel.text = model.termTitle
     }
 }

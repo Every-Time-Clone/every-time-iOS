@@ -20,14 +20,17 @@ final class TermsViewController: UIViewController {
     private let backButton: UIButton = UIButton()
     private let scrollView: UIScrollView = UIScrollView()
     private let checkButton: UIButton = UIButton()
-    private let termsTableView: UITableView = UITableView(frame: .zero, style: .plain)
+    private let termsTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - Properties
 
     var termsList: [TermModel] = [TermModel(isOpened: false, termTitle: "아래 약관에 모두 동의합니다."),
                                   TermModel(isOpened: true, termTitle: "서비스 이용 약관 동의(필수)"),
                                   TermModel(isOpened: true, termTitle: "개인정보 수집 및 이용 동의(필수)"),
-                                  TermModel(isOpened: true, termTitle: "커뮤니티 이용 규칙 확인(필수)")]
+                                  TermModel(isOpened: true, termTitle: "커뮤니티 이용 규칙 확인(필수)"),
+                                  TermModel(isOpened: true, termTitle: "광고성 정보 수신 동의(선택)"),
+                                  TermModel(isOpened: true, termTitle: "본인 명의를 이용하여 가입을 진행하겠습니다."),
+                                  TermModel(isOpened: true, termTitle: "만 14세 이상입니다.")]
     
     // MARK: - View Life Cycle
 
@@ -53,10 +56,6 @@ extension TermsViewController {
             $0.font = .systemFont(ofSize: 17, weight: .semibold)
         }
         
-        scrollView.do {
-            $0.backgroundColor = .white
-        }
-        
         closeButton.do {
             $0.tintColor = .black
             $0.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -68,7 +67,7 @@ extension TermsViewController {
         }
         
         termsTableView.do {
-            $0.backgroundColor = .yellow
+            $0.backgroundColor = .clear
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.separatorStyle = .none
             $0.register(AllAgreeTableViewCell.self, forCellReuseIdentifier: AllAgreeTableViewCell.cellIdentifier)
@@ -141,26 +140,38 @@ extension TermsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !termsList[section].isOpened {
+        if section == 0 {
             return 1
         } else {
-            return 2
+            if !termsList[section].isOpened {
+                return 1
+            } else {
+                return 2
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0  {
-            let cell = tableView.dequeueReusableCell(withIdentifier: AllAgreeTableViewCell.cellIdentifier, for: indexPath)
+//        if indexPath.section == 0  {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: AllAgreeTableViewCell.cellIdentifier, for: indexPath) as! AllAgreeTableViewCell
+//            return cell
+//        } else {
+//            if indexPath.row == 0 {
+//                let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
+//                cell.setDataBind(termsList[indexPath.section])
+//                return cell
+//            } else {
+//                let cell = tableView.dequeueReusableCell(withIdentifier: TermDescriptionTableViewCell.cellIdentifier, for: indexPath) as! TermDescriptionTableViewCell
+//                return cell
+//            }
+//        }
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
+            cell.setDataBind(termsList[indexPath.section])
             return cell
         } else {
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TermTitleTableViewCell.cellIdentifier, for: indexPath) as! TermTitleTableViewCell
-                cell.setDataBind(title: termsList[indexPath.section].termTitle)
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TermDescriptionTableViewCell.cellIdentifier, for: indexPath) as! TermDescriptionTableViewCell
-                return cell
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: TermDescriptionTableViewCell.cellIdentifier, for: indexPath) as! TermDescriptionTableViewCell
+            return cell
         }
     }
 }
@@ -171,7 +182,7 @@ extension TermsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            for i in 0..<termsList.count {
+            for i in 1..<termsList.count-2 {
                 termsList[i].isOpened = false
             }
             tableView.reloadData()
@@ -186,5 +197,32 @@ extension TermsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 { return CGFloat(40) }
         else { return CGFloat(100) }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let view = TermsHeaderView()
+            return view
+        } else {
+            return UIView()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? CGFloat(60) : CGFloat()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == termsList.count - 1 {
+            let view = UIView()
+            view.backgroundColor = .everytimeRed
+            return view
+        } else {
+            return UIView()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return section == termsList.count - 1 ? CGFloat(100) : CGFloat()
     }
 }
