@@ -223,10 +223,15 @@ extension TermsViewController: UITableViewDelegate {
 extension TermsViewController: TermFooterViewDelegate {
     
     func phoneAuthenticationButtonDidTap() {
-        print("휴대폰 인증")
+        let signupVC = SignupViewController()
+        signupVC.modalPresentationStyle = .overFullScreen
+        present(signupVC, animated: false)
+        
     }
     
     func iPinAuthenticationButtonDidTap() {
-        print("아이핀 인증")
+        let signupVC = SignupViewController()
+        signupVC.modalPresentationStyle = .overFullScreen
+        present(signupVC, animated: false)
     }
 }
