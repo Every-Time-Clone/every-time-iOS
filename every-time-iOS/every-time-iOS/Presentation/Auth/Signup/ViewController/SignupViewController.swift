@@ -38,7 +38,7 @@ extension SignupViewController {
         view.backgroundColor = .white
         
         topTitleLabel.do {
-            $0.text = "회원가입"
+            $0.text = "회원 가입"
             $0.font = .systemFont(ofSize: 17, weight: .semibold)
         }
 
