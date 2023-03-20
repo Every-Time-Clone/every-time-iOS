@@ -35,5 +35,6 @@ extension AuthTextField {
         layer.borderColor = UIColor.systemGray5.cgColor
         layer.borderWidth = 1
         tintColor = .black
+        addLeftPadding(width: 10)
     }
 }

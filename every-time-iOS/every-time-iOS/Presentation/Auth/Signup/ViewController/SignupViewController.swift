@@ -19,7 +19,16 @@ final class SignupViewController: UIViewController {
     private let closeButton: UIButton = UIButton()
     private let backButton: UIButton = UIButton()
     private let titleLabel: UILabel = UILabel()
-    private let idTextField: UITextField = AuthTextField()
+    private let idView: AuthDescriptionView = AuthDescriptionView()
+    private let idTextField: AuthTextField = AuthTextField()
+    private let passwordView: AuthDescriptionView = AuthDescriptionView()
+    private let passwordTextField: AuthTextField = AuthTextField()
+    private let passwordCheckTextField: AuthTextField = AuthTextField()
+    private let emailView: AuthDescriptionView = AuthDescriptionView()
+    private let emailTextField: AuthTextField = AuthTextField()
+    private let nicknameView: AuthDescriptionView = AuthDescriptionView()
+    private let nicknameTextField: AuthTextField = AuthTextField()
+    private let signupButton: UIButton = UIButton()
 
     // MARK: - View Life Cycle
     
@@ -58,12 +67,22 @@ extension SignupViewController {
             $0.text = "회원 정보"
             $0.font = .systemFont(ofSize: 20, weight: .bold)
         }
+        
+        idView.setAuthLabel(title: "아이디", description: "영문,숫자,4~20자")
+        
+        passwordView.setAuthLabel(title: "비밀번호", description: "영문,숫자,특문이 2종류 이상 조합된 8~20자")
+        
+        emailView.setAuthLabel(title: "이메일", description: "아이디/비밀번호 찾기에 필요")
+        
+        nicknameView.setAuthLabel(title: "닉네임", description: "커뮤니티 활동에 필요")
+        
+        signupButton.setRedButton("회원가입")
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(topView, titleLabel, idTextField)
+        view.addSubviews(topView, titleLabel, idView, idTextField, passwordView, passwordTextField, passwordCheckTextField, emailView, emailTextField, nicknameView, nicknameTextField, signupButton)
         topView.addSubviews(topTitleLabel, closeButton, backButton)
 
         topView.snp.makeConstraints {
@@ -90,10 +109,69 @@ extension SignupViewController {
             $0.leading.equalToSuperview().offset(20)
         }
         
+        idView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(30)
+            $0.leading.equalTo(titleLabel).offset(5)
+            $0.centerX.equalToSuperview()
+        }
+        
         idTextField.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(idView.snp.bottom).offset(15)
             $0.leading.equalTo(titleLabel)
             $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
+        passwordView.snp.makeConstraints {
+            $0.top.equalTo(idTextField.snp.bottom).offset(30)
+            $0.leading.equalTo(titleLabel).offset(5)
+            $0.centerX.equalToSuperview()
+        }
+        
+        passwordTextField.snp.makeConstraints {
+            $0.top.equalTo(passwordView.snp.bottom).offset(15)
+            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
+        passwordCheckTextField.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(5)
+            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
+        emailView.snp.makeConstraints {
+            $0.top.equalTo(passwordCheckTextField.snp.bottom).offset(30)
+            $0.leading.equalTo(titleLabel).offset(5)
+            $0.centerX.equalToSuperview()
+        }
+        
+        emailTextField.snp.makeConstraints {
+            $0.top.equalTo(emailView.snp.bottom).offset(15)
+            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
+        nicknameView.snp.makeConstraints {
+            $0.top.equalTo(emailTextField.snp.bottom).offset(30)
+            $0.leading.equalTo(titleLabel).offset(5)
+            $0.centerX.equalToSuperview()
+        }
+        
+        nicknameTextField.snp.makeConstraints {
+            $0.top.equalTo(nicknameView.snp.bottom).offset(15)
+            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+        
+        signupButton.snp.makeConstraints {
+            $0.top.equalTo(nicknameTextField.snp.bottom).offset(30)
+            $0.centerX.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
             $0.height.equalTo(40)
         }
     }
