@@ -68,6 +68,16 @@ extension SignupViewController {
             $0.font = .systemFont(ofSize: 20, weight: .bold)
         }
         
+        passwordTextField.do {
+            $0.textContentType = .password
+            $0.isSecureTextEntry = true
+        }
+        
+        passwordCheckTextField.do {
+            $0.textContentType = .password
+            $0.isSecureTextEntry = true
+        }
+        
         idView.setAuthLabel(title: "아이디", description: "영문,숫자,4~20자")
         
         passwordView.setAuthLabel(title: "비밀번호", description: "영문,숫자,특문이 2종류 이상 조합된 8~20자")
