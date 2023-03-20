@@ -25,6 +25,7 @@
 		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
 		AB61432529C75A0C004B14DE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61432429C75A0C004B14DE /* SignupViewController.swift */; };
 		AB676B6D29BE123000387247 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */; };
+		AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7429C88C280068F40D /* AuthTextField.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
 		AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */; };
 		AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */; };
@@ -108,6 +109,7 @@
 		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		AB61432429C75A0C004B14DE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		AB7A5E7429C88C280068F40D /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */,
 				AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */,
 				AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */,
+				AB7A5E7429C88C280068F40D /* AuthTextField.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */,
 				AB8B572729A777650059EBDC /* AnonymityCheckTableViewCell.swift in Sources */,
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
+				AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */,
 				ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				AB9A61F7299CCF36005CA2DB /* PinMenuCollectionViewCell.swift in Sources */,

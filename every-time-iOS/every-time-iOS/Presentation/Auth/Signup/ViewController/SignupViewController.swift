@@ -18,6 +18,8 @@ final class SignupViewController: UIViewController {
     private let topTitleLabel: UILabel = UILabel()
     private let closeButton: UIButton = UIButton()
     private let backButton: UIButton = UIButton()
+    private let titleLabel: UILabel = UILabel()
+    private let idTextField: UITextField = AuthTextField()
 
     // MARK: - View Life Cycle
     
@@ -51,12 +53,17 @@ extension SignupViewController {
             $0.tintColor = .black
             $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         }
+        
+        titleLabel.do {
+            $0.text = "회원 정보"
+            $0.font = .systemFont(ofSize: 20, weight: .bold)
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(topView)
+        view.addSubviews(topView, titleLabel, idTextField)
         topView.addSubviews(topTitleLabel, closeButton, backButton)
 
         topView.snp.makeConstraints {
@@ -76,6 +83,18 @@ extension SignupViewController {
         backButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(15)
             $0.centerY.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(topView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+        idTextField.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.leading.equalTo(titleLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(40)
         }
     }
     
