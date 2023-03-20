@@ -191,6 +191,7 @@ extension SignupViewController {
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(signupButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
@@ -201,5 +202,12 @@ extension SignupViewController {
     
     @objc private func closeButtonDidTap() {
         self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true)
+    }
+    
+    @objc private func signupButtonDidTap() {
+        let tabBar = EverytimeTabBarController()
+        tabBar.modalTransitionStyle = .crossDissolve
+        tabBar.modalPresentationStyle = .overFullScreen
+        present(tabBar, animated: true)
     }
 }
