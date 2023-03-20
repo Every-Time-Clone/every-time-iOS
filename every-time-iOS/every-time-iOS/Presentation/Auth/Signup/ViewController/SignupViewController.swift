@@ -192,6 +192,13 @@ extension SignupViewController {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
         signupButton.addTarget(self, action: #selector(signupButtonDidTap), for: .touchUpInside)
+        idTextField.addTarget(self, action: #selector(idTextFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    private func isValidID(id: String) -> Bool {
+        let regex = "[A-Za-z0-9]{4,20}"
+        let isContains = id.range(of: regex, options: .regularExpression) != nil
+        return isContains
     }
     
     // MARK: - @objc Methods
@@ -209,5 +216,13 @@ extension SignupViewController {
         tabBar.modalTransitionStyle = .crossDissolve
         tabBar.modalPresentationStyle = .overFullScreen
         present(tabBar, animated: true)
+    }
+    
+    @objc private func idTextFieldDidChange(_ textField: UITextField) {
+        if isValidID(id: textField.text!) {
+            textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
+        } else {
+            textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
+        }
     }
 }

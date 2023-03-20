@@ -37,4 +37,14 @@ extension AuthTextField {
         tintColor = .black
         addLeftPadding(width: 10)
     }
+    
+    // MARK: - Methods
+    
+    func setRightImage() {
+        addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .green)
+    }
+    
+    func hideRightImage() {
+        addRightImage(image: UIImage(), tintColor: .green)
+    }
 }
