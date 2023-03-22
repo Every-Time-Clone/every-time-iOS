@@ -23,7 +23,10 @@
 		AB4CFF9F2998D8A5006A3866 /* MenuTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */; };
 		AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */; };
 		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
+		AB61432529C75A0C004B14DE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61432429C75A0C004B14DE /* SignupViewController.swift */; };
 		AB676B6D29BE123000387247 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */; };
+		AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7429C88C280068F40D /* AuthTextField.swift */; };
+		AB7A5E7729C8905A0068F40D /* AuthDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
 		AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */; };
 		AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */; };
@@ -105,7 +108,10 @@
 		AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBoardModel.swift; sourceTree = "<group>"; };
 		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		AB61432429C75A0C004B14DE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		AB7A5E7429C88C280068F40D /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDescriptionView.swift; sourceTree = "<group>"; };
 		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 			children = (
 				AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */,
 				AB91DC6D29BF2DDE00037914 /* TermsViewController.swift */,
+				AB61432429C75A0C004B14DE /* SignupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -195,10 +202,13 @@
 		AB0A31C829B999320095F852 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB676B6B29BE121500387247 /* Cell */,
 				AB0A31C929B999590095F852 /* SchoolTableView.swift */,
 				AB91DC6F29BF335C00037914 /* CheckButton.swift */,
 				AB137F1529C37EAF00804ACD /* TermsHeaderView.swift */,
 				AB137F1729C37FD400804ACD /* TermsFooterView.swift */,
+				AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */,
+				AB7A5E7429C88C280068F40D /* AuthTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				AB137F0E29C1EB7F00804ACD /* Model */,
-				AB676B6B29BE121500387247 /* Cell */,
 				AB0A31C829B999320095F852 /* View */,
 				AB0A31C729B993970095F852 /* ViewController */,
 			);
@@ -690,6 +699,7 @@
 				AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */,
 				AB8B572729A777650059EBDC /* AnonymityCheckTableViewCell.swift in Sources */,
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
+				AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */,
 				ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				AB9A61F7299CCF36005CA2DB /* PinMenuCollectionViewCell.swift in Sources */,
@@ -700,6 +710,7 @@
 				AB676B6D29BE123000387247 /* SchoolTableViewCell.swift in Sources */,
 				AB137F0D29C1EA9100804ACD /* TermDescriptionTableViewCell.swift in Sources */,
 				ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */,
+				AB7A5E7729C8905A0068F40D /* AuthDescriptionView.swift in Sources */,
 				AB137F1629C37EAF00804ACD /* TermsHeaderView.swift in Sources */,
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
 				AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */,
@@ -720,6 +731,7 @@
 				AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */,
 				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
 				AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */,
+				AB61432529C75A0C004B14DE /* SignupViewController.swift in Sources */,
 				AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */,
 				ABB1746E2988D8CB000165E6 /* PostDetailViewController.swift in Sources */,
 				ABF8338B2976ADAD00E3DC16 /* CALayer +.swift in Sources */,

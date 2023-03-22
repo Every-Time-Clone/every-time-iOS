@@ -21,11 +21,11 @@ extension UITextField {
         self.rightViewMode = ViewMode.always
     }
     
-    func addRightImage(image: UIImage) {
+    func addRightImage(image: UIImage, tintColor: UIColor) {
         let rightContainerView = UIView(frame: CGRect(x: 0, y: 0, width: image.size.width + 10, height: image.size.height))
         let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
         rightImage.image = image
-        rightImage.tintColor = .lightGray
+        rightImage.tintColor = tintColor
         rightContainerView.addSubview(rightImage)
         rightView = rightContainerView
         rightViewMode = .always

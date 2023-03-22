@@ -110,7 +110,7 @@ extension SelectCollegeViewController {
             $0.layer.borderColor = UIColor.systemGray6.cgColor
             $0.layer.borderWidth = 1
             $0.addRightPadding(width: CGFloat(10))
-            $0.addRightImage(image: UIImage(systemName: "magnifyingglass")!)
+            $0.addRightImage(image: UIImage(systemName: "magnifyingglass")!, tintColor: .lightGray)
             $0.tintColor = .black
         }
         
