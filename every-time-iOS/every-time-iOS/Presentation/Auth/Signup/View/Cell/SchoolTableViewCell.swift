@@ -14,7 +14,7 @@ final class SchoolTableViewCell: UITableViewCell {
 
     // MARK: - UI Components
     
-    private let testLabel: UILabel = UILabel()
+    private let schoolLabel: UILabel = UILabel()
     
     // MARK: - Initializer
     
@@ -35,8 +35,9 @@ extension SchoolTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
-        testLabel.do {
-            $0.text = "hi"
+        schoolLabel.do {
+            $0.text = "동국대학교"
+            $0.font = .systemFont(ofSize: 15)
         }
     }
     
@@ -44,10 +45,11 @@ extension SchoolTableViewCell {
     
     private func setLayout() {
         contentView.backgroundColor = .clear
-        contentView.addSubview(testLabel)
+        contentView.addSubview(schoolLabel)
         
-        testLabel.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
+        schoolLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(30)
         }
     }
 }
