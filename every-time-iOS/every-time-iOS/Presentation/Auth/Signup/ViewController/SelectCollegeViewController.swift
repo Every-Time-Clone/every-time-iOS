@@ -59,6 +59,7 @@ extension SelectCollegeViewController {
         }
         
         scrollView.do {
+            $0.bounces = false
             $0.backgroundColor = .red
         }
         
