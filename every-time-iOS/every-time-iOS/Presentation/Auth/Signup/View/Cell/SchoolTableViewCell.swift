@@ -36,14 +36,14 @@ extension SchoolTableViewCell {
     
     private func setUI() {
         testLabel.do {
-            $0.text = " hi"
+            $0.text = "hi"
         }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        contentView.backgroundColor = .cyan
+        contentView.backgroundColor = .clear
         contentView.addSubview(testLabel)
         
         testLabel.snp.makeConstraints {

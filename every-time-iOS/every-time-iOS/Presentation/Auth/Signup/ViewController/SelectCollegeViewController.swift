@@ -60,7 +60,7 @@ extension SelectCollegeViewController {
         
         scrollView.do {
             $0.bounces = false
-            $0.backgroundColor = .red
+            $0.backgroundColor = .white
         }
         
         topTitleLabel.do {
@@ -118,8 +118,9 @@ extension SelectCollegeViewController {
         }
         
         schoolTableView.do {
-            $0.backgroundColor = .yellow
+            $0.backgroundColor = .clear
             $0.isScrollEnabled = false
+            $0.separatorStyle = .none
         }
         
         nextButton.setRedButton("다음")
@@ -279,6 +280,6 @@ extension SelectCollegeViewController: UITableViewDataSource {
 extension SelectCollegeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(30)
+        return CGFloat(40)
     }
 }
