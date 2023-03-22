@@ -69,12 +69,12 @@ extension SignupViewController {
         }
         
         passwordTextField.do {
-            $0.textContentType = .password
+            $0.textContentType = .newPassword
             $0.isSecureTextEntry = true
         }
         
         passwordCheckTextField.do {
-            $0.textContentType = .password
+            $0.textContentType = .newPassword
             $0.isSecureTextEntry = true
         }
         
