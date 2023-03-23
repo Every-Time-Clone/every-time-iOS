@@ -35,8 +35,9 @@ extension SchoolTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
+        selectionStyle = .none
+        
         schoolLabel.do {
-            $0.text = "동국대학교"
             $0.font = .systemFont(ofSize: 15)
         }
     }
@@ -51,5 +52,11 @@ extension SchoolTableViewCell {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(30)
         }
+    }
+    
+    // MARK: - Methods
+    
+    func setDataBind(_ schoolName: String) {
+        schoolLabel.text = schoolName
     }
 }

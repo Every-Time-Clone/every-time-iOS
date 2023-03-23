@@ -27,11 +27,11 @@ final class SelectCollegeViewController: UIViewController {
     private let nextButton: UIButton = UIButton()
     private let scrollView: UIScrollView = UIScrollView()
     private let schoolTableView: SchoolTableView = SchoolTableView(frame: .zero, style: .plain)
-//    private let schoolTableView: UITableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - Properties
     
     var yearMenuActions: [UIAction] = []
+    var schoolList: [String] = ["동국대학교", "강동대학교", "가톨릭관동대학교"]
     
     // MARK: - View Life Cycle
     
@@ -266,12 +266,17 @@ extension SelectCollegeViewController: UITextFieldDelegate {
 extension SelectCollegeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return schoolList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SchoolTableViewCell.cellIdentifier, for: indexPath) as! SchoolTableViewCell
+        cell.setDataBind(schoolList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        schoolTextField.text = schoolList[indexPath.row]
     }
 }
 
