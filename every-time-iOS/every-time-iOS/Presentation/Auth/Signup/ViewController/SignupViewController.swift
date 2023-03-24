@@ -203,7 +203,7 @@ extension SignupViewController {
     }
     
     private func isValidPassword(password: String) -> Bool {
-        let regex = "^.{4,20}$"
+        let regex = "^.{8,20}$"
         let isContains = password.range(of: regex, options: .regularExpression) != nil
         return isContains
     }
