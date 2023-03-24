@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class SelectCollegeViewController: UIViewController {
+final class SelectCollegeViewController: UIViewController {
     
     // MARK: - UI Components
     
@@ -31,6 +31,7 @@ class SelectCollegeViewController: UIViewController {
     // MARK: - Properties
     
     var yearMenuActions: [UIAction] = []
+    var schoolList: [String] = ["동국대학교", "강동대학교", "가톨릭관동대학교"]
     
     // MARK: - View Life Cycle
     
@@ -42,6 +43,7 @@ class SelectCollegeViewController: UIViewController {
         setDelegate()
         setAddTarget()
         setMenu()
+        registerCells()
     }
 }
 
@@ -57,6 +59,7 @@ extension SelectCollegeViewController {
         }
         
         scrollView.do {
+            $0.bounces = false
             $0.backgroundColor = .white
         }
         
@@ -115,28 +118,18 @@ extension SelectCollegeViewController {
         }
         
         schoolTableView.do {
-            $0.backgroundColor = .yellow
+            $0.backgroundColor = .clear
             $0.isScrollEnabled = false
-            $0.register(SchoolTableViewCell.self, forCellReuseIdentifier: SchoolTableViewCell.cellIdentifier)
+            $0.separatorStyle = .none
         }
         
-        nextButton.do {
-            var attString = AttributedString("다음")
-            attString.font = .systemFont(ofSize: 15, weight: .bold)
-            attString.foregroundColor = .white
-            var configuration = UIButton.Configuration.plain()
-            configuration.attributedTitle = attString
-            $0.configuration = configuration
-            $0.backgroundColor = .everytimeRed
-            $0.layer.cornerRadius = 10
-        }
+        nextButton.setRedButton("다음")
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         view.addSubviews(topView, scrollView)
-        scrollView.addSubview(schoolTableView)
         scrollView.addSubviews(titleLabel, yearLabel, yearButton, schoolLabel, schoolTextField, schoolTableView, nextButton)
         yearButton.addSubview(classLabel)
         topView.addSubviews(topTitleLabel, closeButton)
@@ -194,13 +187,13 @@ extension SelectCollegeViewController {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(40)
         }
-
+        
         schoolTableView.snp.makeConstraints {
-            $0.top.equalTo(schoolTextField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(nextButton.snp.top)
+            $0.top.equalTo(schoolTextField.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(nextButton.snp.top).offset(-10)
         }
-
+        
         nextButton.snp.makeConstraints {
             $0.leading.equalTo(yearButton.snp.leading)
             $0.centerX.equalToSuperview()
@@ -214,12 +207,17 @@ extension SelectCollegeViewController {
     private func setDelegate() {
         schoolTextField.delegate = self
         schoolTableView.dataSource = self
+        schoolTableView.delegate = self
     }
     
     private func setAddTarget() {
         schoolTextField.addTarget(self, action: #selector(schoolTextFieldDidChange), for: .editingChanged)
         closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func registerCells() {
+        schoolTableView.register(SchoolTableViewCell.self, forCellReuseIdentifier: SchoolTableViewCell.cellIdentifier)
     }
     
     private func setMenu() {
@@ -266,13 +264,27 @@ extension SelectCollegeViewController: UITextFieldDelegate {
 // MARK: - UITableViewDataSource
 
 extension SelectCollegeViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return schoolList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SchoolTableViewCell.cellIdentifier, for: indexPath) as! SchoolTableViewCell
+        cell.setDataBind(schoolList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        schoolTextField.text = schoolList[indexPath.row]
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension SelectCollegeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(40)
     }
 }

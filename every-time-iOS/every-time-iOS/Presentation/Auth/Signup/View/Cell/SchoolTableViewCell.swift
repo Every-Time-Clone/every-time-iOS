@@ -12,6 +12,10 @@ import Then
 
 final class SchoolTableViewCell: UITableViewCell {
 
+    // MARK: - UI Components
+    
+    private let schoolLabel: UILabel = UILabel()
+    
     // MARK: - Initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,12 +35,28 @@ extension SchoolTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
+        selectionStyle = .none
         
+        schoolLabel.do {
+            $0.font = .systemFont(ofSize: 15)
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        contentView.backgroundColor = .black
+        contentView.backgroundColor = .clear
+        contentView.addSubview(schoolLabel)
+        
+        schoolLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(30)
+        }
+    }
+    
+    // MARK: - Methods
+    
+    func setDataBind(_ schoolName: String) {
+        schoolLabel.text = schoolName
     }
 }
