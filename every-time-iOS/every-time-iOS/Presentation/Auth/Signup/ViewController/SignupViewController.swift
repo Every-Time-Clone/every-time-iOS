@@ -194,6 +194,7 @@ extension SignupViewController {
         signupButton.addTarget(self, action: #selector(signupButtonDidTap), for: .touchUpInside)
         idTextField.addTarget(self, action: #selector(idTextFieldDidChange(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
+        passwordCheckTextField.addTarget(self, action: #selector(passwordCheckTextFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func isValidID(id: String) -> Bool {
@@ -235,6 +236,14 @@ extension SignupViewController {
     
     @objc private func passwordTextFieldDidChange(_ textField: UITextField) {
         if isValidPassword(password: textField.text!) {
+            textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
+        } else {
+            textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
+        }
+    }
+    
+    @objc private func passwordCheckTextFieldDidChange(_ textField: UITextField) {
+        if textField.text! == passwordTextField.text! {
             textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
         } else {
             textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
