@@ -209,6 +209,14 @@ extension SignupViewController {
         return isContains
     }
     
+    private func checkValidState(isValid: Bool, textField: UITextField) {
+        if isValid {
+            textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
+        } else {
+            textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
+        }
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func backButtonDidTap() {
@@ -227,19 +235,11 @@ extension SignupViewController {
     }
     
     @objc private func idTextFieldDidChange(_ textField: UITextField) {
-        if isValidID(id: textField.text!) {
-            textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
-        } else {
-            textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
-        }
+        checkValidState(isValid: isValidID(id: textField.text!), textField: textField)
     }
     
     @objc private func passwordTextFieldDidChange(_ textField: UITextField) {
-        if isValidPassword(password: textField.text!) {
-            textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
-        } else {
-            textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
-        }
+        checkValidState(isValid: isValidPassword(password: textField.text!), textField: textField)
     }
     
     @objc private func passwordCheckTextFieldDidChange(_ textField: UITextField) {
