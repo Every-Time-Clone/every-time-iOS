@@ -193,11 +193,18 @@ extension SignupViewController {
         closeButton.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
         signupButton.addTarget(self, action: #selector(signupButtonDidTap), for: .touchUpInside)
         idTextField.addTarget(self, action: #selector(idTextFieldDidChange(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func isValidID(id: String) -> Bool {
-        let regex = "[A-Za-z0-9]{4,20}"
+        let regex = "^[A-Za-z0-9]{4,20}$"
         let isContains = id.range(of: regex, options: .regularExpression) != nil
+        return isContains
+    }
+    
+    private func isValidPassword(password: String) -> Bool {
+        let regex = "^.{4,20}$"
+        let isContains = password.range(of: regex, options: .regularExpression) != nil
         return isContains
     }
     
@@ -220,6 +227,14 @@ extension SignupViewController {
     
     @objc private func idTextFieldDidChange(_ textField: UITextField) {
         if isValidID(id: textField.text!) {
+            textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
+        } else {
+            textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
+        }
+    }
+    
+    @objc private func passwordTextFieldDidChange(_ textField: UITextField) {
+        if isValidPassword(password: textField.text!) {
             textField.addRightImage(image: UIImage(systemName: "checkmark.circle")!, tintColor: .systemGreen)
         } else {
             textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
