@@ -43,6 +43,7 @@ final class SelectCollegeViewController: UIViewController {
                                 "홍익대 세종캠", "세명대", "서원대", "가톨릭관동대", "서경대", "상명대 천안캠", "목원캠", "인덕대", "목포대", "신라대", "건양대",
                                 "대구보건대", "경동대", "신구대", "신한대", "한국해양대", "꾼산대", "한국폴리텍대", "ICT폴리텍대", "KAIST", "KENTECK",
                                 "UNIST"]
+    var finalSchoolList: [String] = []
     
     // MARK: - View Life Cycle
     
@@ -246,8 +247,11 @@ extension SelectCollegeViewController {
     
     // MARK: - @objc Methods
     
-    @objc private func schoolTextFieldDidChange() {
-        print(schoolTextField.text!)
+    @objc private func schoolTextFieldDidChange(textField: UITextField) {
+        let word = textField.text!
+    
+        finalSchoolList = schoolList.filter { $0.contains(word) }
+        schoolTableView.reloadData()
     }
     
     @objc private func closeButtonDidTap() {
@@ -268,6 +272,7 @@ extension SelectCollegeViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == schoolTextField {
             textField.backgroundColor = .white
+            finalSchoolList = schoolList
         }
     }
 }
@@ -277,17 +282,17 @@ extension SelectCollegeViewController: UITextFieldDelegate {
 extension SelectCollegeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return schoolList.count
+        return finalSchoolList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SchoolTableViewCell.cellIdentifier, for: indexPath) as! SchoolTableViewCell
-        cell.setDataBind(schoolList[indexPath.row])
+        cell.setDataBind(finalSchoolList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        schoolTextField.text = schoolList[indexPath.row]
+        schoolTextField.text = finalSchoolList[indexPath.row]
     }
 }
 
