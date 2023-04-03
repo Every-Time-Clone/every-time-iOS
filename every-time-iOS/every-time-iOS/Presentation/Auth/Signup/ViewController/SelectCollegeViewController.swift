@@ -273,12 +273,13 @@ extension SelectCollegeViewController {
 // MARK: - UITextFieldDelegate
 
 extension SelectCollegeViewController: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == schoolTextField {
+            textField.text = ""
             textField.backgroundColor = .white
-            finalSchoolList = schoolList
         }
+        return true
     }
 }
 
@@ -298,6 +299,10 @@ extension SelectCollegeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         schoolTextField.text = finalSchoolList[indexPath.row]
+        schoolTextField.backgroundColor = UIColor(r: 249, g: 249, b: 248)
+        schoolTextField.endEditing(true)
+        finalSchoolList = []
+        schoolTableView.reloadData()
     }
 }
 
