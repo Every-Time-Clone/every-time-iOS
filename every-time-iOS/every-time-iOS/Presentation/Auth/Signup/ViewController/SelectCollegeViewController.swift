@@ -250,8 +250,12 @@ extension SelectCollegeViewController {
     
     @objc private func schoolTextFieldDidChange(textField: UITextField) {
         word = textField.text!
-    
-        finalSchoolList = schoolList.filter { $0.contains(word) }
+        
+        if textField.text == "" {
+            finalSchoolList = schoolList
+        } else {
+            finalSchoolList = schoolList.filter { $0.contains(word) }
+        }
         schoolTableView.reloadData()
     }
     
