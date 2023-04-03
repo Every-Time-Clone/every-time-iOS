@@ -56,7 +56,16 @@ extension SchoolTableViewCell {
     
     // MARK: - Methods
     
-    func setDataBind(_ schoolName: String) {
+    func setDataBind(_ schoolName: String, _ word: String) {
         schoolLabel.text = schoolName
+        setHighlightColor(word)
+    }
+    
+    func setHighlightColor(_ word: String) {
+        let attributtedString = NSMutableAttributedString(string: schoolLabel.text!)
+        let highlightRange = (schoolLabel.text! as NSString).range(of: word)
+        attributtedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.everytimeRed, range: highlightRange)
+        attributtedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15, weight: .bold), range: highlightRange)
+        schoolLabel.attributedText = attributtedString
     }
 }

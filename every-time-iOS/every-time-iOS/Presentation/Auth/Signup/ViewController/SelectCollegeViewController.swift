@@ -44,6 +44,7 @@ final class SelectCollegeViewController: UIViewController {
                                 "대구보건대", "경동대", "신구대", "신한대", "한국해양대", "꾼산대", "한국폴리텍대", "ICT폴리텍대", "KAIST", "KENTECK",
                                 "UNIST"]
     var finalSchoolList: [String] = []
+    var word: String = ""
     
     // MARK: - View Life Cycle
     
@@ -248,7 +249,7 @@ extension SelectCollegeViewController {
     // MARK: - @objc Methods
     
     @objc private func schoolTextFieldDidChange(textField: UITextField) {
-        let word = textField.text!
+        word = textField.text!
     
         finalSchoolList = schoolList.filter { $0.contains(word) }
         schoolTableView.reloadData()
@@ -287,7 +288,7 @@ extension SelectCollegeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SchoolTableViewCell.cellIdentifier, for: indexPath) as! SchoolTableViewCell
-        cell.setDataBind(finalSchoolList[indexPath.row])
+        cell.setDataBind(finalSchoolList[indexPath.row], word)
         return cell
     }
     
