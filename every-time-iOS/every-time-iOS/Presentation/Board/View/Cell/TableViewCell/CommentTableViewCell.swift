@@ -12,6 +12,7 @@ import Then
 
 protocol CommentTableViewCellDelegate {
     func replyButtonDidSelected(_ alert: UIAlertController)
+    func replyOKButtonDidSelected(_ state: Bool)
 }
 
 class CommentTableViewCell: UITableViewCell {
@@ -32,7 +33,6 @@ class CommentTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     var delegate: CommentTableViewCellDelegate?
-    var isOKSelected: Bool = false
 
     // MARK: - Initializer
     
@@ -195,6 +195,7 @@ extension CommentTableViewCell {
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         let okButtonAction = UIAlertAction(title: "확인", style: .default) { action in
             self.backgroundColor = .red
+            self.delegate?.replyOKButtonDidSelected(true)
         }
         alert.addActions(cancelAction, okButtonAction)
         delegate?.replyButtonDidSelected(alert)

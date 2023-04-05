@@ -387,9 +387,11 @@ extension PostDetailViewController: UITextViewDelegate {
 // MARK: - CommentTableViewCellDelegate
 
 extension PostDetailViewController: CommentTableViewCellDelegate {
-    
     func replyButtonDidSelected(_ alert: UIAlertController) {
         present(alert, animated: true)
-        
+    }
+    
+    func replyOKButtonDidSelected(_ state: Bool) {
+        if state { commentTextView.becomeFirstResponder() }
     }
 }
