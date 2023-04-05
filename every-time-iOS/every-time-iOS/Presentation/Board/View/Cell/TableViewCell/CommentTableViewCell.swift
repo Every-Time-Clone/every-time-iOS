@@ -194,7 +194,7 @@ extension CommentTableViewCell {
         let alert = UIAlertController(title: "대댓글을 작성하시겠습니까?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         let okButtonAction = UIAlertAction(title: "확인", style: .default) { action in
-            self.backgroundColor = .red
+            self.backgroundColor = UIColor(r: 251, g: 242, b: 239)
             self.delegate?.replyOKButtonDidSelected(true)
         }
         alert.addActions(cancelAction, okButtonAction)
