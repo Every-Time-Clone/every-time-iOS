@@ -13,6 +13,8 @@ import Then
 protocol CommentTableViewCellDelegate {
     func replyButtonDidSelected(_ alert: UIAlertController)
     func replyOKButtonDidSelected(_ state: Bool)
+    func likeButtonDidSelected(_ alert: UIAlertController)
+    func likeOKButtonDidSelected(_ state: Bool)
 }
 
 class CommentTableViewCell: UITableViewCell {
@@ -186,6 +188,7 @@ extension CommentTableViewCell {
     
     private func setAddTarget() {
         replyButton.addTarget(self, action: #selector(replyButtonDidTap), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(likeButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
@@ -199,5 +202,15 @@ extension CommentTableViewCell {
         }
         alert.addActions(cancelAction, okButtonAction)
         delegate?.replyButtonDidSelected(alert)
+    }
+    
+    @objc private func likeButtonDidTap() {
+        let alert = UIAlertController(title: "이 댓글을 공감하시겠습니까?", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let okButtonAction = UIAlertAction(title: "확인", style: .default) { action in
+            self.delegate?.likeOKButtonDidSelected(true)
+        }
+        alert.addActions(cancelAction, okButtonAction)
+        delegate?.likeButtonDidSelected(alert)
     }
 }

@@ -387,11 +387,23 @@ extension PostDetailViewController: UITextViewDelegate {
 // MARK: - CommentTableViewCellDelegate
 
 extension PostDetailViewController: CommentTableViewCellDelegate {
+    
     func replyButtonDidSelected(_ alert: UIAlertController) {
         present(alert, animated: true)
     }
     
     func replyOKButtonDidSelected(_ state: Bool) {
         if state { commentTextView.becomeFirstResponder() }
+    }
+    
+    func likeButtonDidSelected(_ alert: UIAlertController) {
+        present(alert, animated: true)
+    }
+    
+    func likeOKButtonDidSelected(_ state: Bool) {
+        if state {
+            print("공감하기")
+            // 공감 api 통신
+        }
     }
 }
