@@ -10,6 +10,18 @@ import UIKit
 import SnapKit
 import Then
 
+enum CommentOptionType {
+    case replyButton
+    case likeButton
+    case menuButton
+}
+
+protocol CommentTableViewCellDelegate {
+    func commentOptionDidSelect(_ commentOptionType: CommentOptionType, _ alert: UIAlertController)
+    func replyOKButtonDidSelected(_ state: Bool)
+    func likeOKButtonDidSelected(_ state: Bool)
+}
+
 class CommentTableViewCell: UITableViewCell {
     
     // MARK: - UI Components
@@ -24,6 +36,11 @@ class CommentTableViewCell: UITableViewCell {
     private let menuButton: UIButton = UIButton()
     private let firstLineView: UIView = UIView()
     private let secondLineView: UIView = UIView()
+    
+    // MARK: - Properties
+    
+    var delegate: CommentTableViewCellDelegate?
+    var commentOptionType: CommentOptionType?
 
     // MARK: - Initializer
     
@@ -32,6 +49,7 @@ class CommentTableViewCell: UITableViewCell {
         
         setUI()
         setLayout()
+        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -172,5 +190,41 @@ extension CommentTableViewCell {
         nameLabel.text = model.name
         contentLabel.text = model.content
         timeLabel.text = model.time
+    }
+    
+    private func setAddTarget() {
+        replyButton.addTarget(self, action: #selector(replyButtonDidTap), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(likeButtonDidTap), for: .touchUpInside)
+        menuButton.addTarget(self, action: #selector(menuButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func replyButtonDidTap() {
+        commentOptionType = .replyButton
+        let alert = setAlertWithCancelAndOK("대댓글을 작성하시겠습니까?") { _ in
+            self.backgroundColor = UIColor(r: 251, g: 242, b: 239)
+            self.delegate?.replyOKButtonDidSelected(true)
+        }
+        delegate?.commentOptionDidSelect(commentOptionType!, alert)
+    }
+    
+    @objc private func likeButtonDidTap() {
+        commentOptionType = .likeButton
+        let alert = setAlertWithCancelAndOK("이 댓글을 공감하시겠습니까?") {  _ in
+            self.delegate?.likeOKButtonDidSelected(true)
+        }
+        delegate?.commentOptionDidSelect(commentOptionType!, alert)
+    }
+    
+    @objc private func menuButtonDidTap() {
+        commentOptionType = .menuButton
+        let alert = UIAlertController(title: "댓글 메뉴", message: nil, preferredStyle: .actionSheet)
+        let alarmAction = UIAlertAction(title: "대댓글 알림 켜기", style: .default)
+        let sendLetterAction = UIAlertAction(title: "쪽지 보내기", style: .default)
+        let reportAction = UIAlertAction(title: "신고", style: .default)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alert.addActions(alarmAction, sendLetterAction, reportAction, cancelAction)
+        delegate?.commentOptionDidSelect(commentOptionType!, alert)
     }
 }

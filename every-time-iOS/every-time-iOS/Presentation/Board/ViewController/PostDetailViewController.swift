@@ -294,6 +294,7 @@ extension PostDetailViewController: UITableViewDataSource {
         switch commentType {
         case true:
             let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.cellIdentifier, for: indexPath) as! CommentTableViewCell
+            cell.delegate = self
             cell.setDataBind(commentList[indexPath.row])
             return cell
         case false:
@@ -383,3 +384,25 @@ extension PostDetailViewController: UITextViewDelegate {
     }
 }
 
+// MARK: - CommentTableViewCellDelegate
+
+extension PostDetailViewController: CommentTableViewCellDelegate {
+    
+    func commentOptionDidSelect(_ commentOptionType: CommentOptionType, _ alert: UIAlertController) {
+        switch commentOptionType {
+        default:
+            present(alert, animated: true)
+        }
+    }
+    
+    func replyOKButtonDidSelected(_ state: Bool) {
+        if state { commentTextView.becomeFirstResponder() }
+    }
+    
+    func likeOKButtonDidSelected(_ state: Bool) {
+        if state {
+            print("공감하기")
+            // 공감 api 통신
+        }
+    }
+}
