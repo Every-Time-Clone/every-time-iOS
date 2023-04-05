@@ -294,6 +294,7 @@ extension PostDetailViewController: UITableViewDataSource {
         switch commentType {
         case true:
             let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.cellIdentifier, for: indexPath) as! CommentTableViewCell
+            cell.delegate = self
             cell.setDataBind(commentList[indexPath.row])
             return cell
         case false:
@@ -383,3 +384,12 @@ extension PostDetailViewController: UITextViewDelegate {
     }
 }
 
+// MARK: - CommentTableViewCellDelegate
+
+extension PostDetailViewController: CommentTableViewCellDelegate {
+    
+    func replyButtonDidSelected(_ alert: UIAlertController) {
+        present(alert, animated: true)
+        
+    }
+}

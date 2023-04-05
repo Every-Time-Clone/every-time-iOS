@@ -409,7 +409,6 @@
 			children = (
 				ABB174712988DD01000165E6 /* View */,
 				ABB17468298824D9000165E6 /* Model */,
-				ABB1745829880772000165E6 /* Cell */,
 				ABA5BF3E2987C092007A6BD5 /* ViewController */,
 			);
 			path = Board;
@@ -465,6 +464,7 @@
 		ABB174712988DD01000165E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABB1745829880772000165E6 /* Cell */,
 				ABB174722988DD11000165E6 /* TitleView.swift */,
 			);
 			path = View;

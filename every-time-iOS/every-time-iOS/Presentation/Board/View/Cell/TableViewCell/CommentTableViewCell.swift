@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol CommentTableViewCellDelegate {
+    func replyButtonDidSelected(_ alert: UIAlertController)
+}
+
 class CommentTableViewCell: UITableViewCell {
     
     // MARK: - UI Components
@@ -24,6 +28,11 @@ class CommentTableViewCell: UITableViewCell {
     private let menuButton: UIButton = UIButton()
     private let firstLineView: UIView = UIView()
     private let secondLineView: UIView = UIView()
+    
+    // MARK: - Properties
+    
+    var delegate: CommentTableViewCellDelegate?
+    var isOKSelected: Bool = false
 
     // MARK: - Initializer
     
@@ -32,6 +41,7 @@ class CommentTableViewCell: UITableViewCell {
         
         setUI()
         setLayout()
+        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -172,5 +182,21 @@ extension CommentTableViewCell {
         nameLabel.text = model.name
         contentLabel.text = model.content
         timeLabel.text = model.time
+    }
+    
+    private func setAddTarget() {
+        replyButton.addTarget(self, action: #selector(replyButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func replyButtonDidTap() {
+        let alert = UIAlertController(title: "대댓글을 작성하시겠습니까?", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let okButtonAction = UIAlertAction(title: "확인", style: .default) { action in
+            self.backgroundColor = .red
+        }
+        alert.addActions(cancelAction, okButtonAction)
+        delegate?.replyButtonDidSelected(alert)
     }
 }
