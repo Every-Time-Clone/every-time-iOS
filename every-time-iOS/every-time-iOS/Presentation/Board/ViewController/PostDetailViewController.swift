@@ -406,4 +406,8 @@ extension PostDetailViewController: CommentTableViewCellDelegate {
             // 공감 api 통신
         }
     }
+    
+    func menuButtonDidSelected(_ alert: UIAlertController) {
+        present(alert, animated: true)
+    }
 }

@@ -15,6 +15,7 @@ protocol CommentTableViewCellDelegate {
     func replyOKButtonDidSelected(_ state: Bool)
     func likeButtonDidSelected(_ alert: UIAlertController)
     func likeOKButtonDidSelected(_ state: Bool)
+    func menuButtonDidSelected(_ alert: UIAlertController)
 }
 
 class CommentTableViewCell: UITableViewCell {
@@ -189,6 +190,7 @@ extension CommentTableViewCell {
     private func setAddTarget() {
         replyButton.addTarget(self, action: #selector(replyButtonDidTap), for: .touchUpInside)
         likeButton.addTarget(self, action: #selector(likeButtonDidTap), for: .touchUpInside)
+        menuButton.addTarget(self, action: #selector(menuButtonDidTap), for: .touchUpInside)
     }
     
     // MARK: - @objc Methods
@@ -212,5 +214,15 @@ extension CommentTableViewCell {
         }
         alert.addActions(cancelAction, okButtonAction)
         delegate?.likeButtonDidSelected(alert)
+    }
+    
+    @objc private func menuButtonDidTap() {
+        let alert = UIAlertController(title: "댓글 메뉴", message: nil, preferredStyle: .actionSheet)
+        let alarmAction = UIAlertAction(title: "대댓글 알림 켜기", style: .default)
+        let sendLetterAction = UIAlertAction(title: "쪽지 보내기", style: .default)
+        let reportAction = UIAlertAction(title: "신고", style: .default)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alert.addActions(alarmAction, sendLetterAction, reportAction, cancelAction)
+        delegate?.menuButtonDidSelected(alert)
     }
 }
