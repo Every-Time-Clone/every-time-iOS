@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB02A59A29EABB4C0044AF79 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */; };
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
 		AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */; };
 		AB137F0D29C1EA9100804ACD /* TermDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
 		AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTitleTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF833722976796900E3DC16 /* HomeViewController.swift */,
+				AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
 				AB91DC7029BF335C00037914 /* CheckButton.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
+				AB02A59A29EABB4C0044AF79 /* MyInfoViewController.swift in Sources */,
 				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
 				ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */,
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
