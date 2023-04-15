@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AB02A59A29EABB4C0044AF79 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */; };
+		AB02A5A029EABFFB0044AF79 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A59F29EABFFB0044AF79 /* ProfileCollectionViewCell.swift */; };
+		AB02A5A229EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */; };
+		AB02A5A529EAC57B0044AF79 /* MyInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */; };
+		AB02A5A729EAC5D70044AF79 /* MyInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */; };
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
 		AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */; };
 		AB137F0D29C1EA9100804ACD /* TermDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */; };
@@ -94,6 +98,10 @@
 
 /* Begin PBXFileReference section */
 		AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
+		AB02A59F29EABFFB0044AF79 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoHeaderView.swift; sourceTree = "<group>"; };
+		AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoFooterView.swift; sourceTree = "<group>"; };
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
 		AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTitleTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +199,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB02A5A329EAC4070044AF79 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */,
+				AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */,
+				AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */,
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
 		AB0A31C729B993970095F852 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,7 +327,7 @@
 		AB7DCCB5297D8CCB002F46FE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */,
+				AB02A5A329EAC4070044AF79 /* ReusableView */,
 				AB7DCCBF297D9116002F46FE /* CollectionViewCell */,
 				AB7DCCBE297D910E002F46FE /* TableViewCell */,
 			);
@@ -330,6 +348,8 @@
 			children = (
 				AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */,
 				AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */,
+				AB02A59F29EABFFB0044AF79 /* ProfileCollectionViewCell.swift */,
+				AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -703,6 +723,7 @@
 				AB8B572729A777650059EBDC /* AnonymityCheckTableViewCell.swift in Sources */,
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
 				AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */,
+				AB02A5A529EAC57B0044AF79 /* MyInfoHeaderView.swift in Sources */,
 				ABB1747B298B67D9000165E6 /* ReplyTableViewCell.swift in Sources */,
 				ABF8335529752E0500E3DC16 /* UIColor +.swift in Sources */,
 				AB9A61F7299CCF36005CA2DB /* PinMenuCollectionViewCell.swift in Sources */,
@@ -730,6 +751,7 @@
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
 				AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */,
 				AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */,
+				AB02A5A029EABFFB0044AF79 /* ProfileCollectionViewCell.swift in Sources */,
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
 				AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */,
 				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
@@ -747,10 +769,12 @@
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
 				AB91DC7029BF335C00037914 /* CheckButton.swift in Sources */,
+				AB02A5A229EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
 				AB02A59A29EABB4C0044AF79 /* MyInfoViewController.swift in Sources */,
 				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
 				ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */,
+				AB02A5A729EAC5D70044AF79 /* MyInfoFooterView.swift in Sources */,
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
 				AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */,
