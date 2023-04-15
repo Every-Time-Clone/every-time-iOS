@@ -14,6 +14,13 @@ final class MyInfoViewController: UIViewController {
 
     // MARK: - Initializer
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setNavigationBar()
+        setTabBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,5 +41,17 @@ extension MyInfoViewController {
     
     private func setLayout() {
         
+    }
+    
+    // MARK: - Methods
+    
+    private func setNavigationBar() {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.title = "내 정보"
+    }
+    
+    private func setTabBar() {
+        tabBarController?.tabBar.isHidden = true
     }
 }
