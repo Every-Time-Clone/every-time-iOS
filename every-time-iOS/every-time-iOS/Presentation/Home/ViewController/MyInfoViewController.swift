@@ -133,7 +133,7 @@ extension MyInfoViewController: UICollectionViewDataSource {
             return CGSize()
         } else {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 30)
+            return CGSize(width: width, height: 70)
         }
     }
     
@@ -142,7 +142,7 @@ extension MyInfoViewController: UICollectionViewDataSource {
             return CGSize()
         } else {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 30)
+            return CGSize(width: width, height: 70)
         }
     }
 }

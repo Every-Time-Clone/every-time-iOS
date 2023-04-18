@@ -324,14 +324,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		AB7DCCB5297D8CCB002F46FE /* Cell */ = {
+		AB7DCCB5297D8CCB002F46FE /* View */ = {
 			isa = PBXGroup;
 			children = (
 				AB02A5A329EAC4070044AF79 /* ReusableView */,
 				AB7DCCBF297D9116002F46FE /* CollectionViewCell */,
 				AB7DCCBE297D910E002F46FE /* TableViewCell */,
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		AB7DCCBE297D910E002F46FE /* TableViewCell */ = {
@@ -595,7 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				AB5C7C2229812F9B00CCD3D9 /* Model */,
-				AB7DCCB5297D8CCB002F46FE /* Cell */,
+				AB7DCCB5297D8CCB002F46FE /* View */,
 				AB7DCCB4297D8CBF002F46FE /* ViewController */,
 			);
 			path = Home;
