@@ -26,6 +26,7 @@
 		AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */; };
 		AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */; };
 		AB4CFF9F2998D8A5006A3866 /* MenuTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */; };
+		AB519B8A29F00DF00097877D /* InfoMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8929F00DF00097877D /* InfoMenuModel.swift */; };
 		AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */; };
 		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
 		AB61432529C75A0C004B14DE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61432429C75A0C004B14DE /* SignupViewController.swift */; };
@@ -116,6 +117,7 @@
 		AB4CFF992998C8B4006A3866 /* AdvertiseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB519B8929F00DF00097877D /* InfoMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMenuModel.swift; sourceTree = "<group>"; };
 		AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBoardModel.swift; sourceTree = "<group>"; };
 		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		AB61432429C75A0C004B14DE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */,
 				AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */,
+				AB519B8929F00DF00097877D /* InfoMenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */,
 				AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */,
 				AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */,
+				AB519B8A29F00DF00097877D /* InfoMenuModel.swift in Sources */,
 				AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */,
 				AB9A61F0299CB881005CA2DB /* MainDetailTableViewCell.swift in Sources */,
 				ABF833752976797300E3DC16 /* TImetableViewController.swift in Sources */,

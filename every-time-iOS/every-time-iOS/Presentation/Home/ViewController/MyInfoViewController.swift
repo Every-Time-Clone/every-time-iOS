@@ -21,8 +21,13 @@ final class MyInfoViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
-
-    // MARK: - Initializer
+    
+    // MARK: - Properties
+    
+    let categoryNames: [String] = ["계정", "커뮤니티", "앱 설정", "이용 안내", "기타"]
+    let menuNames: [[InfoMenuModel]] = InfoMenuModel.dummyData()
+    
+    // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -94,14 +99,14 @@ extension MyInfoViewController {
 extension MyInfoViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return categoryNames.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else {
-            return 3
+            return categoryNames[section-1].count
         }
     }
     
@@ -111,6 +116,7 @@ extension MyInfoViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InfoMenuCollectionViewCell.cellIdentifier, for: indexPath) as! InfoMenuCollectionViewCell
+            cell.setDataBind(menuNames[indexPath.section-1][indexPath.row])
             return cell
         }
     }
@@ -118,7 +124,8 @@ extension MyInfoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MyInfoHeaderView.reuseIdentifier, for: indexPath)
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MyInfoHeaderView.reuseIdentifier, for: indexPath) as! MyInfoHeaderView
+            header.setDataBind(categoryNames[indexPath.section-1])
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MyInfoFooterView.reuseIdentifier, for: indexPath)
@@ -142,7 +149,7 @@ extension MyInfoViewController: UICollectionViewDataSource {
             return CGSize()
         } else {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 70)
+            return CGSize(width: width, height: 20)
         }
     }
 }

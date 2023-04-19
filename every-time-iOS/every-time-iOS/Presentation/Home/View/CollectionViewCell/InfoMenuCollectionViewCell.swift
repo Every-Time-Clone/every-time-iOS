@@ -17,6 +17,7 @@ final class InfoMenuCollectionViewCell: UICollectionViewCell {
     private let leftBorderLineView: UIView = UIView()
     private let menuNameLabel: UILabel = UILabel()
     private let rightBorderLineView: UIView = UIView()
+    private let descriptionLabel: UILabel = UILabel()
     
     // MARK: - Initializer
     
@@ -45,18 +46,22 @@ extension InfoMenuCollectionViewCell {
     
         menuNameLabel.do {
             $0.font = .systemFont(ofSize: 15)
-            $0.text = "메뉴"
         }
         
         rightBorderLineView.do {
             $0.backgroundColor = .everytimeGray
+        }
+        
+        descriptionLabel.do {
+            $0.textColor = .lightGray
+            $0.font = .systemFont(ofSize: 13)
         }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        contentView.addSubviews(leftBorderLineView, rightBorderLineView, menuNameLabel)
+        contentView.addSubviews(leftBorderLineView, rightBorderLineView, menuNameLabel, descriptionLabel)
         
         leftBorderLineView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
@@ -74,5 +79,17 @@ extension InfoMenuCollectionViewCell {
             $0.trailing.equalToSuperview().offset(-5)
             $0.width.equalTo(2)
         }
+        
+        descriptionLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalTo(rightBorderLineView.snp.leading).offset(-15)
+        }
+    }
+    
+    // MARK: - Custom Methods
+    
+    func setDataBind(_ infoMenuModel: InfoMenuModel) {
+        menuNameLabel.text = infoMenuModel.menuName
+        descriptionLabel.text = infoMenuModel.description
     }
 }

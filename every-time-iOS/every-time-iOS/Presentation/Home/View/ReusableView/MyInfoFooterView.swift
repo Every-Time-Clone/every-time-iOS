@@ -14,6 +14,11 @@ final class MyInfoFooterView: UICollectionReusableView {
     
     static let reuseIdentifier = "MyInfoFooterView"
     
+    // MARK: - UI Components
+    
+    private let borderView: UIView = UIView()
+    private let lineView: UIView = UIView()
+    
     // MARK: - Initializer
         
     override init(frame: CGRect) {
@@ -33,12 +38,38 @@ extension MyInfoFooterView {
     // MARK: - UI Components Property
     
     private func setUI() {
-        backgroundColor = .purple
+        backgroundColor = .clear
+        
+        borderView.do {
+            $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            $0.layer.cornerRadius = 12
+            $0.layer.borderColor = UIColor.everytimeGray.cgColor
+            $0.layer.borderWidth = 2
+            $0.layer.masksToBounds = true
+        }
+
+        lineView.do {
+            $0.backgroundColor = .white
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
+        addSubviews(borderView, lineView)
         
+        borderView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().offset(5)
+            $0.trailing.equalToSuperview().offset(-5)
+            $0.bottom.equalToSuperview().offset(-5)
+        }
+        
+        lineView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalTo(borderView.snp.leading).offset(2)
+            $0.trailing.equalTo(borderView.snp.trailing).offset(-2)
+            $0.height.equalTo(2)
+        }
     }
 }

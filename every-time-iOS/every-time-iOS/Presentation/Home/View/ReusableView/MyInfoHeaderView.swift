@@ -55,7 +55,6 @@ extension MyInfoHeaderView {
         
         categoryLabel.do {
             $0.font = .systemFont(ofSize: 20, weight: .bold)
-            $0.text = "테스트"
         }
     }
     
@@ -74,7 +73,8 @@ extension MyInfoHeaderView {
         
         lineView.snp.makeConstraints {
             $0.bottom.equalToSuperview()
-            $0.left.trailing.equalTo(borderView)
+            $0.leading.equalTo(borderView.snp.leading).offset(2)
+            $0.trailing.equalTo(borderView.snp.trailing).offset(-2)
             $0.height.equalTo(2)
         }
         
@@ -82,5 +82,11 @@ extension MyInfoHeaderView {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(15)
         }
+    }
+    
+    // MARK: - Custom Methods
+    
+    func setDataBind(_ categoryName: String) {
+        categoryLabel.text = categoryName
     }
 }
