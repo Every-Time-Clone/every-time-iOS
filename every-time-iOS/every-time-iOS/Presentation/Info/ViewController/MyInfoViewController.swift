@@ -7,6 +7,7 @@
 
 import UIKit
 
+import PhotosUI
 import SnapKit
 import Then
 
@@ -92,6 +93,36 @@ extension MyInfoViewController {
         infoCollectionView.dataSource = self
         infoCollectionView.delegate = self
     }
+    
+    private func setProfileImageActions() {
+        let alertVC = UIAlertController(title: "프로필 이미지 변경", message: nil, preferredStyle: .actionSheet)
+        let changeImageAction = UIAlertAction(title: "프로필 이미지 변경", style: .default) { _ in
+            self.changeImageButtonDidTap()
+        }
+        let deleteImageAction = UIAlertAction(title: "프로필 이미지 삭제", style: .default) { _ in
+            self.deleteImageButtonDidTap()
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alertVC.addActions(changeImageAction, deleteImageAction, cancelAction)
+        
+        present(alertVC, animated: true)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func changeImageButtonDidTap() {
+        var configuation = PHPickerConfiguration()
+        configuation.filter = .any(of: [.images])
+        
+        let picker = PHPickerViewController(configuration: configuation)
+        picker.delegate = self
+        picker.modalPresentationStyle = .overFullScreen
+        self.present(picker, animated: true)
+    }
+    
+    @objc private func deleteImageButtonDidTap() {
+        setAlertWithAnimation("프로필 변경 완료")
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -159,6 +190,8 @@ extension MyInfoViewController: UICollectionViewDataSource {
                 let navVC = UINavigationController(rootViewController: SetNicknameViewController())
                 navVC.modalPresentationStyle = .overFullScreen
                 present(navVC, animated: true)
+            } else if indexPath.item == 1 {
+                setProfileImageActions()
             }
         }
     }
@@ -180,5 +213,14 @@ extension MyInfoViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(0)
+    }
+}
+
+// MARK: - PHPickerViewControllerDelegate
+
+extension MyInfoViewController: PHPickerViewControllerDelegate {
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true)
     }
 }
