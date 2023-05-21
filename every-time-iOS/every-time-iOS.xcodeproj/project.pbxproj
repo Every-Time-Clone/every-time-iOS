@@ -73,6 +73,8 @@
 		ABB17481298B8CC1000165E6 /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB17480298B8CC1000165E6 /* UIButton +.swift */; };
 		ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB17485298CD827000165E6 /* UIAlertController +.swift */; };
 		ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDF519E29B43FFC00102E7E /* UITextField +.swift */; };
+		ABE7CAA32A1A6867001EA9A6 /* InfoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CAA22A1A6867001EA9A6 /* InfoTextField.swift */; };
+		ABE7CAA52A1A6A35001EA9A6 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CAA42A1A6A35001EA9A6 /* SetNicknameViewController.swift */; };
 		ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333729752D1000E3DC16 /* AppDelegate.swift */; };
 		ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8333929752D1000E3DC16 /* SceneDelegate.swift */; };
 		ABF8333F29752D1000E3DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF8333D29752D1000E3DC16 /* Main.storyboard */; };
@@ -164,6 +166,8 @@
 		ABB17480298B8CC1000165E6 /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		ABB17485298CD827000165E6 /* UIAlertController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController +.swift"; sourceTree = "<group>"; };
 		ABDF519E29B43FFC00102E7E /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
+		ABE7CAA22A1A6867001EA9A6 /* InfoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextField.swift; sourceTree = "<group>"; };
+		ABE7CAA42A1A6A35001EA9A6 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
 		ABF8333429752D1000E3DC16 /* every-time-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "every-time-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8333729752D1000E3DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8333929752D1000E3DC16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -480,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */,
+				ABE7CAA42A1A6A35001EA9A6 /* SetNicknameViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */,
 				AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */,
 				AB02A59F29EABFFB0044AF79 /* ProfileCollectionViewCell.swift */,
+				ABE7CAA22A1A6867001EA9A6 /* InfoTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
 				AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */,
+				ABE7CAA52A1A6A35001EA9A6 /* SetNicknameViewController.swift in Sources */,
 				AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */,
 				AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */,
 				AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */,
@@ -791,6 +798,7 @@
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
 				AB8B572329A72FD60059EBDC /* CreateBoardTableViewHeader.swift in Sources */,
 				AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */,
+				ABE7CAA32A1A6867001EA9A6 /* InfoTextField.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
 				AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
