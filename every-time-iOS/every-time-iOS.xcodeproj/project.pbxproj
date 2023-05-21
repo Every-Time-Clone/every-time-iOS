@@ -201,16 +201,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB02A5A329EAC4070044AF79 /* ReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */,
-				AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */,
-				AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */,
-			);
-			path = ReusableView;
-			sourceTree = "<group>";
-		};
 		AB0A31C729B993970095F852 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				ABF833722976796900E3DC16 /* HomeViewController.swift */,
-				AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -330,31 +319,13 @@
 		AB7DCCB5297D8CCB002F46FE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AB02A5A329EAC4070044AF79 /* ReusableView */,
-				AB7DCCBF297D9116002F46FE /* CollectionViewCell */,
-				AB7DCCBE297D910E002F46FE /* TableViewCell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AB7DCCBE297D910E002F46FE /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
+				AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */,
+				AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */,
+				AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */,
 				AB7DCCCA297DAA65002F46FE /* BoardTableViewCell.swift */,
 				AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */,
 			);
-			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		AB7DCCBF297D9116002F46FE /* CollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */,
-				AB7DCCC8297D9E21002F46FE /* MenuCollectionViewCell.swift */,
-				AB02A59F29EABFFB0044AF79 /* ProfileCollectionViewCell.swift */,
-				AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */,
-			);
-			path = CollectionViewCell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		AB8B570629A355AE0059EBDC /* Board */ = {
@@ -496,6 +467,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ABE7CA9F2A1A6674001EA9A6 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				ABE7CAA12A1A6697001EA9A6 /* View */,
+				ABE7CAA02A1A667F001EA9A6 /* ViewController */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		ABE7CAA02A1A667F001EA9A6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB02A59929EABB4C0044AF79 /* MyInfoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ABE7CAA12A1A6697001EA9A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */,
+				AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */,
+				AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */,
+				AB02A59F29EABFFB0044AF79 /* ProfileCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ABF8332B29752D1000E3DC16 = {
 			isa = PBXGroup;
 			children = (
@@ -562,6 +561,7 @@
 				ABF8336F2976793700E3DC16 /* Menu */,
 				ABF833702976794400E3DC16 /* Notification */,
 				ABF833712976795400E3DC16 /* CampusPick */,
+				ABE7CA9F2A1A6674001EA9A6 /* Info */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
