@@ -16,7 +16,6 @@ class InfoTextField: UITextField {
         super.init(frame: frame)
         
         setUI()
-        setAddTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -35,15 +34,5 @@ extension InfoTextField {
         layer.borderWidth = 1
         tintColor = .black
         addLeftPadding(width: 10)
-    }
-    
-    private func setAddTarget() {
-        self.addTarget(self, action: #selector(infoTextFieldDidTap), for: .touchUpInside)
-    }
-    
-    // MARK: - @objc Methods
-    
-    @objc private func infoTextFieldDidTap() {
-        backgroundColor = .white
     }
 }

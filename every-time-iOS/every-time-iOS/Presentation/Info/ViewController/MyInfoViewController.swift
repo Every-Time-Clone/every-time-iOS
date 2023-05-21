@@ -156,9 +156,9 @@ extension MyInfoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2 {
             if indexPath.item == 0 {
-                let setNicknameVC = SetNicknameViewController()
-                setNicknameVC.modalPresentationStyle = .overFullScreen
-                present(setNicknameVC, animated: true)
+                let navVC = UINavigationController(rootViewController: SetNicknameViewController())
+                navVC.modalPresentationStyle = .overFullScreen
+                present(navVC, animated: true)
             }
         }
     }
