@@ -13,6 +13,8 @@
 		AB02A5A529EAC57B0044AF79 /* MyInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */; };
 		AB02A5A729EAC5D70044AF79 /* MyInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */; };
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
+		AB1186052A1F9A5900BA236E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186042A1F9A5900BA236E /* Environment.swift */; };
+		AB1186072A1F9A7A00BA236E /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186062A1F9A7A00BA236E /* Encodable+.swift */; };
 		AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */; };
 		AB137F0D29C1EA9100804ACD /* TermDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */; };
 		AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0F29C1EB8C00804ACD /* TermModel.swift */; };
@@ -106,6 +108,8 @@
 		AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoHeaderView.swift; sourceTree = "<group>"; };
 		AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoFooterView.swift; sourceTree = "<group>"; };
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
+		AB1186042A1F9A5900BA236E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		AB1186062A1F9A7A00BA236E /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTitleTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F0F29C1EB8C00804ACD /* TermModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermModel.swift; sourceTree = "<group>"; };
@@ -533,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF8335029752DD100E3DC16 /* Extension */,
+				AB1186042A1F9A5900BA236E /* Environment.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				ABB17485298CD827000165E6 /* UIAlertController +.swift */,
 				AB8B572029A724230059EBDC /* UIViewController +.swift */,
 				ABDF519E29B43FFC00102E7E /* UITextField +.swift */,
+				AB1186062A1F9A7A00BA236E /* Encodable+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -804,11 +810,13 @@
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
 				ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */,
 				ABF8337B2976799100E3DC16 /* CampusPickViewController.swift in Sources */,
+				AB1186072A1F9A7A00BA236E /* Encodable+.swift in Sources */,
 				AB4CFF9F2998D8A5006A3866 /* MenuTabCollectionViewCell.swift in Sources */,
 				AB8B570F29A38EC80059EBDC /* MenuBoardListViewController.swift in Sources */,
 				ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */,
 				ABB1746729880F6F000165E6 /* PostTableViewCell.swift in Sources */,
 				ABB174732988DD11000165E6 /* TitleView.swift in Sources */,
+				AB1186052A1F9A5900BA236E /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,6 +961,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://52.79.188.140:55534";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3H5YNSQ64;
@@ -982,6 +991,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://52.79.188.140:55534";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3H5YNSQ64;
