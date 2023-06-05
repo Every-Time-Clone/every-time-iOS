@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController {
     private let everyTimeLabel: UILabel = UILabel()
     private let campusNameLabel: UILabel = UILabel()
     private let searchButton: UIButton = UIButton()
-    private let myPageButton: UIButton = UIButton()
+    private let myInfoButton: UIButton = UIButton()
     private let homeTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - Properties
@@ -34,6 +34,7 @@ final class HomeViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        setAddTarget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +66,7 @@ extension HomeViewController {
             $0.tintColor = .black
         }
         
-        myPageButton.do {
+        myInfoButton.do {
             $0.setImage(UIImage(systemName: "person"), for: .normal)
             $0.tintColor = .black
         }
@@ -84,7 +85,7 @@ extension HomeViewController {
     
     private func setLayout() {
         view.addSubviews(headerView, homeTableView)
-        headerView.addSubviews(everyTimeLabel, campusNameLabel, searchButton, myPageButton)
+        headerView.addSubviews(everyTimeLabel, campusNameLabel, searchButton, myInfoButton)
         
         headerView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -101,14 +102,14 @@ extension HomeViewController {
             $0.leading.equalTo(everyTimeLabel)
         }
         
-        myPageButton.snp.makeConstraints {
+        myInfoButton.snp.makeConstraints {
             $0.centerY.equalTo(campusNameLabel)
             $0.trailing.equalToSuperview().offset(-20)
         }
         
         searchButton.snp.makeConstraints {
-            $0.centerY.equalTo(myPageButton)
-            $0.trailing.equalTo(myPageButton.snp.leading).offset(-20)
+            $0.centerY.equalTo(myInfoButton)
+            $0.trailing.equalTo(myInfoButton.snp.leading).offset(-20)
         }
         
         homeTableView.snp.makeConstraints {
@@ -127,7 +128,7 @@ extension HomeViewController {
     
     private func pushToBoardViewController() {
         let boardVC = BoardViewController()
-        self.navigationController?.pushViewController(boardVC, animated: true)
+        navigationController?.pushViewController(boardVC, animated: true)
     }
     
     private func setNavigationBar() {
@@ -137,6 +138,17 @@ extension HomeViewController {
     
     private func setTabBar() {
         tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func setAddTarget() {
+        myInfoButton.addTarget(self, action: #selector(myInfoButtonDidTap), for: .touchUpInside)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func myInfoButtonDidTap() {
+        let myInfoVC = MyInfoViewController()
+        navigationController?.pushViewController(myInfoVC, animated: true)
     }
 }
 
