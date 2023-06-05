@@ -24,6 +24,10 @@ final class LoginViewController: UIViewController {
     private let findAccountButton: UIButton = UIButton()
     private let signupButton: UIButton = UIButton()
 
+    // MARK: - Properties
+
+    private let loginManager: LoginManager = LoginManager()
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -33,6 +37,8 @@ final class LoginViewController: UIViewController {
         setLayout()
         setDelegate()
         setAddTarget()
+
+
     }
 }
 
@@ -185,24 +191,40 @@ extension LoginViewController {
             self.loginStackView.superview?.layoutIfNeeded()
         }
     }
+
+    private func presentTabBar() {
+        let tabBar = EverytimeTabBarController()
+        tabBar.modalTransitionStyle = .crossDissolve
+        tabBar.modalPresentationStyle = .overFullScreen
+        self.present(tabBar, animated: true)
+    }
+
+    private func presentLoginErrorAlert() {
+        idTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        setOriginalLoginStackAnimation()
+        let alert = UIAlertController(title: "올바른 정보를 입력해주세요.\nPC에서는 정상적으로 로그인이 되지만 앱에서 로그인이 되지 않을 경우,\n[everytimekr.help@gmail.com] 메일로 아이디와 스크린샷을 보내주시기 바랍니다.", message: nil, preferredStyle: .alert)
+        let closeButton = UIAlertAction(title: "닫기", style: .cancel)
+        alert.addAction(closeButton)
+        present(alert, animated: true) {
+            self.idTextField.text = ""
+            self.passwordTextField.text = ""
+        }
+    }
     
     // MARK: - @objc Methods
     
     @objc private func loginButtonDidTap() {
-        // 실패 시
-//        idTextField.resignFirstResponder()
-//        passwordTextField.resignFirstResponder()
-//        setOriginalLoginStackAnimation()
-//        let alert = UIAlertController(title: "올바른 정보를 입력해주세요.\nPC에서는 정상적으로 로그인이 되지만 앱에서 로그인이 되지 않을 경우,\n[everytimekr.help@gmail.com] 메일로 아이디와 스크린샷을 보내주시기 바랍니다.", message: nil, preferredStyle: .alert)
-//        let closeButton = UIAlertAction(title: "닫기", style: .cancel)
-//        alert.addAction(closeButton)
-//        present(alert, animated: true)
-        
-        // 성공 시
-        let tabBar = EverytimeTabBarController()
-        tabBar.modalTransitionStyle = .crossDissolve
-        tabBar.modalPresentationStyle = .overFullScreen
-        present(tabBar, animated: true)
+        guard let email = idTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        let loginModel = LoginRequest(email: email, password: password)
+        loginManager.request(parameters: loginModel) { [weak self] response in
+            if response {
+                self?.presentTabBar()
+            } else {
+                self?.presentLoginErrorAlert()
+            }
+        }
     }
     
     @objc private func findAccountButtonDidTap() {
