@@ -23,8 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             window.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
             
-            let rootVC = EverytimeTabBarController()
-//            let rootVC = LoginViewController()
+//            let rootVC = EverytimeTabBarController()
+            let rootVC = LoginViewController()
             
             window.rootViewController = rootVC
             window.makeKeyAndVisible()

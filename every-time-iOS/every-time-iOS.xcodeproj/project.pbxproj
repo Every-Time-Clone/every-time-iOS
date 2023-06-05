@@ -12,8 +12,12 @@
 		AB02A5A229EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */; };
 		AB02A5A529EAC57B0044AF79 /* MyInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */; };
 		AB02A5A729EAC5D70044AF79 /* MyInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */; };
+		AB08B5852A2DAA8A0086B8F9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B5842A2DAA8A0086B8F9 /* Constant.swift */; };
+		AB08B58B2A2DAB8F0086B8F9 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B58A2A2DAB8F0086B8F9 /* LoginRequest.swift */; };
+		AB08B58D2A2DAC8D0086B8F9 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */; };
+		AB08B5912A2DAD910086B8F9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B5902A2DAD910086B8F9 /* LoginManager.swift */; };
+		AB08B5942A2DAEF30086B8F9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB08B5932A2DAEF30086B8F9 /* Alamofire */; };
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
-		AB1186052A1F9A5900BA236E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186042A1F9A5900BA236E /* Environment.swift */; };
 		AB1186072A1F9A7A00BA236E /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186062A1F9A7A00BA236E /* Encodable+.swift */; };
 		AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */; };
 		AB137F0D29C1EA9100804ACD /* TermDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */; };
@@ -106,8 +110,11 @@
 		AB02A5A129EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB02A5A429EAC57B0044AF79 /* MyInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoHeaderView.swift; sourceTree = "<group>"; };
 		AB02A5A629EAC5D70044AF79 /* MyInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoFooterView.swift; sourceTree = "<group>"; };
+		AB08B5842A2DAA8A0086B8F9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		AB08B58A2A2DAB8F0086B8F9 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		AB08B5902A2DAD910086B8F9 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
-		AB1186042A1F9A5900BA236E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		AB1186062A1F9A7A00BA236E /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTitleTableViewCell.swift; sourceTree = "<group>"; };
 		AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -199,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB08B5942A2DAEF30086B8F9 /* Alamofire in Frameworks */,
 				ABF833812976889600E3DC16 /* SnapKit in Frameworks */,
 				ABF83384297688A000E3DC16 /* Then in Frameworks */,
 			);
@@ -207,6 +215,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB08B5862A2DAAC10086B8F9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B58E2A2DAD670086B8F9 /* Entity */,
+				AB08B5872A2DAADD0086B8F9 /* Manager */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AB08B5872A2DAADD0086B8F9 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B58F2A2DAD720086B8F9 /* Login */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		AB08B5892A2DAB7E0086B8F9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B58A2A2DAB8F0086B8F9 /* LoginRequest.swift */,
+				AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AB08B58E2A2DAD670086B8F9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B5892A2DAB7E0086B8F9 /* Login */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB08B58F2A2DAD720086B8F9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B5902A2DAD910086B8F9 /* LoginManager.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		AB0A31C729B993970095F852 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +574,7 @@
 			children = (
 				ABF8334B29752D5400E3DC16 /* Global */,
 				ABF8334C29752D5E00E3DC16 /* Application */,
+				AB08B5862A2DAAC10086B8F9 /* Data */,
 				ABF8334D29752D7000E3DC16 /* Resources */,
 				ABF8334F29752D9B00E3DC16 /* Presentation */,
 				ABF8334529752D1100E3DC16 /* Info.plist */,
@@ -535,7 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF8335029752DD100E3DC16 /* Extension */,
-				AB1186042A1F9A5900BA236E /* Environment.swift */,
+				AB08B5842A2DAA8A0086B8F9 /* Constant.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -667,6 +718,7 @@
 			packageProductDependencies = (
 				ABF833802976889600E3DC16 /* SnapKit */,
 				ABF83383297688A000E3DC16 /* Then */,
+				AB08B5932A2DAEF30086B8F9 /* Alamofire */,
 			);
 			productName = "every-time-iOS";
 			productReference = ABF8333429752D1000E3DC16 /* every-time-iOS.app */;
@@ -699,6 +751,7 @@
 			packageReferences = (
 				ABF8337F2976889600E3DC16 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				ABF83382297688A000E3DC16 /* XCRemoteSwiftPackageReference "Then" */,
+				AB08B5922A2DAEF30086B8F9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = ABF8333529752D1000E3DC16 /* Products */;
 			projectDirPath = "";
@@ -781,6 +834,7 @@
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
 				AB91DC7029BF335C00037914 /* CheckButton.swift in Sources */,
+				AB08B58B2A2DAB8F0086B8F9 /* LoginRequest.swift in Sources */,
 				AB02A5A229EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
 				AB02A59A29EABB4C0044AF79 /* MyInfoViewController.swift in Sources */,
@@ -798,12 +852,14 @@
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
 				AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */,
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
+				AB08B5912A2DAD910086B8F9 /* LoginManager.swift in Sources */,
 				AB8B572329A72FD60059EBDC /* CreateBoardTableViewHeader.swift in Sources */,
 				AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */,
 				ABE7CAA32A1A6867001EA9A6 /* InfoTextField.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
 				AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
+				AB08B5852A2DAA8A0086B8F9 /* Constant.swift in Sources */,
 				ABF8335F29752F2D00E3DC16 /* UITableViewCell +.swift in Sources */,
 				ABF8337B2976799100E3DC16 /* CampusPickViewController.swift in Sources */,
 				AB1186072A1F9A7A00BA236E /* Encodable+.swift in Sources */,
@@ -811,8 +867,8 @@
 				AB8B570F29A38EC80059EBDC /* MenuBoardListViewController.swift in Sources */,
 				ABF8333A29752D1000E3DC16 /* SceneDelegate.swift in Sources */,
 				ABB1746729880F6F000165E6 /* PostTableViewCell.swift in Sources */,
+				AB08B58D2A2DAC8D0086B8F9 /* LoginResponse.swift in Sources */,
 				ABB174732988DD11000165E6 /* TitleView.swift in Sources */,
-				AB1186052A1F9A5900BA236E /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1090,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AB08B5922A2DAEF30086B8F9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		ABF8337F2976889600E3DC16 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1053,6 +1117,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB08B5932A2DAEF30086B8F9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB08B5922A2DAEF30086B8F9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		ABF833802976889600E3DC16 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ABF8337F2976889600E3DC16 /* XCRemoteSwiftPackageReference "SnapKit" */;
