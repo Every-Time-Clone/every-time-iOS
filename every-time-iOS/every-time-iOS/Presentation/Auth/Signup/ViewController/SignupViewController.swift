@@ -245,6 +245,7 @@ extension SignupViewController {
         let signupRequest = SignupReqeust(email: email, nickname: nickname, password: password)
         signupManager.reqeust(parameter: signupRequest) { [weak self] response in
             if response.statusCode == 201 {
+                UserDefaults.standard.set(response.data.uuid, forKey: "UUID")
                 self?.presentToTabBar()
             } else {
                 self?.setAlertWithAnimation("회원가입 실패")
