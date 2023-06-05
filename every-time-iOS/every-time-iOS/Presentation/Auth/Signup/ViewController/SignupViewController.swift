@@ -30,6 +30,10 @@ final class SignupViewController: UIViewController {
     private let nicknameTextField: AuthTextField = AuthTextField()
     private let signupButton: UIButton = UIButton()
 
+    // MARK: - Properties
+
+    private let signupManager: SignupManager = SignupManager()
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -216,6 +220,13 @@ extension SignupViewController {
             textField.addRightImage(image: UIImage(), tintColor: .systemGreen)
         }
     }
+
+    private func presentToTabBar() {
+        let tabBar = EverytimeTabBarController()
+        tabBar.modalTransitionStyle = .crossDissolve
+        tabBar.modalPresentationStyle = .overFullScreen
+        self.present(tabBar, animated: true)
+    }
     
     // MARK: - @objc Methods
     
@@ -228,10 +239,18 @@ extension SignupViewController {
     }
     
     @objc private func signupButtonDidTap() {
-        let tabBar = EverytimeTabBarController()
-        tabBar.modalTransitionStyle = .crossDissolve
-        tabBar.modalPresentationStyle = .overFullScreen
-        present(tabBar, animated: true)
+        guard let email = emailTextField.text else { return }
+        guard let nickname = nicknameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        let signupRequest = SignupReqeust(email: email, nickname: nickname, password: password)
+        signupManager.reqeust(parameter: signupRequest) { [weak self] response in
+            if response.statusCode == 201 {
+                UserDefaults.standard.set(response.data.uuid, forKey: "UUID")
+                self?.presentToTabBar()
+            } else {
+                self?.setAlertWithAnimation("회원가입 실패")
+            }
+        }
     }
     
     @objc private func idTextFieldDidChange(_ textField: UITextField) {
