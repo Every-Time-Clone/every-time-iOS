@@ -96,7 +96,6 @@
 		ABF8337D297679BB00E3DC16 /* EverytimeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8337C297679BB00E3DC16 /* EverytimeTabBarController.swift */; };
 		ABF833812976889600E3DC16 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ABF833802976889600E3DC16 /* SnapKit */; };
 		ABF83384297688A000E3DC16 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = ABF83383297688A000E3DC16 /* Then */; };
-		ABF83387297688C800E3DC16 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = ABF83386297688C800E3DC16 /* Moya */; };
 		ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF833882976ACEA00E3DC16 /* UITabBar +.swift */; };
 		ABF8338B2976ADAD00E3DC16 /* CALayer +.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8338A2976ADAD00E3DC16 /* CALayer +.swift */; };
 /* End PBXBuildFile section */
@@ -202,7 +201,6 @@
 			files = (
 				ABF833812976889600E3DC16 /* SnapKit in Frameworks */,
 				ABF83384297688A000E3DC16 /* Then in Frameworks */,
-				ABF83387297688C800E3DC16 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,7 +667,6 @@
 			packageProductDependencies = (
 				ABF833802976889600E3DC16 /* SnapKit */,
 				ABF83383297688A000E3DC16 /* Then */,
-				ABF83386297688C800E3DC16 /* Moya */,
 			);
 			productName = "every-time-iOS";
 			productReference = ABF8333429752D1000E3DC16 /* every-time-iOS.app */;
@@ -702,7 +699,6 @@
 			packageReferences = (
 				ABF8337F2976889600E3DC16 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				ABF83382297688A000E3DC16 /* XCRemoteSwiftPackageReference "Then" */,
-				ABF83385297688C800E3DC16 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = ABF8333529752D1000E3DC16 /* Products */;
 			projectDirPath = "";
@@ -961,7 +957,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://52.79.188.140:55534";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3H5YNSQ64;
@@ -991,7 +986,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://52.79.188.140:55534";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3H5YNSQ64;
@@ -1056,14 +1050,6 @@
 				kind = branch;
 			};
 		};
-		ABF83385297688C800E3DC16 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1076,11 +1062,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ABF83382297688A000E3DC16 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		ABF83386297688C800E3DC16 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ABF83385297688C800E3DC16 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
