@@ -17,6 +17,9 @@
 		AB08B58D2A2DAC8D0086B8F9 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */; };
 		AB08B5912A2DAD910086B8F9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B5902A2DAD910086B8F9 /* LoginManager.swift */; };
 		AB08B5942A2DAEF30086B8F9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB08B5932A2DAEF30086B8F9 /* Alamofire */; };
+		AB08B5A02A2DB8180086B8F9 /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B59F2A2DB8180086B8F9 /* SignupRequest.swift */; };
+		AB08B5A22A2DB8200086B8F9 /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B5A12A2DB8200086B8F9 /* SignupResponse.swift */; };
+		AB08B5A42A2DB82A0086B8F9 /* SignupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08B5A32A2DB82A0086B8F9 /* SignupManager.swift */; };
 		AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A31C929B999590095F852 /* SchoolTableView.swift */; };
 		AB1186072A1F9A7A00BA236E /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1186062A1F9A7A00BA236E /* Encodable+.swift */; };
 		AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */; };
@@ -114,6 +117,9 @@
 		AB08B58A2A2DAB8F0086B8F9 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		AB08B5902A2DAD910086B8F9 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		AB08B59F2A2DB8180086B8F9 /* SignupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
+		AB08B5A12A2DB8200086B8F9 /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
+		AB08B5A32A2DB82A0086B8F9 /* SignupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupManager.swift; sourceTree = "<group>"; };
 		AB0A31C929B999590095F852 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
 		AB1186062A1F9A7A00BA236E /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		AB137F0A29C1EA0A00804ACD /* TermTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				AB08B58F2A2DAD720086B8F9 /* Login */,
+				AB08B59E2A2DB8070086B8F9 /* Signup */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -245,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				AB08B5892A2DAB7E0086B8F9 /* Login */,
+				AB08B59D2A2DB7FE0086B8F9 /* Signup */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -255,6 +263,23 @@
 				AB08B5902A2DAD910086B8F9 /* LoginManager.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		AB08B59D2A2DB7FE0086B8F9 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B59F2A2DB8180086B8F9 /* SignupRequest.swift */,
+				AB08B5A12A2DB8200086B8F9 /* SignupResponse.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		AB08B59E2A2DB8070086B8F9 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B5A32A2DB82A0086B8F9 /* SignupManager.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		AB0A31C729B993970095F852 /* ViewController */ = {
@@ -783,6 +808,7 @@
 				ABF8336129752F3C00E3DC16 /* UICollectionViewCell +.swift in Sources */,
 				ABF8335729752E1F00E3DC16 /* UIStackView +.swift in Sources */,
 				AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */,
+				AB08B5A02A2DB8180086B8F9 /* SignupRequest.swift in Sources */,
 				AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */,
 				AB8B572729A777650059EBDC /* AnonymityCheckTableViewCell.swift in Sources */,
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
@@ -803,6 +829,7 @@
 				ABB1747D298B6867000165E6 /* CommentModel.swift in Sources */,
 				AB8B571929A5D8B60059EBDC /* BoardSearchViewController.swift in Sources */,
 				AB137F1829C37FD400804ACD /* TermsFooterView.swift in Sources */,
+				AB08B5A22A2DB8200086B8F9 /* SignupResponse.swift in Sources */,
 				AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */,
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
 				AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */,
@@ -857,6 +884,7 @@
 				AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */,
 				ABE7CAA32A1A6867001EA9A6 /* InfoTextField.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
+				AB08B5A42A2DB82A0086B8F9 /* SignupManager.swift in Sources */,
 				AB9A61F3299CC0BD005CA2DB /* BoardMainMenuModel.swift in Sources */,
 				ABF8333829752D1000E3DC16 /* AppDelegate.swift in Sources */,
 				AB08B5852A2DAA8A0086B8F9 /* Constant.swift in Sources */,
