@@ -210,9 +210,9 @@ extension PostTableViewHeader {
     func setDataBind(_ model: PostModel) {
         nameLabel.text = model.name
         titleLabel.text = model.title
-        contentLabel.text = model.content
+        contentLabel.text = model.contents
         timeLabel.text = model.time
-        likeNumberLabel.text = model.likeNumber
+        likeNumberLabel.text = "\(model.goods)"
         commentNumberLabel.text = model.commentNumber
         scrapNumberLabel.text = model.scrapNumber
         

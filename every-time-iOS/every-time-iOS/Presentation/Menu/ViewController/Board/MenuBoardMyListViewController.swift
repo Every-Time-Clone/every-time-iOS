@@ -24,7 +24,7 @@ final class MenuBoardMyListViewController: BoardViewController {
     
     @objc override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuBoardPostVC = MenuBoardPostViewController()
-        menuBoardPostVC.postDetail = postList[indexPath.row]
+        menuBoardPostVC.postDetail = posts[indexPath.row]
         navigationController?.pushViewController(menuBoardPostVC, animated: true)
     }
 }

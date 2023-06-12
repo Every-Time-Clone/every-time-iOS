@@ -29,6 +29,8 @@
 		AB137F1829C37FD400804ACD /* TermsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1729C37FD400804ACD /* TermsFooterView.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
+		AB3592802A377E7E009B21A5 /* PostListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35927F2A377E7E009B21A5 /* PostListResponse.swift */; };
+		AB3592822A378014009B21A5 /* PostListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3592812A378014009B21A5 /* PostListManager.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
 		AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */; };
 		AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */; };
@@ -129,6 +131,8 @@
 		AB137F1729C37FD400804ACD /* TermsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsFooterView.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		AB35927F2A377E7E009B21A5 /* PostListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListResponse.swift; sourceTree = "<group>"; };
+		AB3592812A378014009B21A5 /* PostListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListManager.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
 		AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF972998C89F006A3866 /* CareerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerMenuViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 			children = (
 				AB08B58F2A2DAD720086B8F9 /* Login */,
 				AB08B59E2A2DB8070086B8F9 /* Signup */,
+				AB3592792A377E4F009B21A5 /* Board */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			children = (
 				AB08B5892A2DAB7E0086B8F9 /* Login */,
 				AB08B59D2A2DB7FE0086B8F9 /* Signup */,
+				AB35927A2A377E57009B21A5 /* Board */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -329,6 +335,22 @@
 				AB1BF6B429AC452A002DBACF /* LoginViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AB3592792A377E4F009B21A5 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				AB3592812A378014009B21A5 /* PostListManager.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		AB35927A2A377E57009B21A5 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				AB35927F2A377E7E009B21A5 /* PostListResponse.swift */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 		AB37354B29B57D9800FC3EF7 /* Login */ = {
@@ -852,6 +874,7 @@
 				AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */,
 				ABB1746E2988D8CB000165E6 /* PostDetailViewController.swift in Sources */,
 				ABF8338B2976ADAD00E3DC16 /* CALayer +.swift in Sources */,
+				AB3592822A378014009B21A5 /* PostListManager.swift in Sources */,
 				ABF833732976796900E3DC16 /* HomeViewController.swift in Sources */,
 				ABF833772976797B00E3DC16 /* MenuViewController.swift in Sources */,
 				ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */,
@@ -867,6 +890,7 @@
 				AB02A59A29EABB4C0044AF79 /* MyInfoViewController.swift in Sources */,
 				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
 				ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */,
+				AB3592802A377E7E009B21A5 /* PostListResponse.swift in Sources */,
 				AB02A5A729EAC5D70044AF79 /* MyInfoFooterView.swift in Sources */,
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,

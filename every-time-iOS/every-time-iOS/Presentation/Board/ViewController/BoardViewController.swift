@@ -5,6 +5,7 @@
 //  Created by 김민 on 2023/01/30.
 //
 
+import Foundation
 import UIKit
 
 import SnapKit
@@ -20,7 +21,8 @@ class BoardViewController: UIViewController {
     
     // MARK: - Properties
     
-    let postList: [PostModel] = PostModel.dummyData()
+    var posts: [PostModel] = []
+    private let postListManager: PostListManager = PostListManager()
     
     // MARK: - View Life Cycle
     
@@ -37,6 +39,7 @@ class BoardViewController: UIViewController {
         setLayout()
         setDelegate()
         setAddTarget()
+        fetchPosts()
     }
 }
 
@@ -118,6 +121,30 @@ extension BoardViewController {
         writeVC.modalPresentationStyle = .overFullScreen
         present(writeVC, animated: true)
     }
+
+    // MARK: - Network
+
+    private func fetchPosts() {
+        postListManager.request { [weak self] response in
+            response.forEach {
+                self?.posts.insert($0.convertToPost(), at: 0)
+            }
+            self?.boardTableView.reloadData()
+
+//            let dateStr = response[0].uploadDate// Date 형태의 String
+//
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss" // 2020-08-13 16:30
+//
+//            let convertDate = dateFormatter.date(from: dateStr) // Date 타입으로 변환
+//
+//            let myDateFormatter = DateFormatter()
+//            myDateFormatter.dateFormat = "yy/MM/dd HH:mm" // 2020년 08월 13일 오후 04시 30분
+//            myDateFormatter.locale = Locale(identifier:"ko_KR") // PM, AM을 언어에 맞게 setting (ex: PM -> 오후)
+//            let convertStr = myDateFormatter.string(from: convertDate!)
+//            print(convertStr)
+        }
+    }
     
     // MARK: - @objc Methods
     
@@ -153,12 +180,12 @@ extension BoardViewController {
 extension BoardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postList.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.cellIdentifier, for: indexPath) as! PostTableViewCell
-        cell.setDataBind(postList[indexPath.row])
+        cell.setDataBind(posts[indexPath.row])
         return cell
     }
     
@@ -169,7 +196,7 @@ extension BoardViewController: UITableViewDataSource {
     
     @objc func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postDetailVC = PostDetailViewController()
-        postDetailVC.postDetail = postList[indexPath.row]
+        postDetailVC.postDetail = posts[indexPath.row]
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }

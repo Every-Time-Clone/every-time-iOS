@@ -167,9 +167,23 @@ extension PostTableViewCell {
     
     func setDataBind(_ model: PostModel) {
         titleLabel.text = model.title
-        contentLabel.text = model.content
-        timeLabel.text = model.time
-        likeNumberLabel.text = model.likeNumber
+        contentLabel.text = model.contents
+        timeLabel.text = convertTimeStampToDate(model.time)
+        likeNumberLabel.text = "\(model.goods)"
         commentNumberLabel.text = model.commentNumber
+    }
+
+    private func convertTimeStampToDate(_ timeStamp: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss" // 2020-08-13 16:30
+
+        let convertDate = dateFormatter.date(from: timeStamp)
+
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yy/MM/dd"
+        myDateFormatter.locale = Locale(identifier:"ko_KR")
+
+        let convertStr = myDateFormatter.string(from: convertDate!)
+        return convertStr
     }
 }
