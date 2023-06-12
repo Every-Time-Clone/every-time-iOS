@@ -20,7 +20,8 @@ class BoardViewController: UIViewController {
     
     // MARK: - Properties
     
-    let postList: [PostModel] = PostModel.dummyData()
+    var posts: [PostModel] = []
+    private let postListManager: PostListManager = PostListManager()
     
     // MARK: - View Life Cycle
     
@@ -37,6 +38,7 @@ class BoardViewController: UIViewController {
         setLayout()
         setDelegate()
         setAddTarget()
+        fetchPosts()
     }
 }
 
@@ -118,6 +120,17 @@ extension BoardViewController {
         writeVC.modalPresentationStyle = .overFullScreen
         present(writeVC, animated: true)
     }
+
+    // MARK: - Network
+
+    private func fetchPosts() {
+        postListManager.request { [weak self] response in
+            response.forEach {
+                self?.posts.append($0.convertToPost())
+            }
+            self?.boardTableView.reloadData()
+        }
+    }
     
     // MARK: - @objc Methods
     
@@ -153,12 +166,12 @@ extension BoardViewController {
 extension BoardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postList.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.cellIdentifier, for: indexPath) as! PostTableViewCell
-        cell.setDataBind(postList[indexPath.row])
+        cell.setDataBind(posts[indexPath.row])
         return cell
     }
     
@@ -169,7 +182,7 @@ extension BoardViewController: UITableViewDataSource {
     
     @objc func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postDetailVC = PostDetailViewController()
-        postDetailVC.postDetail = postList[indexPath.row]
+        postDetailVC.postDetail = posts[indexPath.row]
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }

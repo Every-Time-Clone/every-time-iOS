@@ -230,7 +230,6 @@ extension HomeViewController: UIScrollViewDelegate {
 extension HomeViewController: BoardTableViewCellDelegate {
     
     func boardPreviewCellDidSelected(_ index: Int) {
-        print(index)
         pushToBoardViewController()
     }
 }

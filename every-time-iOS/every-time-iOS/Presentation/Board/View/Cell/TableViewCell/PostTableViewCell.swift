@@ -167,9 +167,9 @@ extension PostTableViewCell {
     
     func setDataBind(_ model: PostModel) {
         titleLabel.text = model.title
-        contentLabel.text = model.content
+        contentLabel.text = model.contents
         timeLabel.text = model.time
-        likeNumberLabel.text = model.likeNumber
+        likeNumberLabel.text = "\(model.goods)"
         commentNumberLabel.text = model.commentNumber
     }
 }

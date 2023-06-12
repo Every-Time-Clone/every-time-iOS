@@ -34,7 +34,7 @@ final class ModifyPostViewController: WriteViewController {
     private func setPost() {
         guard let postDetail = postDetail else {return}
         titleTextField.text = postDetail.title
-        contentTextView.text = postDetail.content
+        contentTextView.text = postDetail.contents
         contentTextView.textColor = .black
     }
 }
