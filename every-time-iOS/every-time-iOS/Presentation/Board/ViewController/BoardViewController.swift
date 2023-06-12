@@ -126,7 +126,7 @@ extension BoardViewController {
     private func fetchPosts() {
         postListManager.request { [weak self] response in
             response.forEach {
-                self?.posts.append($0.convertToPost())
+                self?.posts.insert($0.convertToPost(), at: 0)
             }
             self?.boardTableView.reloadData()
         }
