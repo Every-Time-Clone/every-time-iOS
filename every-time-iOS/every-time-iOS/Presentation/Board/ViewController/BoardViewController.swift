@@ -5,6 +5,7 @@
 //  Created by 김민 on 2023/01/30.
 //
 
+import Foundation
 import UIKit
 
 import SnapKit
@@ -129,6 +130,19 @@ extension BoardViewController {
                 self?.posts.insert($0.convertToPost(), at: 0)
             }
             self?.boardTableView.reloadData()
+
+//            let dateStr = response[0].uploadDate// Date 형태의 String
+//
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss" // 2020-08-13 16:30
+//
+//            let convertDate = dateFormatter.date(from: dateStr) // Date 타입으로 변환
+//
+//            let myDateFormatter = DateFormatter()
+//            myDateFormatter.dateFormat = "yy/MM/dd HH:mm" // 2020년 08월 13일 오후 04시 30분
+//            myDateFormatter.locale = Locale(identifier:"ko_KR") // PM, AM을 언어에 맞게 setting (ex: PM -> 오후)
+//            let convertStr = myDateFormatter.string(from: convertDate!)
+//            print(convertStr)
         }
     }
     
