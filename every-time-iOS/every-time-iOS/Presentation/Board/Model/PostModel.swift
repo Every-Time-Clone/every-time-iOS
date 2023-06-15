@@ -8,6 +8,7 @@
 import Foundation
 
 struct PostModel {
+    let uuid: String
     let title: String
     let contents: String
     let time: String
