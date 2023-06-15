@@ -1,5 +1,5 @@
 //
-//  WritingViewController.swift
+//  RegisterViewControllerr.swift
 //  every-time-iOS
 //
 //  Created by 김민 on 2023/02/08.
@@ -20,7 +20,7 @@ enum QuestionType {
     case normal
 }
 
-class WriteViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     // MARK: - UI Components
     
@@ -42,6 +42,7 @@ class WriteViewController: UIViewController {
     
     var questionType: QuestionType = .normal
     var writerType: WriterType = .anonymous
+    private let registerPostManager: RegisterPostManager = RegisterPostManager()
     
     // MARK: - View Life Cycle
 
@@ -57,7 +58,7 @@ class WriteViewController: UIViewController {
     }
 }
 
-extension WriteViewController {
+extension RegisterViewController {
     
     // MARK: - UI Components Property
     
@@ -179,13 +180,6 @@ extension WriteViewController {
             $0.leading.trailing.equalTo(titleTextField)
             $0.bottom.equalToSuperview()
         }
-
-//        guidelineView.snp.makeConstraints {
-//            $0.top.equalTo(contentTextView.snp.bottom).offset(100)
-//            $0.bottom.equalToSuperview()
-//            $0.leading.trailing.equalTo(titleTextField)
-//            $0.height.equalTo(1000)
-//        }
         
         cameraButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
@@ -226,6 +220,12 @@ extension WriteViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
+
+    // MARK: - Network
+
+    private func registerPost(_ request: RegisterPostRequest) {
+        registerPostManager.request(request) { _ in }
+    }
     
     // MARK: - @objc Methods
     
@@ -234,6 +234,10 @@ extension WriteViewController {
     }
     
     @objc private func completeButtonDidTap() {
+        guard let title = titleTextField.text,
+              let contents = contentTextView.text else { return }
+        let post = RegisterPostRequest(title: title, contents: contents)
+        registerPost(post)
         dismiss(animated: true)
     }
     
@@ -274,7 +278,7 @@ extension WriteViewController {
 
 // MARK: - UITextFieldDelegate
 
-extension WriteViewController: UITextViewDelegate {
+extension RegisterViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .lightGray {

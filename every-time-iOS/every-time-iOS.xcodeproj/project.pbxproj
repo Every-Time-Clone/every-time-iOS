@@ -42,6 +42,8 @@
 		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
 		AB61432529C75A0C004B14DE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61432429C75A0C004B14DE /* SignupViewController.swift */; };
 		AB676B6D29BE123000387247 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */; };
+		AB6B76642A3AE2E100750305 /* RegisterPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76632A3AE2E100750305 /* RegisterPostRequest.swift */; };
+		AB6B76672A3AE39200750305 /* RegisterPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76662A3AE39200750305 /* RegisterPostManager.swift */; };
 		AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7429C88C280068F40D /* AuthTextField.swift */; };
 		AB7A5E7729C8905A0068F40D /* AuthDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
@@ -144,6 +146,8 @@
 		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		AB61432429C75A0C004B14DE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		AB6B76632A3AE2E100750305 /* RegisterPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostRequest.swift; sourceTree = "<group>"; };
+		AB6B76662A3AE39200750305 /* RegisterPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostManager.swift; sourceTree = "<group>"; };
 		AB7A5E7429C88C280068F40D /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDescriptionView.swift; sourceTree = "<group>"; };
 		AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 				AB08B58F2A2DAD720086B8F9 /* Login */,
 				AB08B59E2A2DB8070086B8F9 /* Signup */,
 				AB3592792A377E4F009B21A5 /* Board */,
+				AB6B76652A3AE38200750305 /* RegisterPost */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				AB08B5892A2DAB7E0086B8F9 /* Login */,
 				AB08B59D2A2DB7FE0086B8F9 /* Signup */,
 				AB35927A2A377E57009B21A5 /* Board */,
+				AB6B76622A3AE25D00750305 /* RegisterPost */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -409,6 +415,22 @@
 				AB137F0C29C1EA9100804ACD /* TermDescriptionTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		AB6B76622A3AE25D00750305 /* RegisterPost */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B76632A3AE2E100750305 /* RegisterPostRequest.swift */,
+			);
+			path = RegisterPost;
+			sourceTree = "<group>";
+		};
+		AB6B76652A3AE38200750305 /* RegisterPost */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B76662A3AE39200750305 /* RegisterPostManager.swift */,
+			);
+			path = RegisterPost;
 			sourceTree = "<group>";
 		};
 		AB7DCCB4297D8CBF002F46FE /* ViewController */ = {
@@ -864,6 +886,7 @@
 				AB91DC6E29BF2DDE00037914 /* TermsViewController.swift in Sources */,
 				ABF8335929752ED500E3DC16 /* Adjusted +.swift in Sources */,
 				AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */,
+				AB6B76642A3AE2E100750305 /* RegisterPostRequest.swift in Sources */,
 				AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */,
 				AB02A5A029EABFFB0044AF79 /* ProfileCollectionViewCell.swift in Sources */,
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
@@ -884,6 +907,7 @@
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
 				AB91DC7029BF335C00037914 /* CheckButton.swift in Sources */,
+				AB6B76672A3AE39200750305 /* RegisterPostManager.swift in Sources */,
 				AB08B58B2A2DAB8F0086B8F9 /* LoginRequest.swift in Sources */,
 				AB02A5A229EAC2FB0044AF79 /* InfoMenuCollectionViewCell.swift in Sources */,
 				AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */,
