@@ -117,7 +117,7 @@ extension BoardViewController {
     }
     
     private func presentToRegisterViewController() {
-        let registerPostVC = RegisterViewController()
+        let registerPostVC = UINavigationController(rootViewController: RegisterPostViewController())
         registerPostVC.modalPresentationStyle = .overFullScreen
         present(registerPostVC, animated: true)
     }

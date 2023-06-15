@@ -1,5 +1,5 @@
 //
-//  RegisterViewControllerr.swift
+//  RegisterViewController.swift
 //  every-time-iOS
 //
 //  Created by 김민 on 2023/02/08.
@@ -20,11 +20,10 @@ enum QuestionType {
     case normal
 }
 
-class RegisterViewController: UIViewController {
+class RegisterPostViewController: UIViewController {
     
     // MARK: - UI Components
-    
-    private let titleView: UIView = UIView()
+
     private let scrollView: UIScrollView = UIScrollView()
     private let titleLabel: UILabel = UILabel()
     private let backButton: UIButton = UIButton()
@@ -48,7 +47,8 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setNavigationBar()
         setUI()
         setLayout()
         setAddTarget()
@@ -58,7 +58,7 @@ class RegisterViewController: UIViewController {
     }
 }
 
-extension RegisterViewController {
+extension RegisterPostViewController {
     
     // MARK: - UI Components Property
     
@@ -124,21 +124,14 @@ extension RegisterViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(titleView, scrollView, bottomView)
-        
-        titleView.addSubviews(titleLabel, backButton, completeButton)
-        
+        view.addSubviews(scrollView, bottomView)
+
         scrollView.addSubviews(titleTextField, lineView, contentTextView, guidelineView)
-        
+
         bottomView.addSubviews(cameraButton, anonymityButton, questionButton)
-        
-        titleView.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(44)
-        }
-        
+
         scrollView.snp.makeConstraints {
-            $0.top.equalTo(titleView.snp.bottom)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(bottomView.snp.top)
         }
@@ -147,21 +140,7 @@ extension RegisterViewController {
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(50)
         }
-        
-        titleLabel.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-        }
 
-        backButton.snp.makeConstraints {
-            $0.centerY.equalTo(titleLabel)
-            $0.leading.equalToSuperview().offset(20)
-        }
-
-        completeButton.snp.makeConstraints {
-            $0.centerY.equalTo(titleLabel)
-            $0.trailing.equalToSuperview().offset(-20)
-        }
-        
         titleTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
             $0.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
@@ -198,6 +177,26 @@ extension RegisterViewController {
     }
     
     // MARK: - Methods
+
+    private func setNavigationBar() {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(backButtonDidTap))
+        backButton.tintColor = .black
+
+        let completeButton = UIButton()
+        var attString = AttributedString("완료")
+        attString.font = .systemFont(ofSize: 13, weight: .bold)
+        attString.foregroundColor = .white
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = attString
+        completeButton.configuration = config
+        completeButton.backgroundColor = .everytimeRed
+        completeButton.layer.cornerRadius = 14
+        completeButton.addTarget(self, action: #selector(completeButtonDidTap), for: .touchUpInside)
+
+        navigationItem.leftBarButtonItem = backButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: completeButton)
+        navigationItem.title = "글 쓰기"
+    }
     
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
@@ -278,7 +277,7 @@ extension RegisterViewController {
 
 // MARK: - UITextFieldDelegate
 
-extension RegisterViewController: UITextViewDelegate {
+extension RegisterPostViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .lightGray {

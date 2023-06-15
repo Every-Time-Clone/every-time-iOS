@@ -28,7 +28,7 @@
 		AB137F1629C37EAF00804ACD /* TermsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1529C37EAF00804ACD /* TermsHeaderView.swift */; };
 		AB137F1829C37FD400804ACD /* TermsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1729C37FD400804ACD /* TermsFooterView.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
-		AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* WriteViewController.swift */; };
+		AB1E73932993D000009A44E4 /* RegisterPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */; };
 		AB3592802A377E7E009B21A5 /* PostListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35927F2A377E7E009B21A5 /* PostListResponse.swift */; };
 		AB3592822A378014009B21A5 /* PostListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3592812A378014009B21A5 /* PostListManager.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
@@ -132,7 +132,7 @@
 		AB137F1529C37EAF00804ACD /* TermsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsHeaderView.swift; sourceTree = "<group>"; };
 		AB137F1729C37FD400804ACD /* TermsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsFooterView.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AB1E73922993D000009A44E4 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostViewController.swift; sourceTree = "<group>"; };
 		AB35927F2A377E7E009B21A5 /* PostListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListResponse.swift; sourceTree = "<group>"; };
 		AB3592812A378014009B21A5 /* PostListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListManager.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
@@ -541,7 +541,7 @@
 			children = (
 				ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */,
 				ABB1746D2988D8CB000165E6 /* PostDetailViewController.swift */,
-				AB1E73922993D000009A44E4 /* WriteViewController.swift */,
+				AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -923,7 +923,7 @@
 				AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */,
 				AB7DCCCB297DAA65002F46FE /* BoardTableViewCell.swift in Sources */,
 				AB4CFF9A2998C8B4006A3866 /* AdvertiseMenuViewController.swift in Sources */,
-				AB1E73932993D000009A44E4 /* WriteViewController.swift in Sources */,
+				AB1E73932993D000009A44E4 /* RegisterPostViewController.swift in Sources */,
 				ABF833792976798500E3DC16 /* NotificationViewController.swift in Sources */,
 				AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */,
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
