@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class ModifyPostViewController: WriteViewController {
+final class ModifyPostViewController: RegisterViewController {
     
     // MARK: - Properties
     

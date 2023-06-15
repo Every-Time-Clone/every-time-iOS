@@ -116,10 +116,10 @@ extension BoardViewController {
         writeButton.addTarget(self, action: #selector(writeButtonDidTap), for: .touchUpInside)
     }
     
-    private func presentToWriteViewController() {
-        let writeVC = WriteViewController()
-        writeVC.modalPresentationStyle = .overFullScreen
-        present(writeVC, animated: true)
+    private func presentToRegisterViewController() {
+        let registerPostVC = RegisterViewController()
+        registerPostVC.modalPresentationStyle = .overFullScreen
+        present(registerPostVC, animated: true)
     }
 
     // MARK: - Network
@@ -158,7 +158,7 @@ extension BoardViewController {
     }
     
     @objc private func writeButtonDidTap() {
-        presentToWriteViewController()
+        presentToRegisterViewController()
     }
 }
 
