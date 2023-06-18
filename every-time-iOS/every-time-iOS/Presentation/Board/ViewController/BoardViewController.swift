@@ -132,7 +132,7 @@ extension BoardViewController {
             self?.boardTableView.reloadData()
         }
     }
-    
+
     // MARK: - @objc Methods
     
     @objc func setNavigationBar() {

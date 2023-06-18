@@ -52,7 +52,6 @@ class PostDetailViewController: UIViewController {
     var commentType: Bool = CommentType.comment.isComment
     var anonymityButtonType: AnonymityButtonType = AnonymityButtonType.anonymity
     var postDetail: PostModel?
-//    private var postType = PostType.othersPost
     private var postType = PostType.myPost
     
     // MARK: - View Life Cycle
@@ -167,7 +166,9 @@ extension PostDetailViewController {
         guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
         guard let postUUID = postDetail?.uuid else { return }
 
-        if postUUID == myUUID { postType = .myPost }
+        if postUUID == myUUID {
+            postType = .myPost
+        }
     }
     
     // MARK: - Methods
@@ -241,9 +242,11 @@ extension PostDetailViewController {
         switch postType {
         case .myPost:
             let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
-                let registerPostVC = UINavigationController(rootViewController: RegisterPostViewController())
-                registerPostVC.modalPresentationStyle = .overFullScreen
-                self.present(registerPostVC, animated: true)
+                let modifyPostVC = ModifyPostViewController()
+                modifyPostVC.postDetail = self.postDetail
+                let vc = UINavigationController(rootViewController: ModifyPostViewController())
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .default)
             let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)

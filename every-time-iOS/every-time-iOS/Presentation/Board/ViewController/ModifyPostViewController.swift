@@ -17,19 +17,14 @@ final class ModifyPostViewController: RegisterPostViewController {
     var postDetail: PostModel?
 
     // MARK: - Initializer
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setNavigationBar()
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         setPost()
     }
     
     // MARK: - Methods
-    
-    private func setNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-    }
     
     private func setPost() {
         guard let postDetail = postDetail else {return}

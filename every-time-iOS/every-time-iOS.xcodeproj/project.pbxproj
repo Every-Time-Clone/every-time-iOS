@@ -461,7 +461,6 @@
 				AB9A61F4299CC439005CA2DB /* MenuBoardMyListViewController.swift */,
 				AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */,
 				AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */,
-				AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */,
 				AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */,
 				AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */,
 			);
@@ -542,6 +541,7 @@
 				ABA5BF3F2987C09E007A6BD5 /* BoardViewController.swift */,
 				ABB1746D2988D8CB000165E6 /* PostDetailViewController.swift */,
 				AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */,
+				AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
