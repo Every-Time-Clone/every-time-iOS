@@ -11,7 +11,7 @@ import Alamofire
 
 class RegisterPostManager {
 
-    func request(_ parameter: RegisterPostRequest, onCompletion: @escaping (String) -> Void) {
+    func request(_ parameter: PostRequest, onCompletion: @escaping (String) -> Void) {
         let url = Constant.base_URL + "/posts"
 
         AF.request(url, method: .post, parameters: parameter, encoder: JSONParameterEncoder())

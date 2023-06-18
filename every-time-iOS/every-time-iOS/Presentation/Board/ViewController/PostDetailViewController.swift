@@ -244,7 +244,7 @@ extension PostDetailViewController {
             let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
                 let modifyPostVC = ModifyPostViewController()
                 modifyPostVC.postDetail = self.postDetail
-                let vc = UINavigationController(rootViewController: ModifyPostViewController())
+                let vc = UINavigationController(rootViewController: modifyPostVC)
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)
             }

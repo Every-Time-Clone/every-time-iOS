@@ -27,7 +27,7 @@ class RegisterPostViewController: UIViewController {
     private let scrollView: UIScrollView = UIScrollView()
     private let titleLabel: UILabel = UILabel()
     private let backButton: UIButton = UIButton()
-    private let completeButton: UIButton = UIButton()
+    let completeButton: UIButton = UIButton()
     private let lineView: UIView = UIView()
     private let guidelineView: UIView = UIView()
     private let bottomView: UIView = UIView()
@@ -222,7 +222,7 @@ extension RegisterPostViewController {
 
     // MARK: - Network
 
-    private func registerPost(_ request: RegisterPostRequest) {
+    private func registerPost(_ request: PostRequest) {
         registerPostManager.request(request) { _ in }
     }
     
@@ -232,10 +232,10 @@ extension RegisterPostViewController {
         dismiss(animated: true)
     }
     
-    @objc private func completeButtonDidTap() {
+    @objc func completeButtonDidTap() {
         guard let title = titleTextField.text,
               let contents = contentTextView.text else { return }
-        let post = RegisterPostRequest(title: title, contents: contents)
+        let post = PostRequest(title: title, contents: contents)
         registerPost(post)
         dismiss(animated: true)
     }
