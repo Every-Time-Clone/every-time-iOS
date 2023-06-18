@@ -29,6 +29,11 @@ enum AnonymityButtonType {
     case nickname
 }
 
+enum PostType {
+    case myPost
+    case othersPost
+}
+
 class PostDetailViewController: UIViewController {
     
     // MARK: - UI Components
@@ -44,9 +49,10 @@ class PostDetailViewController: UIViewController {
     // MARK: - Properties
     
     let commentList: [CommentModel] = CommentModel.dummyData()
-    var commentType = CommentType.comment.isComment
-    var anonymityButtonType = AnonymityButtonType.anonymity
+    var commentType: Bool = CommentType.comment.isComment
+    var anonymityButtonType: AnonymityButtonType = AnonymityButtonType.anonymity
     var postDetail: PostModel?
+    private var postType = PostType.myPost
     
     // MARK: - View Life Cycle
 
@@ -60,6 +66,7 @@ class PostDetailViewController: UIViewController {
         setAddTarget()
         setNotificationCenter()
         setTapGesture()
+        setPostType()
     }
 }
 
@@ -154,6 +161,15 @@ extension PostDetailViewController {
             $0.leading.equalToSuperview().offset(10)
         }
     }
+
+    private func setPostType() {
+        guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
+        guard let postUUID = postDetail?.uuid else { return }
+
+        if postUUID == myUUID {
+            postType = .myPost
+        }
+    }
     
     // MARK: - Methods
     
@@ -223,11 +239,26 @@ extension PostDetailViewController {
     
     @objc func setMenuAlert() {
         let alert = UIAlertController(title: "글 메뉴", message: nil, preferredStyle: .actionSheet)
-        let messageAction = UIAlertAction(title: "쪽지 보내기", style: .default, handler: nil)
-        let reportAction = UIAlertAction(title: "신고", style: .default, handler: nil)
-        let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        alert.addActions(messageAction, reportAction, shareAction, cancelAction)
+        switch postType {
+        case .myPost:
+            let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
+                let modifyPostVC = ModifyPostViewController()
+                modifyPostVC.postDetail = self.postDetail
+                let vc = UINavigationController(rootViewController: ModifyPostViewController())
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+            let deleteAction = UIAlertAction(title: "삭제", style: .default)
+            let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addActions(modifyAction, deleteAction, shareAction, cancelAction)
+        case .othersPost:
+            let messageAction = UIAlertAction(title: "쪽지 보내기", style: .default, handler: nil)
+            let reportAction = UIAlertAction(title: "신고", style: .default, handler: nil)
+            let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addActions(messageAction, reportAction, shareAction, cancelAction)
+        }
         present(alert, animated: true)
     }
     

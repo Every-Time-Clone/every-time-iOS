@@ -20,7 +20,7 @@ struct PostInfo: Decodable {
     }
 
     func convertToPost() -> PostModel {
-        return PostModel(title: self.title, contents: self.contents, time: self.uploadDate, name: "닉네임", goods: self.goods, commentNumber: "3", scrapNumber: "3", isScrapped: false)
+        return PostModel(uuid: self.uuid, title: self.title, contents: self.contents, time: self.uploadDate, name: "닉네임", goods: self.goods, commentNumber: "3", scrapNumber: "3", isScrapped: false)
     }
 }
 
