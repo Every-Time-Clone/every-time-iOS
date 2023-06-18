@@ -211,7 +211,7 @@ extension PostTableViewHeader {
         nameLabel.text = model.name
         titleLabel.text = model.title
         contentLabel.text = model.contents
-        timeLabel.text = model.time
+        timeLabel.text = model.time.convertTimeStampToDate()
         likeNumberLabel.text = "\(model.goods)"
         commentNumberLabel.text = model.commentNumber
         scrapNumberLabel.text = model.scrapNumber
