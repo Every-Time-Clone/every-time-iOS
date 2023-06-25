@@ -40,6 +40,7 @@ class BoardViewController: UIViewController {
         setDelegate()
         setAddTarget()
         fetchPosts()
+        configureRefreshControl()
     }
 }
 
@@ -122,6 +123,13 @@ extension BoardViewController {
         present(registerPostVC, animated: true)
     }
 
+    private func configureRefreshControl() {
+        boardTableView.refreshControl = UIRefreshControl()
+        boardTableView.refreshControl?.addTarget(self,
+                                                 action: #selector(handleRefreshControl),
+                                                 for: .valueChanged)
+    }
+
     // MARK: - Network
 
     private func fetchPosts() {
@@ -159,6 +167,13 @@ extension BoardViewController {
     
     @objc private func writeButtonDidTap() {
         presentToRegisterViewController()
+    }
+
+    @objc private func handleRefreshControl() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.fetchPosts()
+            self.boardTableView.refreshControl?.endRefreshing()
+        }
     }
 }
 
