@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RegisterPostRequest: Encodable {
+struct PostRequest: Encodable {
     let title: String
     let contents: String
 }
