@@ -47,6 +47,7 @@
 		AB6B76722A3EF24300750305 /* ModifyPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76712A3EF24300750305 /* ModifyPostManager.swift */; };
 		AB6B76742A3EF29F00750305 /* ModifyPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76732A3EF29F00750305 /* ModifyPostRequest.swift */; };
 		AB6B76762A3EF5B900750305 /* ModifyPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */; };
+		AB6B76702A3EEC0700750305 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B766F2A3EEC0700750305 /* String +.swift */; };
 		AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7429C88C280068F40D /* AuthTextField.swift */; };
 		AB7A5E7729C8905A0068F40D /* AuthDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };
@@ -151,6 +152,7 @@
 		AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		AB6B76632A3AE2E100750305 /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
 		AB6B76662A3AE39200750305 /* RegisterPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostManager.swift; sourceTree = "<group>"; };
+		AB6B766F2A3EEC0700750305 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
 		AB6B76712A3EF24300750305 /* ModifyPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostManager.swift; sourceTree = "<group>"; };
 		AB6B76732A3EF29F00750305 /* ModifyPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostRequest.swift; sourceTree = "<group>"; };
 		AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostResponse.swift; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 				AB8B572029A724230059EBDC /* UIViewController +.swift */,
 				ABDF519E29B43FFC00102E7E /* UITextField +.swift */,
 				AB1186062A1F9A7A00BA236E /* Encodable+.swift */,
+				AB6B766F2A3EEC0700750305 /* String +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -902,6 +905,7 @@
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
 				AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */,
 				AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */,
+				AB6B76702A3EEC0700750305 /* String +.swift in Sources */,
 				AB8B571D29A6446F0059EBDC /* BoardSearchModel.swift in Sources */,
 				AB61432529C75A0C004B14DE /* SignupViewController.swift in Sources */,
 				AB4CFF982998C89F006A3866 /* CareerMenuViewController.swift in Sources */,
