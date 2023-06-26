@@ -9,6 +9,7 @@ import Foundation
 
 struct PostModel {
     let uuid: String
+    let user: UserModel
     let title: String
     let contents: String
     let time: String
@@ -17,4 +18,10 @@ struct PostModel {
     let commentNumber: String
     let scrapNumber: String
     let isScrapped: Bool
+}
+
+struct UserModel {
+    let uuid: String
+    let email: String
+    let nickname: String
 }
