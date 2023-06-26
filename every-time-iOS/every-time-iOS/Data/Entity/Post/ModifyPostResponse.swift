@@ -10,6 +10,6 @@ import Foundation
 struct ModifyPostResponse: Decodable {
     let statusCode: Int
     let responseMessage: String
-    let data: PostInfo
+    let data: PostListResponse
 }
 

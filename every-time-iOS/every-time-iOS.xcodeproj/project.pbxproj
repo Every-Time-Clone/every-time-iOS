@@ -44,10 +44,10 @@
 		AB676B6D29BE123000387247 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB676B6C29BE123000387247 /* SchoolTableViewCell.swift */; };
 		AB6B76642A3AE2E100750305 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76632A3AE2E100750305 /* PostRequest.swift */; };
 		AB6B76672A3AE39200750305 /* RegisterPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76662A3AE39200750305 /* RegisterPostManager.swift */; };
+		AB6B76702A3EEC0700750305 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B766F2A3EEC0700750305 /* String +.swift */; };
 		AB6B76722A3EF24300750305 /* ModifyPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76712A3EF24300750305 /* ModifyPostManager.swift */; };
 		AB6B76742A3EF29F00750305 /* ModifyPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76732A3EF29F00750305 /* ModifyPostRequest.swift */; };
 		AB6B76762A3EF5B900750305 /* ModifyPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */; };
-		AB6B76702A3EEC0700750305 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B766F2A3EEC0700750305 /* String +.swift */; };
 		AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7429C88C280068F40D /* AuthTextField.swift */; };
 		AB7A5E7729C8905A0068F40D /* AuthDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */; };
 		AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCC0297D9136002F46FE /* EventCollectionViewCell.swift */; };

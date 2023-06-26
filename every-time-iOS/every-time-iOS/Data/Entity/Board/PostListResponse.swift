@@ -7,15 +7,16 @@
 
 import Foundation
 
-struct PostInfo: Decodable {
+struct PostListResponse: Decodable {
     let uuid: String
+    let user: User
     let title: String
     let contents: String
     let goods: Int
     let uploadDate: String
 
     enum CodingKeys: String, CodingKey {
-        case uuid, title, contents, goods
+        case uuid, user, title, contents, goods
         case uploadDate = "upload_date"
     }
 
@@ -24,4 +25,8 @@ struct PostInfo: Decodable {
     }
 }
 
-typealias Posts = [PostInfo]
+struct User: Decodable {
+    let uuid, email, nickname: String
+}
+
+typealias Posts = [PostListResponse]
