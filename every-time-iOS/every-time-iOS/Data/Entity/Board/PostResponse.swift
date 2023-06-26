@@ -21,7 +21,6 @@ struct PostResponse: Decodable {
     }
 
     func convertToPost() -> PostModel {
-//        return PostModel(uuid: self.uuid, title: self.title, contents: self.contents, time: self.uploadDate, name: "닉네임", goods: self.goods, commentNumber: "3", scrapNumber: "3", isScrapped: false)
         return PostModel(uuid: self.uuid,
                          user: UserModel(uuid: self.user.uuid, email: self.user.email, nickname: self.user.nickname),
                          title: self.title,
