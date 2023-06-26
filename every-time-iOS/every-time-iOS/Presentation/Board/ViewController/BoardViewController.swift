@@ -198,7 +198,7 @@ extension BoardViewController: UITableViewDataSource {
     
     @objc func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postDetailVC = PostDetailViewController()
-        postDetailVC.postDetail = posts[indexPath.row]
+        postDetailVC.postUUID = posts[indexPath.row].uuid
         navigationController?.pushViewController(postDetailVC, animated: true)
     }
 }
