@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostListResponse: Decodable {
+struct PostResponse: Decodable {
     let uuid: String
     let user: User
     let title: String
@@ -29,4 +29,4 @@ struct User: Decodable {
     let uuid, email, nickname: String
 }
 
-typealias Posts = [PostListResponse]
+typealias Posts = [PostResponse]

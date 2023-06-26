@@ -51,8 +51,8 @@ class PostDetailViewController: UIViewController {
     let commentList: [CommentModel] = CommentModel.dummyData()
     var commentType: Bool = CommentType.comment.isComment
     var anonymityButtonType: AnonymityButtonType = AnonymityButtonType.anonymity
-    var postDetail: PostModel?
     private var postType = PostType.myPost
+    var postUUID: String?
     
     // MARK: - View Life Cycle
 
@@ -163,12 +163,12 @@ extension PostDetailViewController {
     }
 
     private func setPostType() {
-        guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
-        guard let postUUID = postDetail?.uuid else { return }
-
-        if postUUID == myUUID {
-            postType = .myPost
-        }
+//        guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
+//        guard let postUUID = postDetail?.uuid else { return }
+//
+//        if postUUID == myUUID {
+//            postType = .myPost
+//        }
     }
     
     // MARK: - Methods
@@ -243,7 +243,7 @@ extension PostDetailViewController {
         case .myPost:
             let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
                 let modifyPostVC = ModifyPostViewController()
-                modifyPostVC.postDetail = self.postDetail
+//                modifyPostVC.postDetail = self.postDetail
                 let vc = UINavigationController(rootViewController: modifyPostVC)
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)
@@ -337,8 +337,8 @@ extension PostDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PostTableViewHeader.cellIdentifier) as! PostTableViewHeader
-        guard let postDetail = postDetail else { return nil }
-        header.setDataBind(postDetail)
+//        guard let postDetail = postDetail else { return nil }
+//        header.setDataBind(postDetail)
         header.delegate = self
         return header
     }
