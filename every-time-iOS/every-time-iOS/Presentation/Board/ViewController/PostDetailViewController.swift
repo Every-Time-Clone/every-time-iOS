@@ -51,7 +51,7 @@ class PostDetailViewController: UIViewController {
     let commentList = CommentModel.dummyData()
     var commentType: Bool = CommentType.comment.isComment
     var anonymityButtonType = AnonymityButtonType.anonymity
-    private var postType: PostType = .myPost
+    private var postType: PostType = .othersPost
     var postUUID: String?
     private var postDetailManager = PostDetailManager()
     private var deletePostManager = DeletePostManager()
