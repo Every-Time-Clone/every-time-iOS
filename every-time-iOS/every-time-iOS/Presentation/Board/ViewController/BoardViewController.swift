@@ -30,6 +30,7 @@ class BoardViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setNavigationBar()
+        fetchPosts()
     }
 
     override func viewDidLoad() {
@@ -39,7 +40,6 @@ class BoardViewController: UIViewController {
         setLayout()
         setDelegate()
         setAddTarget()
-        fetchPosts()
         configureRefreshControl()
     }
 }
