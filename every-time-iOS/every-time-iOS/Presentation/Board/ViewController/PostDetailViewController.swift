@@ -51,7 +51,7 @@ class PostDetailViewController: UIViewController {
     let commentList: [CommentModel] = CommentModel.dummyData()
     var commentType: Bool = CommentType.comment.isComment
     var anonymityButtonType: AnonymityButtonType = AnonymityButtonType.anonymity
-    private var postType = PostType.myPost
+    private var postType: PostType = .othersPost
     var postUUID: String?
     private var postDetailManager: PostDetailManager = PostDetailManager()
     private var postModel: PostModel?
@@ -62,6 +62,7 @@ class PostDetailViewController: UIViewController {
         super.viewWillAppear(animated)
 
         fetchPost()
+        setPostType()
     }
 
     override func viewDidLoad() {
@@ -171,12 +172,12 @@ extension PostDetailViewController {
     }
 
     private func setPostType() {
-//        guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
-//        guard let postUUID = postDetail?.uuid else { return }
-//
-//        if postUUID == myUUID {
-//            postType = .myPost
-//        }
+        guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
+        guard let postUUID = postModel?.uuid else { return }
+
+        if postUUID == myUUID {
+            postType = .myPost
+        }
     }
     
     // MARK: - Methods
@@ -243,6 +244,14 @@ extension PostDetailViewController {
         view.addGestureRecognizer(tap)
     }
 
+    private func presentToModifyVC() {
+        let modifyPostVC = ModifyPostViewController()
+        modifyPostVC.postModel = self.postModel
+        let vc = UINavigationController(rootViewController: modifyPostVC)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+
     // MARK: - Network
 
     private func fetchPost() {
@@ -261,11 +270,7 @@ extension PostDetailViewController {
         switch postType {
         case .myPost:
             let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
-                let modifyPostVC = ModifyPostViewController()
-//                modifyPostVC.postDetail = self.postDetail
-                let vc = UINavigationController(rootViewController: modifyPostVC)
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true)
+                self.presentToModifyVC()
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .default)
             let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
