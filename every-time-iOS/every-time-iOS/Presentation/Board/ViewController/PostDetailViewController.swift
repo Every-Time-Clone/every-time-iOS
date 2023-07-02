@@ -243,6 +243,14 @@ extension PostDetailViewController {
         view.addGestureRecognizer(tap)
     }
 
+    private func presentToModifyVC() {
+        let modifyPostVC = ModifyPostViewController()
+        modifyPostVC.postModel = self.postModel
+        let vc = UINavigationController(rootViewController: modifyPostVC)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+
     // MARK: - Network
 
     private func fetchPost() {
@@ -261,11 +269,7 @@ extension PostDetailViewController {
         switch postType {
         case .myPost:
             let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
-                let modifyPostVC = ModifyPostViewController()
-//                modifyPostVC.postDetail = self.postDetail
-                let vc = UINavigationController(rootViewController: modifyPostVC)
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true)
+                self.presentToModifyVC()
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .default)
             let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)

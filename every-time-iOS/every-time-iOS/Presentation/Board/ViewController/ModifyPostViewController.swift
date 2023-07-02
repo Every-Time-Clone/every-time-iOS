@@ -14,7 +14,7 @@ final class ModifyPostViewController: RegisterPostViewController {
     
     // MARK: - Properties
     
-    var postDetail: PostModel?
+    var postModel: PostModel?
     private let modifyPostManager: ModifyPostManager = ModifyPostManager()
 
     // MARK: - Initializer
@@ -32,9 +32,9 @@ extension ModifyPostViewController {
     // MARK: - Methods
 
     private func setPost() {
-        guard let postDetail = postDetail else {return}
-        titleTextField.text = postDetail.title
-        contentTextView.text = postDetail.contents
+        guard let postModel = postModel else {return}
+        titleTextField.text = postModel.title
+        contentTextView.text = postModel.contents
         contentTextView.textColor = .black
     }
 
@@ -43,12 +43,11 @@ extension ModifyPostViewController {
     }
 
     private func patchPost() {
-        guard let uuid = postDetail?.uuid else { return }
+        guard let uuid = postModel?.uuid else { return }
         guard let title = titleTextField.text else { return }
         guard let contents = contentTextView.text else { return }
         let request = PostRequest(title: title, contents: contents)
         modifyPostManager.patchPost(request, uuid) { [weak self] response in
-            print(response)
             self?.dismiss(animated: true)
         }
     }
