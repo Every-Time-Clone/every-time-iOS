@@ -48,12 +48,13 @@ class PostDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    let commentList: [CommentModel] = CommentModel.dummyData()
+    let commentList = CommentModel.dummyData()
     var commentType: Bool = CommentType.comment.isComment
-    var anonymityButtonType: AnonymityButtonType = AnonymityButtonType.anonymity
-    private var postType: PostType = .othersPost
+    var anonymityButtonType = AnonymityButtonType.anonymity
+    private var postType: PostType = .myPost
     var postUUID: String?
-    private var postDetailManager: PostDetailManager = PostDetailManager()
+    private var postDetailManager = PostDetailManager()
+    private var deletePostManager = DeletePostManager()
     private var postModel: PostModel?
     
     // MARK: - View Life Cycle
@@ -252,6 +253,17 @@ extension PostDetailViewController {
         self.present(vc, animated: true)
     }
 
+    private func presentDeleteAlert() {
+        let alertVC = UIAlertController(title: "삭제하시겠습니까?", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .default)
+        let completeAction = UIAlertAction(title: "확인", style: .default) { _ in
+            print("삭제")
+            self.deletePost()
+        }
+        alertVC.addActions(cancelAction, completeAction)
+        present(alertVC, animated: true)
+    }
+
     // MARK: - Network
 
     private func fetchPost() {
@@ -260,6 +272,14 @@ extension PostDetailViewController {
         postDetailManager.request(uuid) { [weak self] response in
             self?.postModel = response.convertToPost()
             self?.postTableView.reloadData()
+        }
+    }
+
+    private func deletePost() {
+        guard let uuid = postUUID else { return }
+
+        deletePostManager.request(uuid) { [weak self] _  in
+            self?.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -272,7 +292,9 @@ extension PostDetailViewController {
             let modifyAction = UIAlertAction(title: "수정", style: .default) { _ in
                 self.presentToModifyVC()
             }
-            let deleteAction = UIAlertAction(title: "삭제", style: .default)
+            let deleteAction = UIAlertAction(title: "삭제", style: .default) { _ in
+                self.presentDeleteAlert()
+            }
             let shareAction = UIAlertAction(title: "URL 공유", style: .default, handler: nil)
             let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
             alert.addActions(modifyAction, deleteAction, shareAction, cancelAction)
