@@ -51,7 +51,7 @@ class PostDetailViewController: UIViewController {
     let commentList: [CommentModel] = CommentModel.dummyData()
     var commentType: Bool = CommentType.comment.isComment
     var anonymityButtonType: AnonymityButtonType = AnonymityButtonType.anonymity
-    private var postType = PostType.myPost
+    private var postType: PostType = .othersPost
     var postUUID: String?
     private var postDetailManager: PostDetailManager = PostDetailManager()
     private var postModel: PostModel?
@@ -62,6 +62,7 @@ class PostDetailViewController: UIViewController {
         super.viewWillAppear(animated)
 
         fetchPost()
+        setPostType()
     }
 
     override func viewDidLoad() {
@@ -171,12 +172,12 @@ extension PostDetailViewController {
     }
 
     private func setPostType() {
-//        guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
-//        guard let postUUID = postDetail?.uuid else { return }
-//
-//        if postUUID == myUUID {
-//            postType = .myPost
-//        }
+        guard let myUUID = UserDefaults.standard.string(forKey: "UUID") else { return }
+        guard let postUUID = postModel?.uuid else { return }
+
+        if postUUID == myUUID {
+            postType = .myPost
+        }
     }
     
     // MARK: - Methods
