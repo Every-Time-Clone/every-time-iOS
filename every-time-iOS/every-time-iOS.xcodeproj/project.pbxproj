@@ -38,6 +38,8 @@
 		AB4CFF9C2998C8D0006A3866 /* GroupMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */; };
 		AB4CFF9F2998D8A5006A3866 /* MenuTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */; };
 		AB519B8A29F00DF00097877D /* InfoMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519B8929F00DF00097877D /* InfoMenuModel.swift */; };
+		AB5B7D662A51B4A3009CC74E /* DeletePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7D652A51B4A3009CC74E /* DeletePostResponse.swift */; };
+		AB5B7D682A51B4BA009CC74E /* DeletePostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7D672A51B4BA009CC74E /* DeletePostManager.swift */; };
 		AB5C7C2429812FAF00CCD3D9 /* FavoriteBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */; };
 		AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */; };
 		AB61432529C75A0C004B14DE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61432429C75A0C004B14DE /* SignupViewController.swift */; };
@@ -46,7 +48,6 @@
 		AB6B76672A3AE39200750305 /* RegisterPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76662A3AE39200750305 /* RegisterPostManager.swift */; };
 		AB6B76702A3EEC0700750305 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B766F2A3EEC0700750305 /* String +.swift */; };
 		AB6B76722A3EF24300750305 /* ModifyPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76712A3EF24300750305 /* ModifyPostManager.swift */; };
-		AB6B76742A3EF29F00750305 /* ModifyPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76732A3EF29F00750305 /* ModifyPostRequest.swift */; };
 		AB6B76762A3EF5B900750305 /* ModifyPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */; };
 		AB6B77082A49F46600750305 /* PostDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B77072A49F46600750305 /* PostDetailManager.swift */; };
 		AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7429C88C280068F40D /* AuthTextField.swift */; };
@@ -147,6 +148,8 @@
 		AB4CFF9B2998C8D0006A3866 /* GroupMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMenuViewController.swift; sourceTree = "<group>"; };
 		AB4CFF9E2998D8A5006A3866 /* MenuTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB519B8929F00DF00097877D /* InfoMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMenuModel.swift; sourceTree = "<group>"; };
+		AB5B7D652A51B4A3009CC74E /* DeletePostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePostResponse.swift; sourceTree = "<group>"; };
+		AB5B7D672A51B4BA009CC74E /* DeletePostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePostManager.swift; sourceTree = "<group>"; };
 		AB5C7C2329812FAF00CCD3D9 /* FavoriteBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBoardModel.swift; sourceTree = "<group>"; };
 		AB5C7C25298131EF00CCD3D9 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		AB61432429C75A0C004B14DE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +158,6 @@
 		AB6B76662A3AE39200750305 /* RegisterPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostManager.swift; sourceTree = "<group>"; };
 		AB6B766F2A3EEC0700750305 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
 		AB6B76712A3EF24300750305 /* ModifyPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostManager.swift; sourceTree = "<group>"; };
-		AB6B76732A3EF29F00750305 /* ModifyPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostRequest.swift; sourceTree = "<group>"; };
 		AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostResponse.swift; sourceTree = "<group>"; };
 		AB6B77072A49F46600750305 /* PostDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailManager.swift; sourceTree = "<group>"; };
 		AB7A5E7429C88C280068F40D /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
@@ -253,7 +255,6 @@
 			children = (
 				AB08B58F2A2DAD720086B8F9 /* Login */,
 				AB08B59E2A2DB8070086B8F9 /* Signup */,
-				AB3592792A377E4F009B21A5 /* Board */,
 				AB6B76652A3AE38200750305 /* Post */,
 			);
 			path = Manager;
@@ -273,7 +274,6 @@
 			children = (
 				AB08B5892A2DAB7E0086B8F9 /* Login */,
 				AB08B59D2A2DB7FE0086B8F9 /* Signup */,
-				AB35927A2A377E57009B21A5 /* Board */,
 				AB6B76622A3AE25D00750305 /* Post */,
 			);
 			path = Entity;
@@ -353,22 +353,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		AB3592792A377E4F009B21A5 /* Board */ = {
-			isa = PBXGroup;
-			children = (
-				AB3592812A378014009B21A5 /* PostListManager.swift */,
-			);
-			path = Board;
-			sourceTree = "<group>";
-		};
-		AB35927A2A377E57009B21A5 /* Board */ = {
-			isa = PBXGroup;
-			children = (
-				AB35927F2A377E7E009B21A5 /* PostResponse.swift */,
-			);
-			path = Board;
-			sourceTree = "<group>";
-		};
 		AB37354B29B57D9800FC3EF7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,9 +414,10 @@
 		AB6B76622A3AE25D00750305 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				AB35927F2A377E7E009B21A5 /* PostResponse.swift */,
 				AB6B76632A3AE2E100750305 /* PostRequest.swift */,
-				AB6B76732A3EF29F00750305 /* ModifyPostRequest.swift */,
 				AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */,
+				AB5B7D652A51B4A3009CC74E /* DeletePostResponse.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -440,9 +425,11 @@
 		AB6B76652A3AE38200750305 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				AB3592812A378014009B21A5 /* PostListManager.swift */,
 				AB6B76662A3AE39200750305 /* RegisterPostManager.swift */,
 				AB6B76712A3EF24300750305 /* ModifyPostManager.swift */,
 				AB6B77072A49F46600750305 /* PostDetailManager.swift */,
+				AB5B7D672A51B4BA009CC74E /* DeletePostManager.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -894,6 +881,7 @@
 				AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */,
 				AB8B571F29A71FBA0059EBDC /* CreateBoardViewController.swift in Sources */,
 				AB7DCCC9297D9E21002F46FE /* MenuCollectionViewCell.swift in Sources */,
+				AB5B7D662A51B4A3009CC74E /* DeletePostResponse.swift in Sources */,
 				AB5C7C26298131EF00CCD3D9 /* MenuModel.swift in Sources */,
 				AB519B8A29F00DF00097877D /* InfoMenuModel.swift in Sources */,
 				AB9A61EC299CB0BC005CA2DB /* MainMenuCollectionViewCell.swift in Sources */,
@@ -920,7 +908,6 @@
 				ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */,
 				ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */,
 				AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */,
-				AB6B76742A3EF29F00750305 /* ModifyPostRequest.swift in Sources */,
 				AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */,
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
@@ -934,6 +921,7 @@
 				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
 				ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */,
 				AB3592802A377E7E009B21A5 /* PostResponse.swift in Sources */,
+				AB5B7D682A51B4BA009CC74E /* DeletePostManager.swift in Sources */,
 				AB02A5A729EAC5D70044AF79 /* MyInfoFooterView.swift in Sources */,
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,
 				ABB1745A2988078E000165E6 /* BoardTableViewHeader.swift in Sources */,
