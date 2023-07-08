@@ -29,6 +29,7 @@
 		AB137F1829C37FD400804ACD /* TermsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1729C37FD400804ACD /* TermsFooterView.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* RegisterPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */; };
+		AB2100362A5976CB00D8941D /* UserPostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100352A5976CB00D8941D /* UserPostsManager.swift */; };
 		AB3592802A377E7E009B21A5 /* PostDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */; };
 		AB3592822A378014009B21A5 /* PostListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3592812A378014009B21A5 /* PostListManager.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
@@ -139,6 +140,7 @@
 		AB137F1729C37FD400804ACD /* TermsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsFooterView.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostViewController.swift; sourceTree = "<group>"; };
+		AB2100352A5976CB00D8941D /* UserPostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsManager.swift; sourceTree = "<group>"; };
 		AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailResponse.swift; sourceTree = "<group>"; };
 		AB3592812A378014009B21A5 /* PostListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListManager.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				AB6B76712A3EF24300750305 /* ModifyPostManager.swift */,
 				AB6B77072A49F46600750305 /* PostDetailManager.swift */,
 				AB5B7D672A51B4BA009CC74E /* DeletePostManager.swift */,
+				AB2100352A5976CB00D8941D /* UserPostsManager.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -936,6 +939,7 @@
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
 				AB08B5912A2DAD910086B8F9 /* LoginManager.swift in Sources */,
 				AB8B572329A72FD60059EBDC /* CreateBoardTableViewHeader.swift in Sources */,
+				AB2100362A5976CB00D8941D /* UserPostsManager.swift in Sources */,
 				AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */,
 				ABE7CAA32A1A6867001EA9A6 /* InfoTextField.swift in Sources */,
 				ABB17486298CD827000165E6 /* UIAlertController +.swift in Sources */,
