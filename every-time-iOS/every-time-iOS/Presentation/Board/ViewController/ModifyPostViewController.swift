@@ -47,7 +47,7 @@ extension ModifyPostViewController {
         guard let title = titleTextField.text else { return }
         guard let contents = contentTextView.text else { return }
         let request = PostRequest(title: title, contents: contents)
-        modifyPostManager.patchPost(request, uuid) { [weak self] response in
+        modifyPostManager.request(request, uuid) { [weak self] response in
             self?.dismiss(animated: true)
         }
     }
