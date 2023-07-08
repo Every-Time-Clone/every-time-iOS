@@ -29,7 +29,7 @@
 		AB137F1829C37FD400804ACD /* TermsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB137F1729C37FD400804ACD /* TermsFooterView.swift */; };
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* RegisterPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */; };
-		AB3592802A377E7E009B21A5 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35927F2A377E7E009B21A5 /* PostResponse.swift */; };
+		AB3592802A377E7E009B21A5 /* PostDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */; };
 		AB3592822A378014009B21A5 /* PostListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3592812A378014009B21A5 /* PostListManager.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
 		AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */; };
@@ -48,7 +48,7 @@
 		AB6B76672A3AE39200750305 /* RegisterPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76662A3AE39200750305 /* RegisterPostManager.swift */; };
 		AB6B76702A3EEC0700750305 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B766F2A3EEC0700750305 /* String +.swift */; };
 		AB6B76722A3EF24300750305 /* ModifyPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76712A3EF24300750305 /* ModifyPostManager.swift */; };
-		AB6B76762A3EF5B900750305 /* ModifyPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */; };
+		AB6B76762A3EF5B900750305 /* PostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B76752A3EF5B800750305 /* PostsResponse.swift */; };
 		AB6B77082A49F46600750305 /* PostDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B77072A49F46600750305 /* PostDetailManager.swift */; };
 		AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7429C88C280068F40D /* AuthTextField.swift */; };
 		AB7A5E7729C8905A0068F40D /* AuthDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */; };
@@ -139,7 +139,7 @@
 		AB137F1729C37FD400804ACD /* TermsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsFooterView.swift; sourceTree = "<group>"; };
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostViewController.swift; sourceTree = "<group>"; };
-		AB35927F2A377E7E009B21A5 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailResponse.swift; sourceTree = "<group>"; };
 		AB3592812A378014009B21A5 /* PostListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListManager.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
 		AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMenuViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		AB6B76662A3AE39200750305 /* RegisterPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostManager.swift; sourceTree = "<group>"; };
 		AB6B766F2A3EEC0700750305 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
 		AB6B76712A3EF24300750305 /* ModifyPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostManager.swift; sourceTree = "<group>"; };
-		AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostResponse.swift; sourceTree = "<group>"; };
+		AB6B76752A3EF5B800750305 /* PostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsResponse.swift; sourceTree = "<group>"; };
 		AB6B77072A49F46600750305 /* PostDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailManager.swift; sourceTree = "<group>"; };
 		AB7A5E7429C88C280068F40D /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		AB7A5E7629C8905A0068F40D /* AuthDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDescriptionView.swift; sourceTree = "<group>"; };
@@ -414,9 +414,9 @@
 		AB6B76622A3AE25D00750305 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				AB35927F2A377E7E009B21A5 /* PostResponse.swift */,
 				AB6B76632A3AE2E100750305 /* PostRequest.swift */,
-				AB6B76752A3EF5B800750305 /* ModifyPostResponse.swift */,
+				AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */,
+				AB6B76752A3EF5B800750305 /* PostsResponse.swift */,
 				AB5B7D652A51B4A3009CC74E /* DeletePostResponse.swift */,
 			);
 			path = Post;
@@ -911,7 +911,7 @@
 				AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */,
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
 				AB7DCCC1297D9136002F46FE /* EventCollectionViewCell.swift in Sources */,
-				AB6B76762A3EF5B900750305 /* ModifyPostResponse.swift in Sources */,
+				AB6B76762A3EF5B900750305 /* PostsResponse.swift in Sources */,
 				AB91DC7029BF335C00037914 /* CheckButton.swift in Sources */,
 				AB6B76672A3AE39200750305 /* RegisterPostManager.swift in Sources */,
 				AB08B58B2A2DAB8F0086B8F9 /* LoginRequest.swift in Sources */,
@@ -920,7 +920,7 @@
 				AB02A59A29EABB4C0044AF79 /* MyInfoViewController.swift in Sources */,
 				AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */,
 				ABDF519F29B43FFC00102E7E /* UITextField +.swift in Sources */,
-				AB3592802A377E7E009B21A5 /* PostResponse.swift in Sources */,
+				AB3592802A377E7E009B21A5 /* PostDetailResponse.swift in Sources */,
 				AB5B7D682A51B4BA009CC74E /* DeletePostManager.swift in Sources */,
 				AB02A5A729EAC5D70044AF79 /* MyInfoFooterView.swift in Sources */,
 				ABB17479298B67D2000165E6 /* CommentTableViewCell.swift in Sources */,

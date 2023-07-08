@@ -11,12 +11,12 @@ import Alamofire
 
 class PostDetailManager {
 
-    func request(_ uuid: String, onCompletion: @escaping (PostResponse) -> Void) {
+    func request(_ uuid: String, onCompletion: @escaping (PostDetailResponse) -> Void) {
         let url = Constant.base_URL + "/posts/\(uuid)"
 
         AF.request(url, method: .get)
             .validate()
-            .responseDecodable(of: PostResponse.self) { response in
+            .responseDecodable(of: PostDetailResponse.self) { response in
                 switch response.result {
                 case .success(let data):
                     onCompletion(data)
