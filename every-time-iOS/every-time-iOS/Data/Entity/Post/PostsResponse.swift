@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ModifyPostResponse: Decodable {
+struct PostsResponse: Decodable {
     let statusCode: Int
     let responseMessage: String
-    let data: PostResponse
+    let data: PostDetailResponse
 }
 

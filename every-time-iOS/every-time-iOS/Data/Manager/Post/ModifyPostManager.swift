@@ -11,12 +11,12 @@ import Alamofire
 
 class ModifyPostManager {
 
-    func patchPost(_ parameters: PostRequest, _ uuid: String, onCompletion: @escaping (ModifyPostResponse) -> Void) {
+    func request(_ parameters: PostRequest, _ uuid: String, onCompletion: @escaping (PostsResponse) -> Void) {
         let url = Constant.base_URL + "/posts/\(uuid)"
 
         AF.request(url, method: .patch, parameters: parameters, encoder: JSONParameterEncoder())
             .validate()
-            .responseDecodable(of: ModifyPostResponse.self) { response in
+            .responseDecodable(of: PostsResponse.self) { response in
                 switch response.result {
                 case .success(let data):
                     onCompletion(data)

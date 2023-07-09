@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostResponse: Decodable {
+struct PostDetailResponse: Decodable {
     let uuid: String
     let user: User
     let title: String
@@ -22,11 +22,12 @@ struct PostResponse: Decodable {
 
     func convertToPost() -> PostModel {
         return PostModel(uuid: self.uuid,
-                         user: UserModel(uuid: self.user.uuid, email: self.user.email, nickname: self.user.nickname),
+                         user: UserModel(uuid: self.user.uuid,
+                                         email: self.user.email,
+                                         nickname: self.user.nickname),
                          title: self.title,
                          contents: self.contents,
                          time: self.uploadDate,
-                         name: self.user.nickname,
                          goods: self.goods,
                          commentNumber: "0",
                          scrapNumber: "3",
@@ -38,4 +39,4 @@ struct User: Decodable {
     let uuid, email, nickname: String
 }
 
-typealias Posts = [PostResponse]
+typealias Posts = [PostDetailResponse]

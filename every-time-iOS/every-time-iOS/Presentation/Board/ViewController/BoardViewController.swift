@@ -16,7 +16,7 @@ class BoardViewController: UIViewController {
     // MARK: - UI Components
     
     private let titleView: TitleView = TitleView()
-    private let boardTableView: UITableView = UITableView(frame: .zero, style: .grouped)
+    let boardTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     private let writeButton: UIButton = UIButton()
     
     // MARK: - Properties
