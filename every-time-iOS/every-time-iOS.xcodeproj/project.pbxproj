@@ -30,6 +30,8 @@
 		AB1BF6B529AC452A002DBACF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BF6B429AC452A002DBACF /* LoginViewController.swift */; };
 		AB1E73932993D000009A44E4 /* RegisterPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */; };
 		AB2100362A5976CB00D8941D /* UserPostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100352A5976CB00D8941D /* UserPostsManager.swift */; };
+		AB2100382A597BCB00D8941D /* UserPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100372A597BCB00D8941D /* UserPostsResponse.swift */; };
+		AB21003A2A597EB800D8941D /* UserPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100392A597EB800D8941D /* UserPostModel.swift */; };
 		AB3592802A377E7E009B21A5 /* PostDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */; };
 		AB3592822A378014009B21A5 /* PostListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3592812A378014009B21A5 /* PostListManager.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
@@ -59,7 +61,6 @@
 		AB7DCCCD297FD82D002F46FE /* BoardPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */; };
 		AB7DCCCF297FDD13002F46FE /* HomeTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */; };
 		AB7DCCD1297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */; };
-		AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */; };
 		AB8B570D29A364AB0059EBDC /* ModifyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */; };
 		AB8B570F29A38EC80059EBDC /* MenuBoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */; };
 		AB8B571729A5D5510059EBDC /* BoardSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */; };
@@ -141,6 +142,8 @@
 		AB1BF6B429AC452A002DBACF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1E73922993D000009A44E4 /* RegisterPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPostViewController.swift; sourceTree = "<group>"; };
 		AB2100352A5976CB00D8941D /* UserPostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsManager.swift; sourceTree = "<group>"; };
+		AB2100372A597BCB00D8941D /* UserPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsResponse.swift; sourceTree = "<group>"; };
+		AB2100392A597EB800D8941D /* UserPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostModel.swift; sourceTree = "<group>"; };
 		AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailResponse.swift; sourceTree = "<group>"; };
 		AB3592812A378014009B21A5 /* PostListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListManager.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +173,6 @@
 		AB7DCCCC297FD82D002F46FE /* BoardPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		AB7DCCCE297FDD13002F46FE /* HomeTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewHeader.swift; sourceTree = "<group>"; };
 		AB7DCCD0297FDD9E002F46FE /* UITableViewHeaderFooterView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView +.swift"; sourceTree = "<group>"; };
-		AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardPostViewController.swift; sourceTree = "<group>"; };
 		AB8B570C29A364AB0059EBDC /* ModifyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPostViewController.swift; sourceTree = "<group>"; };
 		AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardListViewController.swift; sourceTree = "<group>"; };
 		AB8B571629A5D5510059EBDC /* BoardSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSearchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -262,20 +264,11 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		AB08B5892A2DAB7E0086B8F9 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				AB08B58A2A2DAB8F0086B8F9 /* LoginRequest.swift */,
-				AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		AB08B58E2A2DAD670086B8F9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				AB08B5892A2DAB7E0086B8F9 /* Login */,
-				AB08B59D2A2DB7FE0086B8F9 /* Signup */,
+				AB21003C2A5A715500D8941D /* Auth */,
+				AB21003B2A5A712A00D8941D /* User */,
 				AB6B76622A3AE25D00750305 /* Post */,
 			);
 			path = Entity;
@@ -287,15 +280,6 @@
 				AB08B5902A2DAD910086B8F9 /* LoginManager.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		AB08B59D2A2DB7FE0086B8F9 /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				AB08B59F2A2DB8180086B8F9 /* SignupRequest.swift */,
-				AB08B5A12A2DB8200086B8F9 /* SignupResponse.swift */,
-			);
-			path = Signup;
 			sourceTree = "<group>";
 		};
 		AB08B59E2A2DB8070086B8F9 /* Signup */ = {
@@ -353,6 +337,24 @@
 				AB1BF6B429AC452A002DBACF /* LoginViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AB21003B2A5A712A00D8941D /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		AB21003C2A5A715500D8941D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B5A12A2DB8200086B8F9 /* SignupResponse.swift */,
+				AB08B59F2A2DB8180086B8F9 /* SignupRequest.swift */,
+				AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */,
+				AB08B58A2A2DAB8F0086B8F9 /* LoginRequest.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		AB37354B29B57D9800FC3EF7 /* Login */ = {
@@ -420,6 +422,7 @@
 				AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */,
 				AB6B76752A3EF5B800750305 /* PostsResponse.swift */,
 				AB5B7D652A51B4A3009CC74E /* DeletePostResponse.swift */,
+				AB2100372A597BCB00D8941D /* UserPostsResponse.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -463,7 +466,6 @@
 				ABF833762976797B00E3DC16 /* MenuViewController.swift */,
 				AB4CFF952998C842006A3866 /* BoardMenuViewController.swift */,
 				AB9A61F4299CC439005CA2DB /* MenuBoardMyListViewController.swift */,
-				AB8B570A29A360E10059EBDC /* MenuBoardPostViewController.swift */,
 				AB8B570E29A38EC80059EBDC /* MenuBoardListViewController.swift */,
 				AB8B571829A5D8B60059EBDC /* BoardSearchViewController.swift */,
 				AB8B571E29A71FBA0059EBDC /* CreateBoardViewController.swift */,
@@ -525,6 +527,7 @@
 				AB9A61F2299CC0BD005CA2DB /* BoardMainMenuModel.swift */,
 				AB9A61FA299CD3AA005CA2DB /* PinMenuModel.swift */,
 				AB8B571C29A6446F0059EBDC /* BoardSearchModel.swift */,
+				AB2100392A597EB800D8941D /* UserPostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -859,7 +862,6 @@
 				AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */,
 				AB6B76722A3EF24300750305 /* ModifyPostManager.swift in Sources */,
 				AB08B5A02A2DB8180086B8F9 /* SignupRequest.swift in Sources */,
-				AB8B570B29A360E10059EBDC /* MenuBoardPostViewController.swift in Sources */,
 				AB8B572729A777650059EBDC /* AnonymityCheckTableViewCell.swift in Sources */,
 				ABB1747F298B7CFE000165E6 /* PostTableViewHeader.swift in Sources */,
 				AB7A5E7529C88C280068F40D /* AuthTextField.swift in Sources */,
@@ -895,6 +897,7 @@
 				AB137F1029C1EB8C00804ACD /* TermModel.swift in Sources */,
 				AB6B76642A3AE2E100750305 /* PostRequest.swift in Sources */,
 				AB8B572129A724230059EBDC /* UIViewController +.swift in Sources */,
+				AB2100382A597BCB00D8941D /* UserPostsResponse.swift in Sources */,
 				AB02A5A029EABFFB0044AF79 /* ProfileCollectionViewCell.swift in Sources */,
 				AB9A61F9299CD177005CA2DB /* PinDetailTableViewCell.swift in Sources */,
 				AB8B572529A76C420059EBDC /* BoardOptionTableViewCell.swift in Sources */,
@@ -957,6 +960,7 @@
 				ABB1746729880F6F000165E6 /* PostTableViewCell.swift in Sources */,
 				AB08B58D2A2DAC8D0086B8F9 /* LoginResponse.swift in Sources */,
 				ABB174732988DD11000165E6 /* TitleView.swift in Sources */,
+				AB21003A2A597EB800D8941D /* UserPostModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

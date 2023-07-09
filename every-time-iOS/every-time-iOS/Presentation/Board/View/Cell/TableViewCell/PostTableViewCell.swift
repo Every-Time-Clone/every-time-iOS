@@ -172,4 +172,11 @@ extension PostTableViewCell {
         likeNumberLabel.text = "\(model.goods)"
         commentNumberLabel.text = model.commentNumber
     }
+
+    func setUserPostDataBind(_ model: UserPostModel) {
+        titleLabel.text = model.title
+        contentLabel.text = model.contents
+        timeLabel.text = model.uploadDate.convertTimeStampToDate()
+        likeNumberLabel.text = "\(model.goods)"
+    }
 }

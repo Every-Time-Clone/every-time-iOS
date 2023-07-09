@@ -208,7 +208,7 @@ extension PostTableViewHeader {
     // MARK: - Methods
     
     func setDataBind(_ model: PostModel) {
-        nameLabel.text = model.name
+        nameLabel.text = model.user.nickname
         titleLabel.text = model.title
         contentLabel.text = model.contents
         timeLabel.text = model.time.convertTimeStampToDate()

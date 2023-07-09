@@ -22,11 +22,12 @@ struct PostDetailResponse: Decodable {
 
     func convertToPost() -> PostModel {
         return PostModel(uuid: self.uuid,
-                         user: UserModel(uuid: self.user.uuid, email: self.user.email, nickname: self.user.nickname),
+                         user: UserModel(uuid: self.user.uuid,
+                                         email: self.user.email,
+                                         nickname: self.user.nickname),
                          title: self.title,
                          contents: self.contents,
                          time: self.uploadDate,
-                         name: self.user.nickname,
                          goods: self.goods,
                          commentNumber: "0",
                          scrapNumber: "3",

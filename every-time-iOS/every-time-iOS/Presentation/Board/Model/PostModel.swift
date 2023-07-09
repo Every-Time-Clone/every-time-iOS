@@ -13,7 +13,7 @@ struct PostModel {
     let title: String
     let contents: String
     let time: String
-    let name: String
+//    let name: String
     let goods: Int
     let commentNumber: String
     let scrapNumber: String
