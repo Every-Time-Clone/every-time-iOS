@@ -257,8 +257,7 @@
 		AB08B5872A2DAADD0086B8F9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				AB08B58F2A2DAD720086B8F9 /* Login */,
-				AB08B59E2A2DB8070086B8F9 /* Signup */,
+				AB21003D2A5A7B9B00D8941D /* Auth */,
 				AB6B76652A3AE38200750305 /* Post */,
 			);
 			path = Manager;
@@ -272,22 +271,6 @@
 				AB6B76622A3AE25D00750305 /* Post */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		AB08B58F2A2DAD720086B8F9 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				AB08B5902A2DAD910086B8F9 /* LoginManager.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		AB08B59E2A2DB8070086B8F9 /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				AB08B5A32A2DB82A0086B8F9 /* SignupManager.swift */,
-			);
-			path = Signup;
 			sourceTree = "<group>";
 		};
 		AB0A31C729B993970095F852 /* ViewController */ = {
@@ -353,6 +336,15 @@
 				AB08B59F2A2DB8180086B8F9 /* SignupRequest.swift */,
 				AB08B58C2A2DAC8D0086B8F9 /* LoginResponse.swift */,
 				AB08B58A2A2DAB8F0086B8F9 /* LoginRequest.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		AB21003D2A5A7B9B00D8941D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				AB08B5A32A2DB82A0086B8F9 /* SignupManager.swift */,
+				AB08B5902A2DAD910086B8F9 /* LoginManager.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
