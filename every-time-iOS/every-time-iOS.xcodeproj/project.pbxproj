@@ -32,6 +32,8 @@
 		AB2100362A5976CB00D8941D /* UserPostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100352A5976CB00D8941D /* UserPostsManager.swift */; };
 		AB2100382A597BCB00D8941D /* UserPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100372A597BCB00D8941D /* UserPostsResponse.swift */; };
 		AB21003A2A597EB800D8941D /* UserPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100392A597EB800D8941D /* UserPostModel.swift */; };
+		AB2100402A5A7BCC00D8941D /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21003F2A5A7BCC00D8941D /* UserInfoResponse.swift */; };
+		AB2100432A5A7C2B00D8941D /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2100422A5A7C2B00D8941D /* UserInfoManager.swift */; };
 		AB3592802A377E7E009B21A5 /* PostDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */; };
 		AB3592822A378014009B21A5 /* PostListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3592812A378014009B21A5 /* PostListManager.swift */; };
 		AB37354E29B57DBA00FC3EF7 /* SelectCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */; };
@@ -144,6 +146,8 @@
 		AB2100352A5976CB00D8941D /* UserPostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsManager.swift; sourceTree = "<group>"; };
 		AB2100372A597BCB00D8941D /* UserPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsResponse.swift; sourceTree = "<group>"; };
 		AB2100392A597EB800D8941D /* UserPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostModel.swift; sourceTree = "<group>"; };
+		AB21003F2A5A7BCC00D8941D /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
+		AB2100422A5A7C2B00D8941D /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		AB35927F2A377E7E009B21A5 /* PostDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailResponse.swift; sourceTree = "<group>"; };
 		AB3592812A378014009B21A5 /* PostListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListManager.swift; sourceTree = "<group>"; };
 		AB37354D29B57DBA00FC3EF7 /* SelectCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollegeViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 		AB08B5872A2DAADD0086B8F9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				AB2100412A5A7C0D00D8941D /* User */,
 				AB21003D2A5A7B9B00D8941D /* Auth */,
 				AB6B76652A3AE38200750305 /* Post */,
 			);
@@ -325,6 +330,7 @@
 		AB21003B2A5A712A00D8941D /* User */ = {
 			isa = PBXGroup;
 			children = (
+				AB21003F2A5A7BCC00D8941D /* UserInfoResponse.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -347,6 +353,14 @@
 				AB08B5902A2DAD910086B8F9 /* LoginManager.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		AB2100412A5A7C0D00D8941D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AB2100422A5A7C2B00D8941D /* UserInfoManager.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		AB37354B29B57D9800FC3EF7 /* Login */ = {
@@ -905,6 +919,7 @@
 				ABF833772976797B00E3DC16 /* MenuViewController.swift in Sources */,
 				ABF833892976ACEA00E3DC16 /* UITabBar +.swift in Sources */,
 				ABF8335229752DDD00E3DC16 /* UIView +.swift in Sources */,
+				AB2100432A5A7C2B00D8941D /* UserInfoManager.swift in Sources */,
 				AB137F0B29C1EA0A00804ACD /* TermTitleTableViewCell.swift in Sources */,
 				AB9A61FB299CD3AA005CA2DB /* PinMenuModel.swift in Sources */,
 				ABB1746A298824E6000165E6 /* PostModel.swift in Sources */,
@@ -933,6 +948,7 @@
 				AB8B571B29A63A880059EBDC /* BoardSearchTableViewCell.swift in Sources */,
 				AB4CFF962998C842006A3866 /* BoardMenuViewController.swift in Sources */,
 				AB08B5912A2DAD910086B8F9 /* LoginManager.swift in Sources */,
+				AB2100402A5A7BCC00D8941D /* UserInfoResponse.swift in Sources */,
 				AB8B572329A72FD60059EBDC /* CreateBoardTableViewHeader.swift in Sources */,
 				AB2100362A5976CB00D8941D /* UserPostsManager.swift in Sources */,
 				AB0A31CA29B999590095F852 /* SchoolTableView.swift in Sources */,

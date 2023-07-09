@@ -15,7 +15,9 @@ final class MenuBoardMyListViewController: BoardViewController {
     // MARK: - Properties
 
     private let userPostsManger: UserPostsManager = UserPostsManager()
+    private let userInfoManager: UserInfoManager = UserInfoManager()
     private var userPosts: [UserPostModel] = []
+    private var userInfo: UserModel?
 
     // MARK: - View Life Cycle
 
@@ -23,6 +25,7 @@ final class MenuBoardMyListViewController: BoardViewController {
         super.viewDidLoad()
 
         fetchUserPosts()
+        fetchUserInfo()
     }
 
     // MARK: - Network
@@ -35,6 +38,17 @@ final class MenuBoardMyListViewController: BoardViewController {
                 self?.userPosts.insert($0.convertToUserPost(), at: 0)
             }
             self?.boardTableView.reloadData()
+        }
+    }
+
+    private func fetchUserInfo() {
+        let uuid = "54aaf847-9cf2-49ea-b2b4-fd5bde695215"
+
+        userInfoManager.request(uuid) { [weak self] response in
+            let info = response.data
+            self?.userInfo = UserModel(uuid: info.uuid,
+                                 email: info.email,
+                                 nickname: info.nickname)
         }
     }
 
@@ -59,11 +73,14 @@ final class MenuBoardMyListViewController: BoardViewController {
     }
 
     @objc override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = userInfo else { return }
         let postDetailVC = PostDetailViewController()
         let post = userPosts[indexPath.row]
         postDetailVC.postType = .myPost
         postDetailVC.postModel = PostModel(uuid: post.uuid,
-                                           user: UserModel(uuid: "uuid", email: "min@naver.com", nickname: "nic"),
+                                           user: UserModel(uuid: user.uuid,
+                                                           email: user.email,
+                                                           nickname: user.nickname),
                                            title: post.title,
                                            contents: post.contents,
                                            time: post.uploadDate,
